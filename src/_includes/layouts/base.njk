@@ -70,7 +70,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   
   {# === CSS tùy chỉnh === #}
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 </head>
 
 <body class="bg-white dark:bg-navy-950 text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
@@ -87,7 +87,7 @@
   {% include "components/footer.njk" %}
   
   {# === JavaScript === #}
-  <script src="/js/script.js"></script>
+  <script src="{{ '/js/script.js' | url }}"></script>
   
   {# === Khởi tạo Lucide Icons === #}
   <script>
