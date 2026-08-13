@@ -17,8 +17,8 @@ module.exports = function (eleventyConfig) {
 
   // === Cấu hình thư mục input/output và template engine ===
   return {
-    // Path prefix cho GitHub Pages (repo name: Portflotio)
-    pathPrefix: "/Portflotio/",
+    // Bỏ pathPrefix ở đây để dev local (localhost:8080/) không bị lỗi đường dẫn
+    // Sẽ cấu hình pathPrefix trong file GitHub Actions (deploy.yml)
     dir: {
       input: "src",          // Thư mục chứa source (giống resources/views trong Laravel)
       output: "_site",       // Thư mục build ra (giống public/ trong Laravel)
