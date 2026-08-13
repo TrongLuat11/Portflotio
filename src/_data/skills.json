@@ -4,55 +4,102 @@
     "category": "Ngôn ngữ lập trình",
     "level": 80,
     "icon": "🐍",
-    "description": "Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Web Scraping"
+    "description": "Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Web Scraping",
+    "knowledge": [
+      "Sử dụng thành thạo Pandas cho ETL: lọc, nhóm (groupby), hợp nhất dữ liệu (merge/join).",
+      "Kỹ thuật xử lý missing values: điền theo trung vị, bfill/ffill hoặc interpolation tuỳ đặc thù dữ liệu.",
+      "Tối ưu hoá hiệu suất Pandas: Vectorization thay vì dùng vòng lặp for/apply.",
+      "Trực quan hoá dữ liệu với Seaborn (KDE plot, boxplot, heatmap) để tìm ra pattern và outlier."
+    ]
   },
   {
     "name": "SQL",
     "category": "Ngôn ngữ truy vấn",
     "level": 78,
     "icon": "🗄️",
-    "description": "Joins, Window Functions, Database Management Systems"
+    "description": "Joins, Window Functions, Database Management Systems",
+    "knowledge": [
+      "Truy vấn dữ liệu đa bảng bằng INNER/LEFT/RIGHT JOIN hiệu quả.",
+      "Thành thạo Window Functions (ROW_NUMBER(), RANK(), LEAD(), LAG()) để tính toán theo kỳ (YoY, MoM).",
+      "Sử dụng CTE (Common Table Expressions) để làm sạch và chia nhỏ logic các truy vấn phức tạp.",
+      "Hiểu biết về Aggregate functions và HAVING clause để lọc dữ liệu đã nhóm."
+    ]
   },
   {
     "name": "Data Cleaning & EDA",
     "category": "Xử lý dữ liệu",
     "level": 82,
     "icon": "🧹",
-    "description": "Data Validation, Missing Value Imputation, IQR, Exploratory Analysis"
+    "description": "Data Validation, Missing Value Imputation, IQR, Exploratory Analysis",
+    "knowledge": [
+      "Quy trình Exploratory Data Analysis (EDA) chuẩn mực: kiểm tra phân phối, tương quan (correlation matrix).",
+      "Xử lý Outlier: Áp dụng phương pháp IQR hoặc Z-score tuỳ vào phân phối dữ liệu (normal/skewed).",
+      "Data Validation: Kiểm tra tính nhất quán, định dạng ngày tháng, chuẩn hoá text (loại bỏ khoảng trắng, regex).",
+      "Feature Engineering cơ bản: Tạo biến mới từ biến cũ (vd: tính khoảng cách thời gian, phân nhóm độ tuổi)."
+    ]
   },
   {
     "name": "Machine Learning",
     "category": "AI & ML",
     "level": 65,
     "icon": "🤖",
-    "description": "NLP, Text Vectorization, Classification, Logistic Regression, SVM"
+    "description": "NLP, Text Vectorization, Classification, Logistic Regression, SVM",
+    "knowledge": [
+      "Hiểu rõ quy trình train/test split và Cross-Validation để tránh Overfitting.",
+      "NLP (Xử lý ngôn ngữ tự nhiên): Text normalization, Tokenization, dùng TF-IDF và CountVectorizer.",
+      "Phân loại (Classification): Đánh giá mô hình bằng Confusion Matrix, Precision, Recall, F1-score và ROC-AUC.",
+      "Kinh nghiệm triển khai Logistic Regression, Naive Bayes và SVM bằng thư viện Scikit-Learn."
+    ]
   },
   {
     "name": "GenAI Tools",
     "category": "AI & ML",
     "level": 75,
     "icon": "✨",
-    "description": "ChatGPT, Claude, Gemini — workflow optimization & research"
+    "description": "ChatGPT, Claude, Gemini — workflow optimization & research",
+    "knowledge": [
+      "Prompt Engineering: Thiết kế câu lệnh rõ ràng để AI sinh code Python/SQL chính xác.",
+      "Dùng AI để debug code: Nhanh chóng tìm ra lỗi logic hoặc cú pháp trong các đoạn script dài.",
+      "Nghiên cứu và học tập: Sử dụng AI để giải thích các thuật toán khó hoặc tóm tắt tài liệu ngành."
+    ]
   },
   {
     "name": "MS Office",
     "category": "Công cụ",
     "level": 85,
     "icon": "📗",
-    "description": "MOS Certified, Excel nâng cao, Word, PowerPoint"
+    "description": "MOS Certified, Excel nâng cao, Word, PowerPoint",
+    "knowledge": [
+      "Excel: Sử dụng VLOOKUP/INDEX-MATCH, Pivot Table và Power Query để tổng hợp dữ liệu.",
+      "Excel: Dùng Conditional Formatting và Data Validation để tạo Dashboard báo cáo tự động.",
+      "PowerPoint: Kỹ năng kể chuyện qua dữ liệu (Data Storytelling), thiết kế slide báo cáo rành mạch.",
+      "Chứng chỉ MOS minh chứng cho khả năng thao tác công việc hành chính chuẩn xác và nhanh chóng."
+    ]
   },
   {
     "name": "Git/GitHub",
     "category": "Công cụ",
     "level": 70,
     "icon": "🔀",
-    "description": "Version control, collaboration, repository management"
+    "description": "Version control, collaboration, repository management",
+    "knowledge": [
+      "Quản lý mã nguồn cơ bản: init, add, commit, push, pull.",
+      "Sử dụng Branching (nhánh) để phát triển tính năng mới mà không ảnh hưởng code chính.",
+      "Kinh nghiệm đọc hiểu log lỗi và giải quyết Conflict cơ bản khi gộp code.",
+      "Viết file README.md rõ ràng, chuyên nghiệp cho các project Data trên GitHub."
+    ]
   },
   {
     "name": "Web Scraping",
     "category": "Xử lý dữ liệu",
     "level": 60,
     "icon": "🕷️",
-    "description": "Selenium, BeautifulSoup, thu thập dữ liệu tự động"
+    "description": "Selenium, BeautifulSoup, thu thập dữ liệu tự động",
+    "knowledge": [
+      "BeautifulSoup: Phân tích cú pháp HTML tĩnh, trích xuất dữ liệu qua CSS Selectors.",
+      "Selenium: Xử lý các trang web động (JavaScript rendered), tự động hoá các thao tác click, điền form.",
+      "Hiểu biết cơ bản về cấu trúc HTML/DOM để xác định đúng tag chứa dữ liệu.",
+      "Tôn trọng robots.txt và áp dụng kỹ thuật rate-limiting (time.sleep) để không làm quá tải server."
+    ]
   }
 ]

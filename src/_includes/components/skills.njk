@@ -1,29 +1,27 @@
 {# 
   Component Skills Section (ĐÃ CẬP NHẬT)
-  - Bỏ biểu đồ Chart.js radar
-  - Cards kỹ năng full-width grid
-  - Click vào card → mở modal hiện dự án liên quan (match theo tags)
+  - Cards kỹ năng
+  - Modal: Sổ tay kiến thức (Knowledge Base) & Dự án
 #}
 <section id="skills" class="py-20">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     
     {# === Tiêu đề Section === #}
     <div class="text-center mb-16 fade-in">
-      <p class="text-accent dark:text-accent-light font-mono text-sm tracking-wider uppercase mb-2">Kỹ năng</p>
+      <p class="text-accent dark:text-accent-light font-mono text-sm tracking-wider uppercase mb-2">Kỹ năng & Kiến thức</p>
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
-        Công cụ & Kỹ năng
+        Công cụ & Sổ tay ngành
       </h2>
       <div class="w-20 h-1 bg-gradient-to-r from-accent to-navy-500 mx-auto mt-4 rounded-full"></div>
       <p class="text-gray-600 dark:text-gray-400 mt-4 max-w-lg mx-auto">
-        Nhấn vào kỹ năng để xem các dự án liên quan
+        Nhấn vào từng kỹ năng để xem "Sổ tay kiến thức" và dự án áp dụng
       </p>
     </div>
     
-    {# === Grid kỹ năng — full width === #}
+    {# === Grid kỹ năng === #}
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {% for skill in skills %}
         <div class="fade-in" style="animation-delay: {{ loop.index0 * 80 }}ms;">
-          {# Card có thể click — mở modal dự án #}
           <button type="button"
                   class="skill-card w-full text-left bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-lg hover:border-accent/30 dark:hover:border-accent/30 transform hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
                   data-skill-name="{{ skill.name }}"
@@ -42,12 +40,11 @@
             <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-2">{{ skill.description }}</p>
             
             {# Hint nhấn để xem #}
-            <div class="flex items-center gap-1 text-xs text-accent/60 dark:text-accent-light/60 group-hover:text-accent dark:group-hover:text-accent-light transition-colors">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            <div class="flex items-center gap-1 text-xs text-accent/60 dark:text-accent-light/60 group-hover:text-accent dark:group-hover:text-accent-light transition-colors mt-4">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
               </svg>
-              <span>Xem dự án</span>
+              <span>Xem Sổ tay & Dự án</span>
             </div>
           </button>
         </div>
@@ -56,35 +53,67 @@
   </div>
 </section>
 
-{# === MODAL — Hiện dự án liên quan khi click skill === #}
+{# === MODAL — Kiến thức & Dự án === #}
 <div id="skill-modal" class="fixed inset-0 z-[100] hidden">
-  {# Overlay tối #}
   <div id="skill-modal-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeSkillModal()"></div>
   
-  {# Modal content #}
-  <div class="absolute inset-4 sm:inset-8 md:inset-12 lg:inset-x-24 lg:inset-y-16 bg-white dark:bg-navy-900 rounded-2xl shadow-2xl overflow-hidden flex flex-col modal-content">
+  <div class="absolute inset-4 sm:inset-8 md:inset-12 lg:inset-x-32 lg:inset-y-16 bg-white dark:bg-navy-900 rounded-2xl shadow-2xl overflow-hidden flex flex-col modal-content">
     
     {# Header modal #}
-    <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-navy-700">
+    <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-navy-700 bg-gray-50/50 dark:bg-navy-800/30">
       <div class="flex items-center gap-3">
-        <span id="modal-skill-icon" class="text-2xl"></span>
+        <span id="modal-skill-icon" class="text-2xl sm:text-3xl"></span>
         <div>
-          <h3 id="modal-skill-name" class="text-xl font-bold text-gray-900 dark:text-white"></h3>
+          <h3 id="modal-skill-name" class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white"></h3>
           <p id="modal-skill-desc" class="text-sm text-gray-500 dark:text-gray-400"></p>
         </div>
       </div>
       <button onclick="closeSkillModal()" 
-              class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-navy-800 text-gray-500 dark:text-gray-400 transition-colors"
+              class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-navy-700 text-gray-500 dark:text-gray-400 transition-colors"
               aria-label="Đóng">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
     </div>
     
-    {# Body modal — danh sách dự án #}
-    <div id="modal-projects-list" class="flex-1 overflow-y-auto px-6 py-6 space-y-4">
-      {# Nội dung được JS render động #}
+    {# Body modal: chia 2 cột trên Desktop (Kiến thức / Dự án) #}
+    <div class="flex-1 overflow-y-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 h-full">
+        
+        {# Cột trái: Sổ tay kiến thức #}
+        <div class="p-6 lg:p-8 lg:border-r border-gray-200 dark:border-navy-700">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="p-2 rounded-lg bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent-light">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+            <h4 class="text-lg font-bold text-gray-900 dark:text-white">Kiến thức ngành</h4>
+          </div>
+          
+          <ul id="modal-knowledge-list" class="space-y-4">
+            {# Dữ liệu kiến thức sẽ render vào đây #}
+          </ul>
+        </div>
+        
+        {# Cột phải: Dự án áp dụng #}
+        <div class="p-6 lg:p-8 bg-gray-50/50 dark:bg-navy-950/30">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="p-2 rounded-lg bg-green-500/10 text-green-600 dark:text-green-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h4 class="text-lg font-bold text-gray-900 dark:text-white">Dự án áp dụng</h4>
+          </div>
+          
+          <div id="modal-projects-list" class="space-y-4">
+            {# Dữ liệu dự án sẽ render vào đây #}
+          </div>
+        </div>
+        
+      </div>
     </div>
   </div>
 </div>
@@ -99,12 +128,16 @@
       icon: "{{ skill.icon }}",
       category: "{{ skill.category }}",
       description: "{{ skill.description }}",
-      level: {{ skill.level }}
+      knowledge: [
+        {% for note in skill.knowledge %}
+          "{{ note }}"{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ];
   
-  // Dữ liệu projects (render từ Nunjucks)
+  // Dữ liệu projects
   const projectsData = [
     {% for project in projects %}
     {
@@ -113,120 +146,87 @@
       image: "{{ project.image }}",
       tags: [{% for tag in project.tags %}"{{ tag }}"{% if not loop.last %},{% endif %}{% endfor %}],
       github: "{{ project.github }}",
-      demo: "{{ project.demo }}",
-      problem: "{{ project.problem }}",
-      result: "{{ project.result }}"
+      demo: "{{ project.demo }}"
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ];
   
-  // Mở modal và hiện dự án match với skill
   function openSkillModal(skillName) {
     const modal = document.getElementById('skill-modal');
     const skill = skillsData.find(s => s.name === skillName);
     if (!skill) return;
     
-    // Cập nhật header modal
+    // Header
     document.getElementById('modal-skill-icon').textContent = skill.icon;
     document.getElementById('modal-skill-name').textContent = skill.name;
     document.getElementById('modal-skill-desc').textContent = skill.description;
     
-    // Tìm dự án liên quan (match tên skill trong tags — không phân biệt hoa thường)
+    // Render Knowledge List
+    const knowledgeContainer = document.getElementById('modal-knowledge-list');
+    if (skill.knowledge && skill.knowledge.length > 0) {
+      knowledgeContainer.innerHTML = skill.knowledge.map(note => `
+        <li class="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-navy-800 border border-gray-100 dark:border-navy-700">
+          <div class="mt-0.5 min-w-4 text-accent dark:text-accent-light">•</div>
+          <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">${note}</p>
+        </li>
+      `).join('');
+    } else {
+      knowledgeContainer.innerHTML = `<p class="text-sm text-gray-500 italic">Đang cập nhật kiến thức...</p>`;
+    }
+    
+    // Render Projects List
+    const projectsContainer = document.getElementById('modal-projects-list');
     const matchedProjects = projectsData.filter(p => 
-      p.tags.some(tag => tag.toLowerCase().includes(skillName.toLowerCase()) || 
-                         skillName.toLowerCase().includes(tag.toLowerCase()))
+      p.tags.some(tag => tag.toLowerCase().includes(skillName.toLowerCase()) || skillName.toLowerCase().includes(tag.toLowerCase()))
     );
     
-    // Render danh sách dự án
-    const container = document.getElementById('modal-projects-list');
-    
     if (matchedProjects.length > 0) {
-      container.innerHTML = `
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
-          Tìm thấy <span class="font-bold text-accent">${matchedProjects.length}</span> dự án sử dụng ${skillName}
-        </p>
-        ${matchedProjects.map(project => `
-          <div class="bg-gray-50 dark:bg-navy-800/50 rounded-xl overflow-hidden border border-gray-100 dark:border-navy-700/50 hover:shadow-md transition-shadow">
-            <div class="flex flex-col sm:flex-row">
-              <div class="sm:w-48 h-32 sm:h-auto flex-shrink-0">
-                <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover">
-              </div>
-              <div class="p-5 flex-1">
-                <h4 class="font-bold text-gray-900 dark:text-white mb-2">${project.title}</h4>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">${project.summary}</p>
-                <div class="flex flex-wrap gap-1.5 mb-3">
-                  ${project.tags.map(tag => `
-                    <span class="px-2 py-0.5 text-xs font-mono ${
-                      tag.toLowerCase().includes(skillName.toLowerCase()) || skillName.toLowerCase().includes(tag.toLowerCase())
-                        ? 'bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent-light border border-accent/20' 
-                        : 'bg-gray-100 dark:bg-navy-700 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-navy-600'
-                    } rounded-full">${tag}</span>
-                  `).join('')}
-                </div>
-                <div class="flex gap-3">
-                  <a href="${project.github}" target="_blank" 
-                     class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-accent transition-colors">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    GitHub
-                  </a>
-                  ${project.demo !== '#' ? `
-                  <a href="${project.demo}" target="_blank"
-                     class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-dark transition-colors">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                    Demo
-                  </a>` : ''}
-                </div>
-              </div>
+      projectsContainer.innerHTML = matchedProjects.map(project => `
+        <div class="bg-white dark:bg-navy-800 rounded-xl overflow-hidden border border-gray-100 dark:border-navy-700/50 hover:shadow-md transition-shadow">
+          <div class="h-32">
+            <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4">
+            <h5 class="font-bold text-gray-900 dark:text-white mb-2 text-sm">${project.title}</h5>
+            <p class="text-xs text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">${project.summary}</p>
+            <div class="flex gap-2">
+              <a href="${project.github}" target="_blank" class="text-xs font-medium text-gray-700 dark:text-gray-300 hover:text-accent">GitHub</a>
+              ${project.demo !== '#' ? `<a href="${project.demo}" target="_blank" class="text-xs font-medium text-accent">Demo</a>` : ''}
             </div>
           </div>
-        `).join('')}
-      `;
+        </div>
+      `).join('');
     } else {
-      // Chưa có dự án nào match — hiện placeholder
-      container.innerHTML = `
-        <div class="flex flex-col items-center justify-center py-16 text-center">
-          <div class="w-20 h-20 bg-gray-100 dark:bg-navy-800 rounded-full flex items-center justify-center mb-4">
-            <svg class="w-10 h-10 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12H9.75m3 0v3m0-3V15m-3-3h6m-9 3H6.375a1.875 1.875 0 01-1.875-1.875V5.625A1.875 1.875 0 016.375 3.75h5.25"/>
-            </svg>
-          </div>
-          <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">Chưa có dự án</h4>
-          <p class="text-sm text-gray-500 dark:text-gray-400 max-w-sm">
-            Hiện chưa có dự án nào sử dụng <strong>${skillName}</strong>. 
-            Các dự án sẽ được cập nhật sớm!
-          </p>
+      projectsContainer.innerHTML = `
+        <div class="flex flex-col items-center justify-center py-8 text-center bg-white dark:bg-navy-800 rounded-xl border border-dashed border-gray-300 dark:border-navy-600">
+          <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12H9.75m3 0v3m0-3V15m-3-3h6m-9 3H6.375a1.875 1.875 0 01-1.875-1.875V5.625A1.875 1.875 0 016.375 3.75h5.25"/>
+          </svg>
+          <p class="text-xs text-gray-500 dark:text-gray-400 max-w-xs">Chưa có dự án public dùng kỹ năng này.</p>
         </div>
       `;
     }
     
-    // Hiện modal với animation
+    // Mở modal
     modal.classList.remove('hidden');
     requestAnimationFrame(() => {
       modal.querySelector('.modal-content').classList.add('modal-open');
       modal.querySelector('#skill-modal-overlay').classList.add('modal-overlay-open');
     });
-    
-    // Chặn scroll body
     document.body.style.overflow = 'hidden';
   }
   
-  // Đóng modal
   function closeSkillModal() {
     const modal = document.getElementById('skill-modal');
-    const content = modal.querySelector('.modal-content');
-    const overlay = modal.querySelector('#skill-modal-overlay');
-    
-    content.classList.remove('modal-open');
-    overlay.classList.remove('modal-overlay-open');
-    
+    modal.querySelector('.modal-content').classList.remove('modal-open');
+    modal.querySelector('#skill-modal-overlay').classList.remove('modal-overlay-open');
     setTimeout(() => {
       modal.classList.add('hidden');
       document.body.style.overflow = '';
     }, 250);
   }
   
-  // Đóng modal khi nhấn Escape
-  document.addEventListener('keydown', function(e) {
+  document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeSkillModal();
   });
 </script>

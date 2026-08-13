@@ -1,102 +1,102 @@
 {# 
-  Component Hero Section
-  Phần đầu tiên người dùng nhìn thấy, bao gồm:
-  - Ảnh đại diện (avatar)
-  - Tên và chức danh
-  - Tagline giới thiệu ngắn
-  - Nút CTA (Call to Action)
-  - Hiệu ứng gradient background
+  Component Hero (hero.njk)
+  Banner Landing Page chia làm 2 cột:
+  - Trái: Nội dung giới thiệu, lời chào, nút kêu gọi hành động
+  - Phải: Hình ảnh avatar 
 #}
-<section id="hero" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+<section id="hero" class="relative min-h-[90vh] flex items-center pt-20 pb-16 overflow-hidden">
   
-  {# === Background Gradient trang trí === #}
-  <div class="absolute inset-0 -z-10">
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl animate-pulse"></div>
-    <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-navy-400/10 dark:bg-navy-600/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-accent/5 to-transparent rounded-full"></div>
+  {# Background blobs trang trí #}
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-[10%] left-[5%] w-72 h-72 bg-accent/20 dark:bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+    <div class="absolute top-[20%] right-[10%] w-80 h-80 bg-purple-300/30 dark:bg-purple-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+    <div class="absolute bottom-[10%] left-[40%] w-96 h-96 bg-blue-300/30 dark:bg-blue-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
   </div>
-  
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
       
-      {# === Ảnh đại diện === #}
-      <div class="fade-in relative group">
-        <div class="absolute -inset-1 bg-gradient-to-r from-accent to-navy-500 rounded-full opacity-70 group-hover:opacity-100 blur transition-opacity duration-500"></div>
-        <img 
-          src="{{ site.avatar }}" 
-          alt="Ảnh đại diện {{ site.name }}"
-          class="relative w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white dark:border-navy-900 shadow-2xl"
-          loading="eager"
-        >
-        {# Badge trạng thái #}
-        <div class="absolute bottom-2 right-2 w-6 h-6 bg-green-400 rounded-full border-4 border-white dark:border-navy-900 shadow-lg"></div>
-      </div>
-      
-      {# === Nội dung chính === #}
-      <div class="text-center md:text-left space-y-6">
-        {# Chào hỏi nhỏ #}
-        <p class="fade-in text-accent dark:text-accent-light font-mono text-sm tracking-wider uppercase">
-          👋 Xin chào, tôi là
-        </p>
+      {# === CỘT TRÁI: Nội dung giới thiệu === #}
+      <div class="order-2 lg:order-1 text-center lg:text-left">
+        <div class="fade-in inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 dark:bg-accent/20 text-accent dark:text-accent-light font-medium text-sm mb-6 border border-accent/20">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+          </span>
+          Đang tìm kiếm cơ hội Data Intern
+        </div>
         
-        {# Tên #}
-        <h1 class="fade-in text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight">
-          {{ site.name }}
+        <h1 class="fade-in text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-[1.1] mb-6" style="animation-delay: 100ms;">
+          Xin chào, tôi là <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-navy-500">{{ site.name }}</span>
         </h1>
         
-        {# Chức danh với hiệu ứng gradient #}
-        <p class="fade-in text-xl sm:text-2xl font-semibold bg-gradient-to-r from-accent to-navy-500 dark:from-accent-light dark:to-blue-300 bg-clip-text text-transparent">
+        <h2 class="fade-in text-xl sm:text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-4" style="animation-delay: 200ms;">
           {{ site.role }}
-        </p>
+        </h2>
         
-        {# Tagline #}
-        <p class="fade-in text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
+        <p class="fade-in text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed" style="animation-delay: 300ms;">
           {{ site.tagline }}
         </p>
         
-        {# Nút CTA #}
-        <div class="fade-in flex flex-wrap gap-4 justify-center md:justify-start">
+        <div class="fade-in flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10" style="animation-delay: 400ms;">
           <a href="{{ site.ctaLink }}" 
-             class="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-white font-semibold rounded-xl shadow-lg shadow-accent/25 hover:shadow-accent/40 transform hover:-translate-y-0.5 transition-all duration-300">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0l-4-4m4 4l-4 4"/>
-            </svg>
+             class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-medium rounded-xl text-white bg-gradient-to-r from-accent to-navy-600 hover:shadow-lg hover:shadow-accent/30 transform hover:-translate-y-0.5 transition-all duration-300">
             {{ site.ctaText }}
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
           </a>
           <a href="{{ site.cvLink }}" 
-             class="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-300 dark:border-navy-600 text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:border-accent hover:text-accent dark:hover:border-accent-light dark:hover:text-accent-light transform hover:-translate-y-0.5 transition-all duration-300">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-            </svg>
-            Tải CV
+             class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-gray-200 dark:border-navy-700 text-base font-medium rounded-xl text-gray-700 dark:text-gray-200 hover:border-accent dark:hover:border-accent hover:text-accent dark:hover:text-accent-light bg-white/50 dark:bg-navy-900/50 backdrop-blur-sm transition-all duration-300">
+            <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Tải CV (PDF)
           </a>
         </div>
         
         {# Thống kê nhanh #}
-        <div class="fade-in flex gap-8 justify-center md:justify-start pt-4">
-          <div class="text-center">
-            <p class="text-2xl font-bold font-mono text-navy-700 dark:text-white">2+</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">Dự án</p>
+        <div class="fade-in grid grid-cols-3 gap-6 pt-6 border-t border-gray-200 dark:border-navy-800" style="animation-delay: 500ms;">
+          <div class="text-center lg:text-left">
+            <p class="text-3xl font-bold font-mono text-gray-900 dark:text-white">2+</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Dự án</p>
           </div>
-          <div class="text-center">
-            <p class="text-2xl font-bold font-mono text-navy-700 dark:text-white">3.3</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">GPA</p>
+          <div class="text-center lg:text-left">
+            <p class="text-3xl font-bold font-mono text-gray-900 dark:text-white">3.3</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">GPA</p>
           </div>
-          <div class="text-center">
-            <p class="text-2xl font-bold font-mono text-navy-700 dark:text-white">MIS</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">Chuyên ngành</p>
+          <div class="text-center lg:text-left">
+            <p class="text-3xl font-bold font-mono text-gray-900 dark:text-white">MIS</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Ngành</p>
           </div>
         </div>
       </div>
+      
+      {# === CỘT PHẢI: Hình ảnh === #}
+      <div class="order-1 lg:order-2 flex justify-center lg:justify-end fade-in" style="animation-delay: 200ms;">
+        <div class="relative w-72 h-72 sm:w-96 sm:h-96">
+          {# Khung trang trí phía sau #}
+          <div class="absolute inset-0 bg-gradient-to-tr from-accent to-purple-400 rounded-3xl transform rotate-6 scale-105 opacity-20 dark:opacity-40 animate-pulse"></div>
+          <div class="absolute inset-0 bg-gradient-to-bl from-navy-500 to-accent rounded-3xl transform -rotate-3 scale-100 opacity-20 dark:opacity-40"></div>
+          
+          {# Hình ảnh chính #}
+          <div class="relative z-10 w-full h-full rounded-3xl overflow-hidden border-4 border-white dark:border-navy-800 shadow-2xl transform transition-transform hover:-translate-y-2 duration-500">
+            <img src="{{ site.avatar | url }}" alt="{{ site.name }}" class="w-full h-full object-cover">
+          </div>
+          
+          {# Floating badge (Kinh nghiệm) #}
+          <div class="absolute -bottom-6 -left-6 z-20 bg-white dark:bg-navy-800 rounded-2xl p-4 shadow-xl border border-gray-100 dark:border-navy-700 animate-bounce" style="animation-duration: 3s;">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Đang phát triển</p>
+                <p class="text-sm font-bold text-gray-900 dark:text-white">Data Analyst</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
     </div>
-  </div>
-  
-  {# === Mũi tên cuộn xuống === #}
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <a href="#about" class="text-gray-400 dark:text-gray-500 hover:text-accent transition-colors">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-      </svg>
-    </a>
   </div>
 </section>
