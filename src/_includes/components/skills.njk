@@ -29,23 +29,12 @@
                   data-skill-name="{{ skill.name }}"
                   onclick="openSkillModal('{{ skill.name }}')">
             
-            {# Icon + tên + level #}
-            <div class="flex items-center justify-between mb-3">
-              <div class="flex items-center gap-3">
-                <span class="text-2xl group-hover:scale-110 transition-transform duration-300">{{ skill.icon }}</span>
-                <div>
-                  <h4 class="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-accent dark:group-hover:text-accent-light transition-colors">{{ skill.name }}</h4>
-                  <p class="text-xs text-gray-500 dark:text-gray-400 font-mono">{{ skill.category }}</p>
-                </div>
-              </div>
-              <span class="text-sm font-bold font-mono text-accent dark:text-accent-light">{{ skill.level }}%</span>
-            </div>
-            
-            {# Progress bar #}
-            <div class="w-full bg-gray-200 dark:bg-navy-700 rounded-full h-2 overflow-hidden mb-3">
-              <div class="skill-progress h-full bg-gradient-to-r from-accent to-navy-500 rounded-full transition-all duration-1000 ease-out" 
-                   style="width: 0%;" 
-                   data-level="{{ skill.level }}">
+            {# Icon + tên #}
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform duration-300">{{ skill.icon }}</span>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-accent dark:group-hover:text-accent-light transition-colors">{{ skill.name }}</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-mono">{{ skill.category }}</p>
               </div>
             </div>
             
