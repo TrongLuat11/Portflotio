@@ -71,14 +71,14 @@
       
       {# === CỘT PHẢI: Hình ảnh === #}
       <div class="order-1 lg:order-2 flex justify-center lg:justify-end fade-in" style="animation-delay: 200ms;">
-        <div class="relative w-72 h-72 sm:w-96 sm:h-96">
-          {# Khung trang trí phía sau #}
-          <div class="absolute inset-0 bg-gradient-to-tr from-accent to-purple-400 rounded-3xl transform rotate-6 scale-105 opacity-20 dark:opacity-40 animate-pulse"></div>
-          <div class="absolute inset-0 bg-gradient-to-bl from-navy-500 to-accent rounded-3xl transform -rotate-3 scale-100 opacity-20 dark:opacity-40"></div>
+        <div class="relative w-72 h-72 sm:w-96 sm:h-96 mx-auto">
+          <!-- Blob background -->
+          <div class="absolute inset-0 bg-accent/20 rounded-full blur-3xl animate-blob"></div>
+          <div class="absolute inset-0 bg-blue-400/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
           
-          {# Hình ảnh chính #}
-          <div class="relative z-10 w-full h-full rounded-3xl overflow-hidden border-4 border-white dark:border-navy-800 shadow-2xl transform transition-transform hover:-translate-y-2 duration-500">
-            <img src="{{ site.avatar | url }}" alt="{{ site.name }}" class="w-full h-full object-cover">
+          <!-- Image -->
+          <div class="relative w-full h-full rounded-2xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl group">
+            <img src="{{ '/images/hero_illustration.png' | url }}" alt="Data Analyst Illustration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
           </div>
           
           {# Floating badge (Kinh nghiệm) #}
