@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Python",
+    "category": "Ngôn ngữ lập trình",
+    "level": 80,
+    "icon": "🐍",
+    "description": "Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Web Scraping"
+  },
+  {
+    "name": "SQL",
+    "category": "Ngôn ngữ truy vấn",
+    "level": 78,
+    "icon": "🗄️",
+    "description": "Joins, Window Functions, Database Management Systems"
+  },
+  {
+    "name": "Data Cleaning & EDA",
+    "category": "Xử lý dữ liệu",
+    "level": 82,
+    "icon": "🧹",
+    "description": "Data Validation, Missing Value Imputation, IQR, Exploratory Analysis"
+  },
+  {
+    "name": "Machine Learning",
+    "category": "AI & ML",
+    "level": 65,
+    "icon": "🤖",
+    "description": "NLP, Text Vectorization, Classification, Logistic Regression, SVM"
+  },
+  {
+    "name": "GenAI Tools",
+    "category": "AI & ML",
+    "level": 75,
+    "icon": "✨",
+    "description": "ChatGPT, Claude, Gemini — workflow optimization & research"
+  },
+  {
+    "name": "MS Office",
+    "category": "Công cụ",
+    "level": 85,
+    "icon": "📗",
+    "description": "MOS Certified, Excel nâng cao, Word, PowerPoint"
+  },
+  {
+    "name": "Git/GitHub",
+    "category": "Công cụ",
+    "level": 70,
+    "icon": "🔀",
+    "description": "Version control, collaboration, repository management"
+  },
+  {
+    "name": "Web Scraping",
+    "category": "Xử lý dữ liệu",
+    "level": 60,
+    "icon": "🕷️",
+    "description": "Selenium, BeautifulSoup, thu thập dữ liệu tự động"
+  }
+]

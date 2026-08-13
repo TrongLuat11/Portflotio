@@ -1,0 +1,121 @@
+{# 
+  Component Skills Section
+  Hiển thị kỹ năng dạng grid cards + biểu đồ Chart.js
+  Loop qua skills.json bằng Nunjucks {% for %}
+  Giống @foreach($skills as $skill) trong Blade
+#}
+<section id="skills" class="py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {# === Tiêu đề Section === #}
+    <div class="text-center mb-16 fade-in">
+      <p class="text-accent dark:text-accent-light font-mono text-sm tracking-wider uppercase mb-2">Kỹ năng</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+        Công cụ & Kỹ năng
+      </h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-accent to-navy-500 mx-auto mt-4 rounded-full"></div>
+      <p class="text-gray-600 dark:text-gray-400 mt-4 max-w-lg mx-auto">
+        Những công cụ và kỹ năng tôi sử dụng hàng ngày trong công việc phân tích dữ liệu
+      </p>
+    </div>
+    
+    <div class="grid lg:grid-cols-5 gap-8 items-start">
+      
+      {# === Cột trái: Grid kỹ năng (3 cột) === #}
+      <div class="lg:col-span-3">
+        <div class="grid sm:grid-cols-2 gap-4">
+          {# Loop qua skills.json — giống @foreach trong Blade #}
+          {% for skill in skills %}
+            <div class="fade-in" style="animation-delay: {{ loop.index0 * 100 }}ms;">
+              {% include "components/skill-item.njk" %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+      {# === Cột phải: Biểu đồ Chart.js === #}
+      <div class="lg:col-span-2 fade-in">
+        <div class="bg-white dark:bg-navy-800/50 rounded-2xl p-6 border border-gray-100 dark:border-navy-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4 text-center">
+            📊 Mức độ thành thạo
+          </h3>
+          <div class="relative" style="max-height: 350px;">
+            <canvas id="skillsChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# === Script khởi tạo biểu đồ Chart.js === #}
+<script>
+  // Đợi DOM load xong mới tạo biểu đồ
+  document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('skillsChart');
+    if (!ctx) return;
+    
+    // Dữ liệu kỹ năng (render từ Nunjucks sang JS)
+    const skillNames = [{% for skill in skills %}"{{ skill.name }}"{% if not loop.last %}, {% endif %}{% endfor %}];
+    const skillLevels = [{% for skill in skills %}{{ skill.level }}{% if not loop.last %}, {% endif %}{% endfor %}];
+    
+    // Tạo biểu đồ Radar (mạng nhện) — trực quan cho skill set
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: skillNames,
+        datasets: [{
+          label: 'Mức độ thành thạo (%)',
+          data: skillLevels,
+          backgroundColor: 'rgba(37, 99, 235, 0.15)',
+          borderColor: 'rgba(37, 99, 235, 0.8)',
+          pointBackgroundColor: 'rgba(37, 99, 235, 1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(37, 99, 235, 1)',
+          borderWidth: 2,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        scales: {
+          r: {
+            beginAtZero: true,
+            max: 100,
+            ticks: {
+              stepSize: 20,
+              display: false,
+            },
+            grid: {
+              color: document.documentElement.classList.contains('dark') 
+                ? 'rgba(255,255,255,0.1)' 
+                : 'rgba(0,0,0,0.08)',
+            },
+            pointLabels: {
+              font: {
+                family: "'JetBrains Mono', monospace",
+                size: 11,
+              },
+              color: document.documentElement.classList.contains('dark') 
+                ? 'rgba(255,255,255,0.7)' 
+                : 'rgba(0,0,0,0.6)',
+            },
+            angleLines: {
+              color: document.documentElement.classList.contains('dark') 
+                ? 'rgba(255,255,255,0.08)' 
+                : 'rgba(0,0,0,0.06)',
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: false,
+          }
+        }
+      }
+    });
+  });
+</script>

@@ -1,0 +1,17 @@
+# Thư mục output (build ra bởi Eleventy)
+_site/
+
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*

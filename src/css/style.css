@@ -1,0 +1,223 @@
+/* 
+ * style.css — CSS tùy chỉnh cho portfolio
+ * Bổ sung cho Tailwind CSS (CDN) 
+ * Bao gồm: hiệu ứng scroll fade-in, animation, 
+ * và các style đặc biệt không dùng Tailwind
+ */
+
+/* === CSS Variables — Biến màu sắc === */
+:root {
+  --accent: #2563eb;
+  --accent-light: #60a5fa;
+  --navy-700: #1e3a5f;
+  --navy-950: #060f1a;
+}
+
+/* === Smooth scroll cho toàn trang === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Ẩn scrollbar nhưng vẫn scroll được (thẩm mỹ hơn) === */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(37, 99, 235, 0.3) transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.3);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 99, 235, 0.5);
+}
+
+/* === Hiệu ứng Fade-in khi scroll === */
+/* Trạng thái ban đầu: ẩn, dịch xuống nhẹ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Trạng thái khi hiện ra (thêm class qua JS) */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Animation cho Hero section === */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(37, 99, 235, 0.4); }
+}
+
+/* === Gradient text cho tiêu đề === */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--navy-700) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === Hiệu ứng cho Navigation links === */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 60%;
+  left: 20%;
+}
+
+/* === Hiệu ứng hover cho project card === */
+.project-card {
+  position: relative;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--navy-700));
+  border-radius: 999px 999px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* === Skill progress bar animation === */
+.skill-progress {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* === Timeline dot pulse === */
+.timeline-dot {
+  position: relative;
+}
+
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.2);
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.5); opacity: 0; }
+}
+
+/* === Form focus styles === */
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* === Selection color === */
+::selection {
+  background: rgba(37, 99, 235, 0.2);
+  color: inherit;
+}
+
+/* === Responsive adjustments === */
+@media (max-width: 640px) {
+  /* Hero section nhỏ hơn trên mobile */
+  .fade-in {
+    transform: translateY(20px);
+  }
+  
+  /* Giảm animation trên mobile để tiết kiệm pin */
+  .skill-progress::after {
+    animation: none;
+  }
+}
+
+/* === Print styles (khi in CV) === */
+@media print {
+  header, footer, #scroll-top-btn, #theme-toggle, #mobile-menu-btn {
+    display: none !important;
+  }
+  
+  .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* === Dark mode transition mượt mà === */
+* {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+/* Loại trừ các phần tử cần transition riêng */
+.skill-progress,
+.project-card img,
+button,
+a {
+  transition-property: all;
+}

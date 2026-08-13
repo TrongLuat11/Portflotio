@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Turkey Market E-Commerce Data Analysis",
+    "slug": "turkey-ecommerce",
+    "image": "https://placehold.co/600x400/1e3a5f/ffffff?text=E-Commerce+EDA",
+    "summary": "Phân tích dữ liệu giao dịch e-commerce thị trường Thổ Nhĩ Kỳ: làm sạch 1,300+ bản ghi, phát hiện xu hướng doanh thu theo mùa và tối ưu quy trình vận hành.",
+    "problem": "Cần phân tích toàn diện dữ liệu bán hàng e-commerce để tìm xu hướng doanh thu, nguyên nhân lỗ và điểm nghẽn vận hành.",
+    "data": "1,300+ bản ghi giao dịch e-commerce gồm: mã đơn, ngày mua, danh mục sản phẩm, giá trị, mã bưu chính, thời gian xử lý đơn hàng.",
+    "method": "Làm sạch dữ liệu bằng logical group imputation cho missing values (Postal Code), áp dụng IQR để loại bỏ anomalies. Phân tích time-series doanh thu, root-cause profit margin analysis, và lead time logistics.",
+    "result": "Phát hiện đỉnh bán hàng theo mùa (tháng 6, 9, 12). Danh mục Technology chiếm 34% tổng lỗ. Lead time trung bình 3.97 ngày — đề xuất tối ưu quy trình xử lý đơn hàng.",
+    "tags": ["Python", "Pandas", "Seaborn", "Matplotlib", "EDA"],
+    "github": "https://github.com/TrongLuat11",
+    "demo": "#"
+  },
+  {
+    "title": "Sentiment Analysis & NLP System",
+    "slug": "sentiment-nlp",
+    "image": "https://placehold.co/600x400/2563eb/ffffff?text=Sentiment+NLP",
+    "summary": "Xây dựng hệ thống phân tích cảm xúc văn bản với pipeline xử lý dữ liệu tự động, feature engineering bằng TF-IDF và đánh giá đa mô hình ML.",
+    "problem": "Cần phân loại cảm xúc (sentiment) từ dữ liệu văn bản phi cấu trúc với độ chính xác cao, phục vụ phân tích phản hồi khách hàng.",
+    "data": "Tập dữ liệu văn bản phi cấu trúc (text datasets) cần được làm sạch, loại bỏ trùng lặp và tiền xử lý trước khi đưa vào mô hình.",
+    "method": "Thiết kế pipeline tự động bằng Python (regex, string handling) để làm sạch text. Feature engineering với CountVectorizer và TF-IDF. Huấn luyện Logistic Regression, Naive Bayes, SVM. Đánh giá bằng Confusion Matrix và ROC-AUC.",
+    "result": "So sánh hiệu suất 3 mô hình ML, chọn được mô hình tối ưu nhất cho phân loại sentiment. Tích hợp AI prompt-engineering để debug và tăng tốc nghiên cứu.",
+    "tags": ["Python", "Scikit-learn", "NLP", "TF-IDF", "ML"]
+  ,
+    "github": "https://github.com/TrongLuat11",
+    "demo": "#"
+  }
+]

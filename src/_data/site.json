@@ -1,0 +1,56 @@
+{
+  "title": "Portfolio - IT/Data Intern",
+  "name": "Lê Trần Trọng Luật",
+  "role": "IT / Data Intern",
+  "email": "luatle.111105@gmail.com",
+  "phone": "0966330657",
+  "location": "An Lạc, TP. Hồ Chí Minh",
+  "tagline": "Sinh viên Hệ thống Thông tin Quản lý, thành thạo Python & SQL — chuyên thu thập, làm sạch và phân tích dữ liệu để hỗ trợ ra quyết định kinh doanh.",
+  "avatar": "https://ui-avatars.com/api/?name=Trong+Luat&size=200&background=1e3a5f&color=ffffff&bold=true&format=svg",
+  "ctaText": "Xem dự án của tôi",
+  "ctaLink": "#projects",
+  "cvLink": "#",
+  "about": {
+    "intro": "Tôi là sinh viên ngành Hệ thống Thông tin Quản lý (MIS), có kinh nghiệm thực tế về thu thập, làm sạch dữ liệu, xử lý giá trị thiếu và tích hợp công cụ AI. Tôi chủ động, có khả năng thích nghi cao và mong muốn tận dụng kiến thức kỹ thuật về Data & Software để hỗ trợ vận hành nhóm và cung cấp các giải pháp dữ liệu đáng tin cậy.",
+    "education": "Cử nhân Hệ thống Thông tin Quản lý (MIS) — Đại học Ngân hàng TP.HCM (09/2023 – dự kiến 09/2027). GPA: 3.3/4.0. Các môn liên quan: Hệ quản trị CSDL (SQL), Phân tích & Trực quan hóa dữ liệu, Lập trình Python, Xác suất & Thống kê, Phân tích & Thiết kế Hệ thống.",
+    "goal": "Mục tiêu ngắn hạn: Trở thành Data Intern/Junior Data Analyst tại một công ty công nghệ, nơi tôi có thể áp dụng kỹ năng Python, SQL và phân tích dữ liệu vào thực tế. Dài hạn: Phát triển chuyên sâu về Data Analytics và Machine Learning."
+  },
+  "social": {
+    "github": "https://github.com/TrongLuat11",
+    "linkedin": "https://linkedin.com/in/trongluat",
+    "facebook": "#",
+    "twitter": "#"
+  },
+  "experience": [
+    {
+      "title": "Turkey Market E-Commerce Data Analysis",
+      "company": "Dự án cá nhân | Python, Pandas, Seaborn, Matplotlib",
+      "period": "2024",
+      "description": "Xử lý và làm sạch 1,300+ bản ghi giao dịch e-commerce. Phân tích xu hướng doanh thu theo thời gian, tìm ra đỉnh bán hàng theo mùa (tháng 6, 9, 12). Phân tích nguyên nhân gốc lợi nhuận, phát hiện danh mục Technology chiếm 34% tổng lỗ. Theo dõi lead time xử lý đơn hàng (trung bình 3.97 ngày) để tối ưu quy trình vận hành.",
+      "icon": "📊"
+    },
+    {
+      "title": "Sentiment Analysis & NLP System",
+      "company": "Dự án cá nhân | Python, Scikit-learn",
+      "period": "2024",
+      "description": "Thiết kế pipeline xử lý dữ liệu tự động bằng Python để làm sạch và tiền xử lý văn bản phi cấu trúc. Sử dụng CountVectorizer và TF-IDF để feature engineering. Huấn luyện và đánh giá các mô hình ML (Logistic Regression, Naive Bayes, SVM) với Confusion Matrix và ROC-AUC.",
+      "icon": "🤖"
+    }
+  ],
+  "education_timeline": [
+    {
+      "title": "Cử nhân Hệ thống Thông tin Quản lý (MIS)",
+      "institution": "Đại học Ngân hàng TP.HCM (HUB)",
+      "period": "09/2023 – 09/2027",
+      "description": "GPA: 3.3/4.0. Các môn: Hệ quản trị CSDL (SQL), Phân tích & Trực quan hóa dữ liệu, Lập trình Python, Xác suất & Thống kê, Phân tích & Thiết kế Hệ thống.",
+      "icon": "🎓"
+    },
+    {
+      "title": "MOS Certified — Microsoft Office Specialist",
+      "institution": "Microsoft",
+      "period": "2024",
+      "description": "Chứng chỉ MS Office chuyên nghiệp, thể hiện kỹ năng thành thạo bộ công cụ Excel, Word, PowerPoint trong môi trường doanh nghiệp.",
+      "icon": "📜"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+npm run dev - chạy local 
+
+Tạo repo trên GitHub (public, không tick Add README)
+Push code:
+bash
+git init && git add . && git commit -m "Portfolio" && git branch -M main
+git remote add origin https://github.com/TrongLuat11/<tên-repo>.git
+git push -u origin main
+Bật Pages: Settings → Pages → Source: GitHub Actions
+Truy cập: https://trongluat11.github.io/<tên-repo>/
