@@ -1,7 +1,7 @@
 {
-  "title": "Portfolio - IT/Data Intern",
+  "title": "Portfolio - Data Analyst",
   "name": "Lê Trần Trọng Luật",
-  "role": "IT / Data Intern",
+  "role": "Data Analyst",
   "email": "luatle.111105@gmail.com",
   "phone": "0966330657",
   "location": "An Lạc, TP. Hồ Chí Minh",
@@ -44,6 +44,13 @@
       "period": "09/2023 – 09/2027",
       "description": "GPA: 3.3/4.0. Các môn: Hệ quản trị CSDL (SQL), Phân tích & Trực quan hóa dữ liệu, Lập trình Python, Xác suất & Thống kê, Phân tích & Thiết kế Hệ thống.",
       "icon": "🎓"
+    },
+    {
+      "title": "Google Data Analytics Professional Certificate",
+      "institution": "Google (Coursera)",
+      "period": "07/2025 – Hiện tại",
+      "description": "Đang theo học chứng chỉ chuyên nghiệp gồm 8 khóa về quy trình phân tích dữ liệu, spreadsheet, SQL, R, Tableau và case study thực tế. Chương trình được thiết kế bởi Google, chuẩn bị sẵn sàng cho vị trí Data Analyst.",
+      "icon": "📊"
     },
     {
       "title": "MOS Certified — Microsoft Office Specialist",
