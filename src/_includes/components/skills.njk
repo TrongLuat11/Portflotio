@@ -121,35 +121,10 @@
 {# === Script xử lý modal === #}
 <script>
   // Dữ liệu skills (render từ Nunjucks)
-  const skillsData = [
-    {% for skill in skills %}
-    {
-      name: "{{ skill.name }}",
-      icon: "{{ skill.icon }}",
-      category: "{{ skill.category }}",
-      description: "{{ skill.description }}",
-      knowledge: [
-        {% for note in skill.knowledge %}
-          "{{ note }}"{% if not loop.last %},{% endif %}
-        {% endfor %}
-      ]
-    }{% if not loop.last %},{% endif %}
-    {% endfor %}
-  ];
+  const skillsData = {{ skills | dump | safe }};
   
   // Dữ liệu projects
-  const projectsData = [
-    {% for project in projects %}
-    {
-      title: "{{ project.title }}",
-      summary: "{{ project.summary }}",
-      image: "{{ project.image }}",
-      tags: [{% for tag in project.tags %}"{{ tag }}"{% if not loop.last %},{% endif %}{% endfor %}],
-      github: "{{ project.github }}",
-      demo: "{{ project.demo }}"
-    }{% if not loop.last %},{% endif %}
-    {% endfor %}
-  ];
+  const projectsData = {{ projects | dump | safe }};
   
   function openSkillModal(skillName) {
     const modal = document.getElementById('skill-modal');

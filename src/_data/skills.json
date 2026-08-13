@@ -19,10 +19,11 @@
     "icon": "🗄️",
     "description": "Joins, Window Functions, Database Management Systems",
     "knowledge": [
-      "Truy vấn dữ liệu đa bảng bằng INNER/LEFT/RIGHT JOIN hiệu quả.",
-      "Thành thạo Window Functions (ROW_NUMBER(), RANK(), LEAD(), LAG()) để tính toán theo kỳ (YoY, MoM).",
-      "Sử dụng CTE (Common Table Expressions) để làm sạch và chia nhỏ logic các truy vấn phức tạp.",
-      "Hiểu biết về Aggregate functions và HAVING clause để lọc dữ liệu đã nhóm."
+      "<strong>Thứ tự thực hiện truy vấn (Execution Order)</strong>: <code>FROM > WHERE > GROUP BY > SELECT > ORDER BY</code>. Không sử dụng bí danh (alias) trong WHERE, ngoại trừ khi tên cột trùng bí danh.",
+      "<strong>Xử lý OUTER JOIN nâng cao</strong>: Để giữ nguyên số dòng khi LEFT JOIN, cần đặt điều kiện lọc thời gian ở <code>ON ... AND ...</code> thay vì <code>WHERE</code>.<br><pre class=\"bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-3 rounded-lg mt-2 text-xs text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed\"><code>LEFT OUTER JOIN order_details odv \nON p.product_id = odv.product_id \nAND to_char(odv.order_date, 'yyyy-MM') = '2014-01'</code></pre>",
+      "<strong>Window Functions (RANK / DENSE_RANK)</strong>: Phân hạng dữ liệu mà không làm mất thông tin chi tiết.<br><pre class=\"bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-3 rounded-lg mt-2 text-xs text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed\"><code>RANK() OVER(\n  PARTITION BY order_date \n  ORDER BY revenue DESC\n) AS rnk</code></pre><span class=\"text-[11px] text-accent/80 mt-1 block\">*Lưu ý: Để lọc theo Rank (ví dụ lấy Top 5), bắt buộc phải bọc trong Sub-query hoặc CTE (mệnh đề WITH).</span>",
+      "<strong>Bảng tạm CTEs (WITH)</strong>: Giúp code gọn gàng, dễ bảo trì, mô-đun hóa logic phức tạp thay vì dùng quá nhiều Subquery lồng nhau.<br><pre class=\"bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-3 rounded-lg mt-2 text-xs text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed\"><code>WITH daily_revenue AS (\n  SELECT order_date, SUM(revenue) \n  FROM orders GROUP BY order_date\n)\nSELECT * FROM daily_revenue;</code></pre>",
+      "<strong>Pivot Table bằng CASE WHEN</strong>: Kỹ thuật xoay chiều dữ liệu từ dòng thành cột cho báo cáo.<br><pre class=\"bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-3 rounded-lg mt-2 text-xs text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed\"><code>SUM(CASE WHEN category = 'A' \n  THEN value ELSE 0 END) AS col_A</code></pre>"
     ]
   },
   {
