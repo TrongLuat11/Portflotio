@@ -1,0 +1,271 @@
+[
+  {
+    "id": "epic-01",
+    "title": "Data Analytics Skill",
+    "duration": "Sprint 1-3",
+    "description": "Xây nền tảng xử lý dữ liệu bằng công cụ ai cũng có sẵn - Excel - trước khi động đến code.",
+    "sprints": [
+      {
+        "id": "e1-s1",
+        "title": "Sprint 1 - Excel cơ bản",
+        "duration": "2 tuần",
+        "dod": "Xử lý được 1 bộ dữ liệu thô thành bảng sạch, dùng Pivot Table tổng hợp theo nhiều chiều",
+        "backlog": [
+          {
+            "week": "Tuần 1 - Hàm & xử lý dữ liệu",
+            "tasks": [
+              "Học hàm tra cứu: VLOOKUP, XLOOKUP, INDEX/MATCH",
+              "Học hàm điều kiện: IF, IFS, SUMIFS, COUNTIFS",
+              "Học hàm xử lý text: TRIM, LEFT/RIGHT/MID, Text to Columns",
+              "Thực hành làm sạch 1 bộ dữ liệu có lỗi (trùng dòng, sai định dạng)"
+            ]
+          },
+          {
+            "week": "Tuần 2 - Pivot Table & tổng hợp",
+            "tasks": [
+              "Tạo Pivot Table từ dữ liệu thô",
+              "Pivot Chart, Slicer, Timeline filter",
+              "Bài tập: tổng hợp doanh thu theo tháng/khu vực/sản phẩm",
+              "Tự đánh giá: làm lại 1 bài Pivot không xem hướng dẫn, đo thời gian"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "e1-s2",
+        "title": "Sprint 2 - End-to-end project Excel",
+        "duration": "2 tuần",
+        "dod": "Có 1 dashboard/report hoàn chỉnh trả lời được ít nhất 3 câu hỏi kinh doanh",
+        "backlog": [
+          {
+            "week": "Backlog Thực thi",
+            "tasks": [
+              "Chọn 1 bộ dữ liệu thật (sales, HR attrition, marketing campaign)",
+              "Viết 3-5 câu hỏi kinh doanh cụ thể cần trả lời",
+              "Làm sạch và cấu trúc lại dữ liệu thô",
+              "Dùng Pivot Table trả lời từng câu hỏi",
+              "Thiết kế 1 dashboard (biểu đồ + bảng + slicer)",
+              "Viết insight summary 3-5 gạch đầu dòng",
+              "Lưu file để dùng lại cho portfolio"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "e1-s3",
+        "title": "Sprint 3 - Apply AI",
+        "duration": "1-2 tuần",
+        "dod": "Tự động hóa được ít nhất 1 tác vụ lặp lại bằng AI, giải thích rõ AI đã làm gì",
+        "backlog": [
+          {
+            "week": "Backlog Ứng dụng AI",
+            "tasks": [
+              "Học viết prompt hiệu quả để nhờ AI viết công thức phức tạp",
+              "Thử Copilot for Excel hoặc ChatGPT để phân tích nhanh 1 bảng dữ liệu",
+              "Bài tập: so sánh insight AI tóm tắt với insight tự làm ở Sprint 2",
+              "Đúc kết 3 việc nên và 3 việc không nên dùng AI khi làm data",
+              "Sprint Review: Demo dashboard Excel cho mentor/cộng đồng, giải thích logic xử lý dữ liệu và insight rút ra.",
+              "Retrospective: Việc học nào hiệu quả nhất? Chỗ nào mất nhiều thời gian hơn dự kiến? Có cần điều chỉnh nhịp học cho sprint sau không?"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "epic-02",
+    "title": "Core Technique Skill",
+    "duration": "Sprint 1-3",
+    "description": "Bộ kỹ năng lõi mọi tin tuyển dụng DA đều yêu cầu: truy vấn dữ liệu và trực quan hóa.",
+    "sprints": [
+      {
+        "id": "e2-s1",
+        "title": "Sprint 1 - SQL",
+        "duration": "2-3 tuần",
+        "dod": "Viết được query JOIN từ 3 bảng trở lên, dùng được window function để tính running total/rank",
+        "backlog": [
+          {
+            "week": "Tuần 1 - Truy vấn cơ bản",
+            "tasks": [
+              "SELECT, WHERE, ORDER BY, LIMIT",
+              "GROUP BY, HAVING, hàm aggregate (SUM, COUNT, AVG)",
+              "Luyện tập trên SQLZoo / Mode Analytics / LeetCode Database"
+            ]
+          },
+          {
+            "week": "Tuần 2 - JOIN & subquery",
+            "tasks": [
+              "INNER JOIN, LEFT JOIN - hiểu sự khác biệt",
+              "JOIN từ 3 bảng trở lên",
+              "Subquery (nested SELECT)",
+              "Viết 5 query JOIN nhiều bảng trên bộ dữ liệu mẫu (Northwind, e-commerce Kaggle)"
+            ]
+          },
+          {
+            "week": "Tuần 3 - Window function",
+            "tasks": [
+              "ROW_NUMBER, RANK, DENSE_RANK",
+              "Running total, moving average bằng OVER/PARTITION BY",
+              "Tính running total doanh thu theo tháng, rank top khách hàng theo khu vực"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "e2-s2",
+        "title": "Sprint 2 - Power BI",
+        "duration": "2 tuần",
+        "dod": "Xuất bản được 1 dashboard tương tác có filter/slicer, dùng ít nhất 2 loại visual",
+        "backlog": [
+          {
+            "week": "Tuần 1 - Connect & xử lý dữ liệu",
+            "tasks": [
+              "Import dữ liệu từ Excel/CSV/database",
+              "Power Query: làm sạch, merge, transform dữ liệu",
+              "Tạo relationship giữa các bảng"
+            ]
+          },
+          {
+            "week": "Tuần 2 - Visual & DAX",
+            "tasks": [
+              "Các loại visual: bar/line chart, card, table, matrix",
+              "DAX cơ bản: CALCULATE, SUM, measure vs column",
+              "Thêm slicer, filter tương tác",
+              "Dựng dashboard có ít nhất 4 visual khác loại + 1 slicer"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "e2-s3",
+        "title": "Sprint 3 - End-to-end project",
+        "duration": "2 tuần",
+        "dod": "Có 1 project khép kín từ SQL → dashboard → insight, tự tin giải thích lại toàn bộ SQL đã dùng",
+        "backlog": [
+          {
+            "week": "Backlog Thực thi",
+            "tasks": [
+              "Chọn bài toán kinh doanh (churn khách hàng, hiệu suất bán hàng theo khu vực)",
+              "Viết SQL truy xuất và xử lý dữ liệu cần thiết",
+              "Import kết quả vào Power BI, dựng dashboard hoàn chỉnh",
+              "Viết report/insight đi kèm dashboard",
+              "Ôn Sprint 1: tự giải lại 3 query JOIN/window function không xem bài cũ",
+              "Đóng gói project (SQL script + file Power BI + insight doc)",
+              "Sprint Review: Demo project (SQL query + dashboard) - trình bày như đang present cho stakeholder.",
+              "Retrospective: SQL hay Power BI phần nào còn yếu? Có cần quay lại ôn Sprint 1 trước khi qua Epic 3 không?"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "epic-03",
+    "title": "Stand Out - Go Beyond The Basics",
+    "duration": "Sprint 1-2",
+    "description": "Phần tạo khác biệt so với người chỉ biết SQL/BI cơ bản.",
+    "sprints": [
+      {
+        "id": "e3-s1",
+        "title": "Sprint 1 - DWH & SQL nâng cao",
+        "duration": "2 tuần",
+        "dod": "Thiết kế được 1 schema đơn giản (fact + dimension), viết definition rõ ràng cho ít nhất 2 metric",
+        "backlog": [
+          {
+            "week": "Tuần 1 - Data modeling",
+            "tasks": [
+              "Khái niệm fact table, dimension table",
+              "Star schema vs snowflake schema",
+              "Vẽ 1 star schema đơn giản cho bài toán 'phân tích đơn hàng e-commerce'"
+            ]
+          },
+          {
+            "week": "Tuần 2 - Metric design",
+            "tasks": [
+              "Cách viết metric definition rõ ràng (công thức, khung thời gian, điều kiện loại trừ)",
+              "Viết definition chuẩn cho 3 metric (active user, conversion rate, churn rate)",
+              "Đối chiếu với cách 1-2 công ty thật định nghĩa (tìm case study/blog)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "e3-s2",
+        "title": "Sprint 2 - Python",
+        "duration": "2-3 tuần",
+        "dod": "Làm được 1 notebook EDA hoàn chỉnh, kết thúc bằng 3-5 insight bằng chữ",
+        "backlog": [
+          {
+            "week": "Tuần 1 - Python cơ bản",
+            "tasks": [
+              "Biến, kiểu dữ liệu, list/dict, vòng lặp, hàm cơ bản",
+              "Làm quen Jupyter Notebook / Google Colab"
+            ]
+          },
+          {
+            "week": "Tuần 2 - Pandas",
+            "tasks": [
+              "Đọc dữ liệu (read_csv, read_excel)",
+              "Lọc, group, merge dữ liệu bằng pandas",
+              "Xử lý missing value, duplicate"
+            ]
+          },
+          {
+            "week": "Tuần 3 - EDA",
+            "tasks": [
+              "Thống kê mô tả cơ bản (mean, median, std, distribution)",
+              "Trực quan hóa bằng matplotlib/seaborn",
+              "Làm 1 notebook EDA hoàn chỉnh trên bộ dữ liệu mới",
+              "Sprint Review: Demo schema thiết kế + notebook EDA, giải thích vì sao chọn cách tổ chức dữ liệu như vậy.",
+              "Retrospective: Phần data modeling có trừu tượng quá không? Python học có bị vấp vì thiếu nền tảng lập trình không?"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "epic-04",
+    "title": "Prepare & Get Hired",
+    "duration": "Sprint cuối",
+    "description": "Đóng gói toàn bộ sản phẩm từ Epic 1-3 thành hồ sơ ứng tuyển thuyết phục.",
+    "sprints": [
+      {
+        "id": "e4-s1",
+        "title": "Sprint cuối - Portfolio, CV & phỏng vấn",
+        "duration": "2-3 tuần",
+        "dod": "Portfolio có 3 project với case study rõ ràng; CV/LinkedIn sẵn sàng nộp đơn; trả lời tự tin 10 câu hỏi phỏng vấn DA phổ biến",
+        "backlog": [
+          {
+            "week": "Tuần 1 - Portfolio",
+            "tasks": [
+              "Chọn 3 project tiêu biểu nhất (1 từ Epic 1, 1-2 từ Epic 2-3)",
+              "Viết case study: vấn đề → cách tiếp cận → kết quả",
+              "Đăng portfolio lên GitHub (SQL/Python) hoặc Notion"
+            ]
+          },
+          {
+            "week": "Tuần 2 - CV & LinkedIn",
+            "tasks": [
+              "Viết lại CV theo hướng định lượng kết quả",
+              "Rà soát CV theo checklist ATS",
+              "Cập nhật LinkedIn: headline, summary, project nổi bật",
+              "Kết nối 5-10 người trong ngành Data"
+            ]
+          },
+          {
+            "week": "Tuần 3 - Mock interview",
+            "tasks": [
+              "Luyện 10 câu hỏi SQL live coding phổ biến",
+              "Luyện 5 case study kinh doanh dạng 'cho dữ liệu, đưa insight'",
+              "Mock interview thật với mentor/bạn bè, xin feedback cụ thể",
+              "Rà lại portfolio + CV lần cuối trước khi nộp đơn",
+              "Sprint Review: Nhờ mentor/bạn cùng ngành/cộng đồng review lại CV + portfolio, xin feedback thật.",
+              "Retrospective: Nhìn lại toàn bộ 6 tháng - Epic nào tốn nhiều thời gian nhất, kỹ năng nào cần tiếp tục trau dồi."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
