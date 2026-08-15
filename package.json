@@ -1,16 +1,19 @@
 {
-  "name": "data-analyst-portfolio",
-  "version": "1.0.0",
-  "description": "Portfolio cá nhân dành cho Data Analyst - Eleventy + Tailwind CDN",
-  "scripts": {
-    "dev": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve --port=8080"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
-  },
-  "keywords": ["portfolio", "data-analyst", "eleventy", "11ty"],
-  "author": "Data Analyst Portfolio",
-  "license": "MIT"
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.0.0",
+        "concurrently": "^10.0.3",
+        "laravel-vite-plugin": "^3.1",
+        "tailwindcss": "^4.0.0",
+        "vite": "^8.0.0"
+    },
+    "optionalDependencies": {
+        "@laravel/multiplex": "^0.4.1"
+    }
 }

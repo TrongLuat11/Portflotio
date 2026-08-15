@@ -1,0 +1,106 @@
+<section id="roadmap" class="py-20 bg-gray-50/50 dark:bg-navy-800/30 border-t border-gray-100 dark:border-navy-800">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        <span class="text-gray-900 dark:text-white">Lộ trình học</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Data Analyst</span>
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Bản đồ 6 tháng từ con số 0 đến ứng viên nổi bật. Lộ trình được thiết kế bài bản theo mô hình Agile (Epic - Sprint - Backlog).
+      </p>
+    </div>
+
+    <div class="relative border-l-2 border-accent/20 dark:border-accent/10 ml-4 md:ml-6 space-y-12 pb-8">
+      @foreach($roadmap as $epic)
+        <div class="relative pl-8 md:pl-12">
+          <!-- Timeline dot -->
+          <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-white dark:border-navy-900 bg-accent z-10 shadow-sm"></div>
+          
+          <!-- Epic Header -->
+          <div class="mb-6">
+            <div class="flex flex-wrap items-center gap-3 mb-2">
+              <span class="bg-accent/10 text-accent text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                Epic 0{{ $loop->iteration }}
+              </span>
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ $epic->duration }}</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">{{ $epic->title }}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{{ $epic->description }}</p>
+          </div>
+
+          <!-- Sprints Accordion -->
+          <div class="space-y-3">
+            @foreach($epic->sprints as $sprint)
+              <div class="roadmap-accordion-item bg-white dark:bg-navy-800 border border-gray-200 dark:border-navy-700 rounded-xl overflow-hidden shadow-sm transition-all duration-200 hover:shadow-md">
+                <!-- Accordion Header -->
+                <button class="roadmap-accordion-btn w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <h4 class="font-bold text-gray-900 dark:text-white">{{ $sprint->title }}</h4>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-navy-900 dark:text-gray-300">
+                      {{ $sprint->duration }}
+                    </span>
+                  </div>
+                  <div class="flex-shrink-0 text-gray-400 dark:text-gray-500 ml-4">
+                    <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                
+                <!-- Accordion Content -->
+                <div class="roadmap-accordion-content hidden px-5 pb-5 pt-1 border-t border-gray-100 dark:border-navy-700/50">
+                  <div class="mb-4 p-3 bg-accent/5 dark:bg-accent/10 border-l-4 border-accent rounded-r-lg">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                      <strong class="text-accent dark:text-accent-light">Mục tiêu (DoD):</strong> {{ $sprint->dod }}
+                    </p>
+                  </div>
+                  
+                  <div class="space-y-4">
+                    @foreach($sprint->backlog as $backlog)
+                      <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">{{ $backlog->week }}</h5>
+                        <ul class="space-y-1.5 ml-2">
+                          @foreach($backlog->tasks as $task)
+                            <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>{{ $task }}</span>
+                            </li>
+                          @endforeach
+                        </ul>
+                      </div>
+                    @endforeach
+                  </div>
+                </div>
+              </div>
+            @endforeach
+          </div>
+        </div>
+      @endforeach
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.roadmap-accordion-btn');
+    
+    accordions.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const icon = this.querySelector('.accordion-icon');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle current accordion
+        if (isExpanded) {
+          this.setAttribute('aria-expanded', 'false');
+          content.classList.add('hidden');
+          icon.classList.remove('rotate-180');
+        } else {
+          this.setAttribute('aria-expanded', 'true');
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>

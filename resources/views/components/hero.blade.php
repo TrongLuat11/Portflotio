@@ -1,0 +1,102 @@
+{{-- 
+  Component Hero (hero.njk)
+  Banner Landing Page chia làm 2 cột:
+  - Trái: Nội dung giới thiệu, lời chào, nút kêu gọi hành động
+  - Phải: Hình ảnh avatar 
+--}}
+<section id="hero" class="relative min-h-[90vh] flex items-center pt-20 pb-16 overflow-hidden">
+  
+  {{-- Background blobs trang trí --}}
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-[10%] left-[5%] w-72 h-72 bg-accent/20 dark:bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+    <div class="absolute top-[20%] right-[10%] w-80 h-80 bg-purple-300/30 dark:bg-purple-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+    <div class="absolute bottom-[10%] left-[40%] w-96 h-96 bg-blue-300/30 dark:bg-blue-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      
+      {{-- === CỘT TRÁI: Nội dung giới thiệu === --}}
+      <div class="order-2 lg:order-1 text-center lg:text-left">
+        <div class="fade-in inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 dark:bg-accent/20 text-accent dark:text-accent-light font-medium text-sm mb-6 border border-accent/20">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+          </span>
+          Đang tìm kiếm cơ hội Data Intern
+        </div>
+        
+        <h1 class="fade-in text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-[1.1] mb-6" style="animation-delay: 100ms;">
+          Xin chào, tôi là <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-navy-500">{{ $site->name }}</span>
+        </h1>
+        
+        <h2 class="fade-in text-xl sm:text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-4" style="animation-delay: 200ms;">
+          {{ $site->role }}
+        </h2>
+        
+        <p class="fade-in text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed" style="animation-delay: 300ms;">
+          {{ $site->tagline }}
+        </p>
+        
+        <div class="fade-in flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10" style="animation-delay: 400ms;">
+          <a href="{{ $site->ctaLink }}" 
+             class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-medium rounded-xl text-white bg-gradient-to-r from-accent to-navy-600 hover:shadow-lg hover:shadow-accent/30 transform hover:-translate-y-0.5 transition-all duration-300">
+            {{ $site->ctaText }}
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+          </a>
+          <a href="{{ $site->cvLink }}" 
+             class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-gray-200 dark:border-navy-700 text-base font-medium rounded-xl text-gray-700 dark:text-gray-200 hover:border-accent dark:hover:border-accent hover:text-accent dark:hover:text-accent-light bg-white/50 dark:bg-navy-900/50 backdrop-blur-sm transition-all duration-300">
+            <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Tải CV (PDF)
+          </a>
+        </div>
+        
+        {{-- Thống kê nhanh --}}
+        <div class="fade-in grid grid-cols-3 gap-6 pt-6 border-t border-gray-200 dark:border-navy-800" style="animation-delay: 500ms;">
+          <div class="text-center lg:text-left">
+            <p class="text-3xl font-bold font-mono text-gray-900 dark:text-white">2+</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Dự án</p>
+          </div>
+          <div class="text-center lg:text-left">
+            <p class="text-3xl font-bold font-mono text-gray-900 dark:text-white">3.3</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">GPA</p>
+          </div>
+          <div class="text-center lg:text-left">
+            <p class="text-3xl font-bold font-mono text-gray-900 dark:text-white">MIS</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Ngành</p>
+          </div>
+        </div>
+      </div>
+      
+      {{-- === CỘT PHẢI: Hình ảnh === --}}
+      <div class="order-1 lg:order-2 flex justify-center lg:justify-end fade-in" style="animation-delay: 200ms;">
+        <div class="relative w-72 h-72 sm:w-96 sm:h-96 mx-auto">
+          <!-- Blob background -->
+          <div class="absolute inset-0 bg-accent/20 rounded-full blur-3xl animate-blob"></div>
+          <div class="absolute inset-0 bg-blue-400/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+          
+          <!-- Image -->
+          <div class="relative w-full h-full rounded-2xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl group">
+            <img src="{{ asset('/images/hero_illustration.png') }}" alt="Data Analyst Illustration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          
+          {{-- Floating badge (Kinh nghiệm) --}}
+          <div class="absolute -bottom-6 -left-6 z-20 bg-white dark:bg-navy-800 rounded-2xl p-4 shadow-xl border border-gray-100 dark:border-navy-700 animate-bounce" style="animation-duration: 3s;">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Đang phát triển</p>
+                <p class="text-sm font-bold text-gray-900 dark:text-white">Data Analyst</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>

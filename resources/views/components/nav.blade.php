@@ -1,0 +1,84 @@
+{{-- 
+  Component Navigation (nav.njk)
+  Thanh điều hướng sticky ở đầu trang, bao gồm:
+  - Logo/tên
+  - Menu navigation các section
+  - Nút dark mode toggle
+  - Menu hamburger cho mobile
+  Giống @include('components.nav') trong Laravel Blade
+--}}
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 dark:bg-navy-950/80 backdrop-blur-lg border-b border-gray-200/50 dark:border-navy-800/50">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      
+      {{-- === Logo / Tên === --}}
+      <a href="#hero" class="flex items-center gap-3 group">
+        <img src="{{ asset($site->avatar) }}" alt="Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-accent/20 group-hover:border-accent transition-all duration-300 transform group-hover:rotate-[360deg] shadow-sm">
+        <span class="text-xl sm:text-2xl font-extrabold text-accent dark:text-accent-light group-hover:text-navy-700 dark:group-hover:text-white transition-all duration-300 drop-shadow-sm group-hover:scale-105 origin-left">
+          TrLuat <span class="text-gray-400 dark:text-gray-600 font-normal text-lg px-0.5">|</span> <span class="font-semibold text-gray-700 dark:text-gray-300 group-hover:text-accent dark:group-hover:text-accent-light">Data Analyst</span>
+        </span>
+      </a>
+      
+      {{-- === Menu Desktop === --}}
+      <div class="hidden md:flex items-center gap-1">
+        @php $navItems = [
+          (object)[ "href" => "#hero", "label" => "Trang chủ" ],
+          (object)[ "href" => "#about", "label" => "Giới thiệu" ],
+          (object)[ "href" => "#skills", "label" => "Kỹ năng" ],
+          (object)[ "href" => "#roadmap", "label" => "Lộ trình" ],
+          (object)[ "href" => "#projects", "label" => "Dự án" ],
+          (object)[ "href" => "#timeline", "label" => "Kinh nghiệm" ],
+          (object)[ "href" => "#contact", "label" => "Liên hệ" ]
+        ]; @endphp
+        @foreach($navItems as $item)
+          <a href="{{ $item->href }}" 
+             class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent-light hover:bg-gray-100 dark:hover:bg-navy-800 transition-all duration-200">
+            {{ $item->label }}
+          </a>
+        @endforeach
+      </div>
+      
+      {{-- === Nút Dark Mode + Menu Mobile === --}}
+      <div class="flex items-center gap-2">
+        {{-- Nút chuyển đổi Dark Mode --}}
+        <button id="theme-toggle" 
+                class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all duration-200"
+                aria-label="Chuyển đổi dark mode">
+          {{-- Icon mặt trời (hiện khi dark mode) --}}
+          <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          {{-- Icon mặt trăng (hiện khi light mode) --}}
+          <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+        
+        {{-- Nút hamburger cho mobile --}}
+        <button id="mobile-menu-btn" 
+                class="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all"
+                aria-label="Mở menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    {{-- === Menu Mobile (ẩn mặc định) === --}}
+    <div id="mobile-menu" class="md:hidden hidden pb-4">
+      <div class="flex flex-col gap-1 pt-2 border-t border-gray-200 dark:border-navy-800">
+        @foreach($navItems as $item)
+          <a href="{{ $item->href }}" 
+             class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent hover:bg-gray-100 dark:hover:bg-navy-800 transition-all">
+            {{ $item->label }}
+          </a>
+        @endforeach
+      </div>
+    </div>
+  </nav>
+</header>
+
+{{-- Spacer để nội dung không bị che bởi header cố định --}}
+<div class="h-16"></div>
