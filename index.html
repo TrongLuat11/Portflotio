@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Portfolio - Data Analyst | Lê Trần Trọng Luật</title>
+  <meta name="description" content="Sinh viên Hệ thống Thông tin Quản lý, thành thạo Python &amp; SQL — chuyên thu thập, làm sạch và phân tích dữ liệu để hỗ trợ ra quyết định kinh doanh.">
+  <meta name="author" content="Lê Trần Trọng Luật">
+  <meta name="keywords" content="data intern, IT intern, portfolio, python, sql, machine learning, NLP, MIS, phân tích dữ liệu">
+  
+  <meta property="og:title" content="Portfolio - Data Analyst | Lê Trần Trọng Luật">
+  <meta property="og:description" content="Sinh viên Hệ thống Thông tin Quản lý, thành thạo Python &amp; SQL — chuyên thu thập, làm sạch và phân tích dữ liệu để hỗ trợ ra quyết định kinh doanh.">
+  <meta property="og:type" content="website">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            navy: {
+              50:  '#eef2f7',
+              100: '#d4dce8',
+              200: '#a9b9d1',
+              300: '#7e96ba',
+              400: '#5373a3',
+              500: '#3b5998',
+              600: '#2d4a80',
+              700: '#1e3a5f',
+              800: '#152b47',
+              900: '#0b1b2f',
+              950: '#060f1a',
+            },
+            accent: {
+              DEFAULT: '#2563eb',
+              light: '#60a5fa',
+              dark: '#1d4ed8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-white dark:bg-navy-950 text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
+  
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 dark:bg-navy-950/80 backdrop-blur-lg border-b border-gray-200/50 dark:border-navy-800/50">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      
+      
+      <a href="#hero" class="flex items-center gap-3 group">
+        <img src="images/avatar.jpeg" alt="Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-accent/20 group-hover:border-accent transition-all duration-300 transform group-hover:rotate-[360deg] shadow-sm">
+        <span class="text-xl sm:text-2xl font-extrabold text-accent dark:text-accent-light group-hover:text-navy-700 dark:group-hover:text-white transition-all duration-300 drop-shadow-sm group-hover:scale-105 origin-left">
+          TrLuat <span class="text-gray-400 dark:text-gray-600 font-normal text-lg px-0.5">|</span> <span class="font-semibold text-gray-700 dark:text-gray-300 group-hover:text-accent dark:group-hover:text-accent-light">Data Analyst</span>
+        </span>
+      </a>
+      
+      
+      <div class="hidden md:flex items-center gap-1">
+                          <a href="#hero" 
+             class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent-light hover:bg-gray-100 dark:hover:bg-navy-800 transition-all duration-200">
+            Trang chủ
+          </a>
+                  <a href="#about" 
+             class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent-light hover:bg-gray-100 dark:hover:bg-navy-800 transition-all duration-200">
+            Giới thiệu
+          </a>
+                  <a href="#skills" 
+             class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent-light hover:bg-gray-100 dark:hover:bg-navy-800 transition-all duration-200">
+            Kỹ năng
+          </a>
+                  <a href="#roadmap" 
+             class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent-light hover:bg-gray-100 dark:hover:bg-navy-800 transition-all duration-200">
+            Lộ trình
+          </a>
+                  <a href="#projects" 
+             class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent-light hover:bg-gray-100 dark:hover:bg-navy-800 transition-all duration-200">
+            Dự án
+          </a>
+                  <a href="#timeline" 
+             class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent-light hover:bg-gray-100 dark:hover:bg-navy-800 transition-all duration-200">
+            Kinh nghiệm
+          </a>
+                  <a href="#contact" 
+             class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent-light hover:bg-gray-100 dark:hover:bg-navy-800 transition-all duration-200">
+            Liên hệ
+          </a>
+              </div>
+      
+      
+      <div class="flex items-center gap-2">
+        
+        <button id="theme-toggle" 
+                class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all duration-200"
+                aria-label="Chuyển đổi dark mode">
+          
+          <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          
+          <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+        
+        
+        <button id="mobile-menu-btn" 
+                class="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all"
+                aria-label="Mở menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    
+    <div id="mobile-menu" class="md:hidden hidden pb-4">
+      <div class="flex flex-col gap-1 pt-2 border-t border-gray-200 dark:border-navy-800">
+                  <a href="#hero" 
+             class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent hover:bg-gray-100 dark:hover:bg-navy-800 transition-all">
+            Trang chủ
+          </a>
+                  <a href="#about" 
+             class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent hover:bg-gray-100 dark:hover:bg-navy-800 transition-all">
+            Giới thiệu
+          </a>
+                  <a href="#skills" 
+             class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent hover:bg-gray-100 dark:hover:bg-navy-800 transition-all">
+            Kỹ năng
+          </a>
+                  <a href="#roadmap" 
+             class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent hover:bg-gray-100 dark:hover:bg-navy-800 transition-all">
+            Lộ trình
+          </a>
+                  <a href="#projects" 
+             class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent hover:bg-gray-100 dark:hover:bg-navy-800 transition-all">
+            Dự án
+          </a>
+                  <a href="#timeline" 
+             class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent hover:bg-gray-100 dark:hover:bg-navy-800 transition-all">
+            Kinh nghiệm
+          </a>
+                  <a href="#contact" 
+             class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent hover:bg-gray-100 dark:hover:bg-navy-800 transition-all">
+            Liên hệ
+          </a>
+              </div>
+    </div>
+  </nav>
+</header>
+
+
+<div class="h-16"></div>
+  
+  <main>
+    
+
+<section id="hero" class="relative min-h-[90vh] flex items-center pt-20 pb-16 overflow-hidden">
+  
+  
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-[10%] left-[5%] w-72 h-72 bg-accent/20 dark:bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+    <div class="absolute top-[20%] right-[10%] w-80 h-80 bg-purple-300/30 dark:bg-purple-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+    <div class="absolute bottom-[10%] left-[40%] w-96 h-96 bg-blue-300/30 dark:bg-blue-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      
+      
+      <div class="order-2 lg:order-1 text-center lg:text-left">
+        <div class="fade-in inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 dark:bg-accent/20 text-accent dark:text-accent-light font-medium text-sm mb-6 border border-accent/20">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+          </span>
+          Đang tìm kiếm cơ hội Data Intern
+        </div>
+        
+        <h1 class="fade-in text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-[1.1] mb-6" style="animation-delay: 100ms;">
+          Xin chào, tôi là <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-navy-500">Lê Trần Trọng Luật</span>
+        </h1>
+        
+        <h2 class="fade-in text-xl sm:text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-4" style="animation-delay: 200ms;">
+          Data Analyst
+        </h2>
+        
+        <p class="fade-in text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed" style="animation-delay: 300ms;">
+          Sinh viên Hệ thống Thông tin Quản lý, thành thạo Python &amp; SQL — chuyên thu thập, làm sạch và phân tích dữ liệu để hỗ trợ ra quyết định kinh doanh.
+        </p>
+        
+        <div class="fade-in flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10" style="animation-delay: 400ms;">
+          <a href="#projects" 
+             class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-medium rounded-xl text-white bg-gradient-to-r from-accent to-navy-600 hover:shadow-lg hover:shadow-accent/30 transform hover:-translate-y-0.5 transition-all duration-300">
+            Xem dự án của tôi
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+          </a>
+          <a href="#" 
+             class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-gray-200 dark:border-navy-700 text-base font-medium rounded-xl text-gray-700 dark:text-gray-200 hover:border-accent dark:hover:border-accent hover:text-accent dark:hover:text-accent-light bg-white/50 dark:bg-navy-900/50 backdrop-blur-sm transition-all duration-300">
+            <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Tải CV (PDF)
+          </a>
+        </div>
+        
+        
+        <div class="fade-in grid grid-cols-3 gap-6 pt-6 border-t border-gray-200 dark:border-navy-800" style="animation-delay: 500ms;">
+          <div class="text-center lg:text-left">
+            <p class="text-3xl font-bold font-mono text-gray-900 dark:text-white">2+</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Dự án</p>
+          </div>
+          <div class="text-center lg:text-left">
+            <p class="text-3xl font-bold font-mono text-gray-900 dark:text-white">3.3</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">GPA</p>
+          </div>
+          <div class="text-center lg:text-left">
+            <p class="text-3xl font-bold font-mono text-gray-900 dark:text-white">MIS</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Ngành</p>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="order-1 lg:order-2 flex justify-center lg:justify-end fade-in" style="animation-delay: 200ms;">
+        <div class="relative w-72 h-72 sm:w-96 sm:h-96 mx-auto">
+          <!-- Blob background -->
+          <div class="absolute inset-0 bg-accent/20 rounded-full blur-3xl animate-blob"></div>
+          <div class="absolute inset-0 bg-blue-400/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+          
+          <!-- Image -->
+          <div class="relative w-full h-full rounded-2xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl group">
+            <img src="images/hero_illustration.png" alt="Data Analyst Illustration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          
+          
+          <div class="absolute -bottom-6 -left-6 z-20 bg-white dark:bg-navy-800 rounded-2xl p-4 shadow-xl border border-gray-100 dark:border-navy-700 animate-bounce" style="animation-duration: 3s;">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Đang phát triển</p>
+                <p class="text-sm font-bold text-gray-900 dark:text-white">Data Analyst</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+<section id="about" class="py-20 bg-gray-50/50 dark:bg-navy-900/30">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    
+    <div class="text-center mb-16 fade-in">
+      <p class="text-accent dark:text-accent-light font-mono text-sm tracking-wider uppercase mb-2">Về tôi</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+        Giới thiệu bản thân
+      </h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-accent to-navy-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    
+    
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      
+      
+      <div class="space-y-6 fade-in">
+        <div class="bg-white dark:bg-navy-800/50 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-navy-700/50 hover:shadow-md transition-shadow duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">👤</span>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Tôi là ai?</h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            Tôi là sinh viên ngành Hệ thống Thông tin Quản lý (MIS), có kinh nghiệm thực tế về thu thập, làm sạch dữ liệu, xử lý giá trị thiếu và tích hợp công cụ AI. Tôi chủ động, có khả năng thích nghi cao và mong muốn tận dụng kiến thức kỹ thuật về Data &amp; Software để hỗ trợ vận hành nhóm và cung cấp các giải pháp dữ liệu đáng tin cậy.
+          </p>
+        </div>
+        
+        <div class="bg-white dark:bg-navy-800/50 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-navy-700/50 hover:shadow-md transition-shadow duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">🎯</span>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Mục tiêu</h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            Mục tiêu ngắn hạn: Trở thành Data Intern/Junior Data Analyst tại một công ty công nghệ, nơi tôi có thể áp dụng kỹ năng Python, SQL và phân tích dữ liệu vào thực tế. Dài hạn: Phát triển chuyên sâu về Data Analytics và Machine Learning.
+          </p>
+        </div>
+      </div>
+      
+      
+      <div class="space-y-6 fade-in">
+        <div class="bg-white dark:bg-navy-800/50 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-navy-700/50 hover:shadow-md transition-shadow duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">🎓</span>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Học vấn</h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            Cử nhân Hệ thống Thông tin Quản lý (MIS) — Đại học Ngân hàng TP.HCM (09/2023 – dự kiến 09/2027). GPA: 3.3/4.0. Các môn liên quan: Hệ quản trị CSDL (SQL), Phân tích &amp; Trực quan hóa dữ liệu, Lập trình Python, Xác suất &amp; Thống kê, Phân tích &amp; Thiết kế Hệ thống.
+          </p>
+        </div>
+        
+        
+        <div class="bg-gradient-to-br from-accent/5 to-navy-500/5 dark:from-accent/10 dark:to-navy-600/10 rounded-2xl p-6 border border-accent/10 dark:border-accent/20">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">📌 Thông tin nhanh</h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <span class="text-accent dark:text-accent-light">📍</span>
+              <span class="text-gray-600 dark:text-gray-400">An Lạc, TP. Hồ Chí Minh</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-accent dark:text-accent-light">📧</span>
+              <a href="mailto:luatle.111105@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">luatle.111105@gmail.com</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-accent dark:text-accent-light">💼</span>
+              <span class="text-gray-600 dark:text-gray-400">Data Analyst</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-accent dark:text-accent-light">🌐</span>
+              <div class="flex gap-3">
+                <a href="https://github.com/TrongLuat11" target="_blank" class="text-gray-500 hover:text-accent transition-colors text-sm font-mono">GitHub</a>
+                <a href="https://linkedin.com/in/trongluat" target="_blank" class="text-gray-500 hover:text-accent transition-colors text-sm font-mono">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="skills" class="py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    
+    <div class="text-center mb-16 fade-in">
+      <p class="text-accent dark:text-accent-light font-mono text-sm tracking-wider uppercase mb-2">Kỹ năng & Kiến thức</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+        Công cụ & Sổ tay ngành
+      </h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-accent to-navy-500 mx-auto mt-4 rounded-full"></div>
+      <p class="text-gray-600 dark:text-gray-400 mt-4 max-w-lg mx-auto">
+        Nhấn vào từng kỹ năng để xem "Sổ tay kiến thức" và dự án áp dụng
+      </p>
+    </div>
+    
+    
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="fade-in" style="animation-delay: 0ms;">
+          <button type="button"
+                  class="skill-card w-full text-left bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-lg hover:border-accent/30 dark:hover:border-accent/30 transform hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+                  data-skill-name="Python"
+                  onclick="openSkillModal('Python')">
+            
+            
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🐍</span>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-accent dark:group-hover:text-accent-light transition-colors">Python</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-mono">Ngôn ngữ lập trình</p>
+              </div>
+            </div>
+            
+            
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-2">Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Web Scraping</p>
+            
+            
+            <div class="flex items-center gap-1 text-xs text-accent/60 dark:text-accent-light/60 group-hover:text-accent dark:group-hover:text-accent-light transition-colors mt-4">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              <span>Xem chi tiết Sổ tay</span>
+            </div>
+          </button>
+        </div>
+              <div class="fade-in" style="animation-delay: 80ms;">
+          <button type="button"
+                  class="skill-card w-full text-left bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-lg hover:border-accent/30 dark:hover:border-accent/30 transform hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+                  data-skill-name="SQL"
+                  onclick="openSkillModal('SQL')">
+            
+            
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🗄️</span>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-accent dark:group-hover:text-accent-light transition-colors">SQL</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-mono">Ngôn ngữ truy vấn</p>
+              </div>
+            </div>
+            
+            
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-2">Từ truy vấn cơ bản đến Window Functions, Cohort Analysis &amp; RFM Segmentation</p>
+            
+            
+            <div class="flex items-center gap-1 text-xs text-accent/60 dark:text-accent-light/60 group-hover:text-accent dark:group-hover:text-accent-light transition-colors mt-4">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              <span>Xem chi tiết Sổ tay</span>
+            </div>
+          </button>
+        </div>
+              <div class="fade-in" style="animation-delay: 160ms;">
+          <button type="button"
+                  class="skill-card w-full text-left bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-lg hover:border-accent/30 dark:hover:border-accent/30 transform hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+                  data-skill-name="Data Cleaning &amp; EDA"
+                  onclick="openSkillModal('Data Cleaning &amp; EDA')">
+            
+            
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🧹</span>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-accent dark:group-hover:text-accent-light transition-colors">Data Cleaning &amp; EDA</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-mono">Xử lý dữ liệu</p>
+              </div>
+            </div>
+            
+            
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-2">Data Validation, Missing Value Imputation, IQR, Exploratory Analysis</p>
+            
+            
+            <div class="flex items-center gap-1 text-xs text-accent/60 dark:text-accent-light/60 group-hover:text-accent dark:group-hover:text-accent-light transition-colors mt-4">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              <span>Xem chi tiết Sổ tay</span>
+            </div>
+          </button>
+        </div>
+              <div class="fade-in" style="animation-delay: 240ms;">
+          <button type="button"
+                  class="skill-card w-full text-left bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-lg hover:border-accent/30 dark:hover:border-accent/30 transform hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+                  data-skill-name="Machine Learning"
+                  onclick="openSkillModal('Machine Learning')">
+            
+            
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🤖</span>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-accent dark:group-hover:text-accent-light transition-colors">Machine Learning</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-mono">AI &amp; ML</p>
+              </div>
+            </div>
+            
+            
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-2">NLP, Text Vectorization, Classification, Logistic Regression, SVM</p>
+            
+            
+            <div class="flex items-center gap-1 text-xs text-accent/60 dark:text-accent-light/60 group-hover:text-accent dark:group-hover:text-accent-light transition-colors mt-4">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              <span>Xem chi tiết Sổ tay</span>
+            </div>
+          </button>
+        </div>
+              <div class="fade-in" style="animation-delay: 320ms;">
+          <button type="button"
+                  class="skill-card w-full text-left bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-lg hover:border-accent/30 dark:hover:border-accent/30 transform hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+                  data-skill-name="GenAI Tools"
+                  onclick="openSkillModal('GenAI Tools')">
+            
+            
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform duration-300">✨</span>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-accent dark:group-hover:text-accent-light transition-colors">GenAI Tools</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-mono">AI &amp; ML</p>
+              </div>
+            </div>
+            
+            
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-2">ChatGPT, Claude, Gemini — workflow optimization &amp; research</p>
+            
+            
+            <div class="flex items-center gap-1 text-xs text-accent/60 dark:text-accent-light/60 group-hover:text-accent dark:group-hover:text-accent-light transition-colors mt-4">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              <span>Xem chi tiết Sổ tay</span>
+            </div>
+          </button>
+        </div>
+              <div class="fade-in" style="animation-delay: 400ms;">
+          <button type="button"
+                  class="skill-card w-full text-left bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-lg hover:border-accent/30 dark:hover:border-accent/30 transform hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+                  data-skill-name="MS Office"
+                  onclick="openSkillModal('MS Office')">
+            
+            
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform duration-300">📗</span>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-accent dark:group-hover:text-accent-light transition-colors">MS Office</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-mono">Công cụ</p>
+              </div>
+            </div>
+            
+            
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-2">MOS Certified, Excel nâng cao, Word, PowerPoint</p>
+            
+            
+            <div class="flex items-center gap-1 text-xs text-accent/60 dark:text-accent-light/60 group-hover:text-accent dark:group-hover:text-accent-light transition-colors mt-4">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              <span>Xem chi tiết Sổ tay</span>
+            </div>
+          </button>
+        </div>
+              <div class="fade-in" style="animation-delay: 480ms;">
+          <button type="button"
+                  class="skill-card w-full text-left bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-lg hover:border-accent/30 dark:hover:border-accent/30 transform hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+                  data-skill-name="Git/GitHub"
+                  onclick="openSkillModal('Git/GitHub')">
+            
+            
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🔀</span>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-accent dark:group-hover:text-accent-light transition-colors">Git/GitHub</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-mono">Công cụ</p>
+              </div>
+            </div>
+            
+            
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-2">Version control, collaboration, repository management</p>
+            
+            
+            <div class="flex items-center gap-1 text-xs text-accent/60 dark:text-accent-light/60 group-hover:text-accent dark:group-hover:text-accent-light transition-colors mt-4">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              <span>Xem chi tiết Sổ tay</span>
+            </div>
+          </button>
+        </div>
+              <div class="fade-in" style="animation-delay: 560ms;">
+          <button type="button"
+                  class="skill-card w-full text-left bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-lg hover:border-accent/30 dark:hover:border-accent/30 transform hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+                  data-skill-name="Web Scraping"
+                  onclick="openSkillModal('Web Scraping')">
+            
+            
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform duration-300">🕷️</span>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-accent dark:group-hover:text-accent-light transition-colors">Web Scraping</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-mono">Xử lý dữ liệu</p>
+              </div>
+            </div>
+            
+            
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-2">Selenium, BeautifulSoup, thu thập dữ liệu tự động</p>
+            
+            
+            <div class="flex items-center gap-1 text-xs text-accent/60 dark:text-accent-light/60 group-hover:text-accent dark:group-hover:text-accent-light transition-colors mt-4">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              <span>Xem chi tiết Sổ tay</span>
+            </div>
+          </button>
+        </div>
+          </div>
+  </div>
+</section>
+
+
+<div id="skill-modal" class="fixed inset-0 z-[100] hidden">
+  <div id="skill-modal-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeSkillModal()"></div>
+  
+  <div class="absolute inset-4 sm:inset-8 md:inset-12 lg:inset-x-32 lg:inset-y-16 bg-white dark:bg-navy-900 rounded-2xl shadow-2xl overflow-hidden flex flex-col modal-content">
+    
+    
+    <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-navy-700 bg-gray-50/50 dark:bg-navy-800/30">
+      <div class="flex items-center gap-3">
+        <span id="modal-skill-icon" class="text-2xl sm:text-3xl"></span>
+        <div>
+          <h3 id="modal-skill-name" class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white"></h3>
+          <p id="modal-skill-desc" class="text-sm text-gray-500 dark:text-gray-400"></p>
+        </div>
+      </div>
+      <button onclick="closeSkillModal()" 
+              class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-navy-700 text-gray-500 dark:text-gray-400 transition-colors"
+              aria-label="Đóng">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    
+    
+    <div class="flex-1 overflow-y-auto bg-gray-50/30 dark:bg-navy-950/20">
+      <div class="p-6 lg:p-10 max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="p-2.5 rounded-xl bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent-light shadow-inner">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 dark:text-white tracking-wide">Chi tiết Sổ tay (Knowledge Base)</h4>
+        </div>
+        
+        <ul id="modal-knowledge-list" class="space-y-6">
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // Dữ liệu skills (render từ Nunjucks)
+  const skillsData = [{"name":"Python","category":"Ng\u00f4n ng\u1eef l\u1eadp tr\u00ecnh","level":80,"icon":"\ud83d\udc0d","description":"Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Web Scraping","knowledge":["\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003ECh\u01b0\u01a1ng 01\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EPrepare Data - Thu th\u1eadp \u0026 L\u00e0m s\u1ea1ch\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003EImport d\u1eef li\u1ec7u, x\u1eed l\u00fd missing values (NaN), duplicates, v\u00e0 \u00e9p ki\u1ec3u d\u1eef li\u1ec7u chu\u1ea9n b\u1ecb cho ph\u00e2n t\u00edch.\u003C\/p\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003Eimport pandas as pd\n\n# \u0110\u1ecdc d\u1eef li\u1ec7u v\u00e0 x\u1eed l\u00fd c\u01a1 b\u1ea3n\ndf = pd.read_csv(\u0027sales_data.csv\u0027)\n\n# \u0110i\u1ec1n missing values cho c\u1ed9t s\u1ed1 b\u1eb1ng Median\ndf[\u0027revenue\u0027].fillna(df[\u0027revenue\u0027].median(), inplace=True)\n\n# Lo\u1ea1i b\u1ecf b\u1ea3n ghi tr\u00f9ng l\u1eb7p\ndf.drop_duplicates(subset=[\u0027order_id\u0027], keep=\u0027first\u0027, inplace=True)\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EPandas\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ENumPy\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EData Cleaning\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003ECh\u01b0\u01a1ng 02\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EAsk the Right Questions - \u0110\u1eb7t \u0111\u00fang c\u00e2u h\u1ecfi\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003EKh\u00f4ng v\u1ed9i code! D\u00e0nh 20% th\u1eddi gian \u0111\u1ea7u \u0111\u1ec3 \u0111\u1eb7t c\u00e2u h\u1ecfi kinh doanh (Business Framing) gi\u00fap \u0111\u1ecbnh h\u01b0\u1edbng 80% th\u1eddi gian ph\u00e2n t\u00edch.\u003C\/p\u003E\u003Cdiv class=\u0022bg-purple-50 dark:bg-purple-900\/10 border-l-4 border-purple-500 p-3 mb-3 text-sm text-purple-900 dark:text-purple-200 rounded-r-lg\u0022\u003E\u003Cp\u003E\u003Cstrong\u003EC\u00f4ng th\u1ee9c KPI Framing:\u003C\/strong\u003E\u003Cbr\u003E- \u003Cem\u003EWhat happened?\u003C\/em\u003E (Doanh thu th\u00e1ng n\u00e0y gi\u1ea3m 15%).\u003Cbr\u003E- \u003Cem\u003EWhy?\u003C\/em\u003E (Do nh\u00f3m kh\u00e1ch h\u00e0ng m\u1edbi mua \u00edt h\u01a1n hay t\u1ef7 l\u1ec7 churn t\u0103ng?).\u003Cbr\u003E- \u003Cem\u003EWhat\u0027s next?\u003C\/em\u003E (Ph\u00e2n kh\u00fac n\u00e0o c\u1ea7n tung khuy\u1ebfn m\u00e3i ngay?).\u003C\/p\u003E\u003C\/div\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-purple-100 text-purple-700 dark:bg-purple-900\/30 dark:text-purple-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EBusiness Framing\u003C\/span\u003E\u003Cspan class=\u0022bg-purple-100 text-purple-700 dark:bg-purple-900\/30 dark:text-purple-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EKPI Design\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003ECh\u01b0\u01a1ng 03\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EAnalyze - Ph\u00e2n t\u00edch chuy\u00ean s\u00e2u\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003ES\u1eed d\u1ee5ng Pandas groupby \u0111\u1ec3 Cohort Analysis ho\u1eb7c t\u00ecm Correlation gi\u1eefa c\u00e1c bi\u1ebfn s\u1ed1.\u003C\/p\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003E# T\u00ednh t\u1ed5ng doanh thu v\u00e0 AOV (Average Order Value) theo ph\u00e2n kh\u00fac\nsegment_analysis = df.groupby(\u0027customer_segment\u0027).agg(\n    total_revenue=(\u0027revenue\u0027, \u0027sum\u0027),\n    total_orders=(\u0027order_id\u0027, \u0027nunique\u0027)\n).reset_index()\n\nsegment_analysis[\u0027AOV\u0027] = segment_analysis[\u0027total_revenue\u0027] \/ segment_analysis[\u0027total_orders\u0027]\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-emerald-100 text-green-700 dark:bg-emerald-900\/30 dark:text-green-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EStatistics\u003C\/span\u003E\u003Cspan class=\u0022bg-emerald-100 text-green-700 dark:bg-emerald-900\/30 dark:text-green-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ESegmentation\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003ECh\u01b0\u01a1ng 04\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EExtract Insights - R\u00fat ra Insight\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003EChuy\u1ec3n h\u00f3a Data th\u00e0nh Actionable Insights. M\u1ed9t Insight t\u1ed1t kh\u00f4ng ch\u1ec9 l\u00e0 m\u00f4 t\u1ea3 s\u1ed1 li\u1ec7u, m\u00e0 ph\u1ea3i tr\u1ea3 l\u1eddi \u0111\u01b0\u1ee3c c\u00e2u h\u1ecfi \u0022So What?\u0022.\u003C\/p\u003E\u003Cdiv class=\u0022bg-orange-50 dark:bg-orange-900\/10 border-l-4 border-orange-500 p-3 mb-3 text-sm text-orange-900 dark:text-orange-200 rounded-r-lg\u0022\u003E\u003Cp\u003E\u003Cstrong\u003EInsight:\u003C\/strong\u003E Ph\u00e2n kh\u00fac \u0027Sinh vi\u00ean\u0027 chi\u1ebfm 40% user nh\u01b0ng ch\u1ec9 \u0111\u00f3ng g\u00f3p 15% doanh thu (LTV th\u1ea5p).\u003Cbr\u003E\u003Cstrong\u003ESo What (Action):\u003C\/strong\u003E Kh\u00f4ng n\u00ean \u0111\u1ed1t ti\u1ec1n qu\u1ea3ng c\u00e1o v\u00e0o t\u1ec7p n\u00e0y. Chuy\u1ec3n ng\u00e2n s\u00e1ch sang t\u1ec7p \u0027Nh\u00e2n vi\u00ean v\u0103n ph\u00f2ng\u0027 c\u00f3 AOV g\u1ea5p 3 l\u1ea7n.\u003C\/p\u003E\u003C\/div\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-orange-100 text-orange-700 dark:bg-orange-900\/30 dark:text-orange-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EInsight Generation\u003C\/span\u003E\u003Cspan class=\u0022bg-orange-100 text-orange-700 dark:bg-orange-900\/30 dark:text-orange-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EBusiness Value\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003ECh\u01b0\u01a1ng 05\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EPresent Results - Tr\u00ecnh b\u00e0y thuy\u1ebft ph\u1ee5c\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003ETr\u1ef1c quan h\u00f3a d\u1eef li\u1ec7u b\u1eb1ng Seaborn \u0111\u1ec3 v\u1ebd c\u00e1c bi\u1ec3u \u0111\u1ed3 ph\u00e2n ph\u1ed1i chu\u1ea9n m\u1ef1c, d\u1ec5 nh\u00ecn.\u003C\/p\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003Eimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nplt.figure(figsize=(10, 6))\nsns.barplot(x=\u0027customer_segment\u0027, y=\u0027AOV\u0027, data=segment_analysis)\nplt.title(\u0027Average Order Value (AOV) by Segment\u0027)\nplt.ylabel(\u0027AOV ($)\u0027)\nplt.show()\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-pink-100 text-pink-700 dark:bg-pink-900\/30 dark:text-pink-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EMatplotlib\u003C\/span\u003E\u003Cspan class=\u0022bg-pink-100 text-pink-700 dark:bg-pink-900\/30 dark:text-pink-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ESeaborn\u003C\/span\u003E\u003Cspan class=\u0022bg-pink-100 text-pink-700 dark:bg-pink-900\/30 dark:text-pink-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EData Storytelling\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E"]},{"name":"SQL","category":"Ng\u00f4n ng\u1eef truy v\u1ea5n","level":85,"icon":"\ud83d\uddc4\ufe0f","description":"T\u1eeb truy v\u1ea5n c\u01a1 b\u1ea3n \u0111\u1ebfn Window Functions, Cohort Analysis \u0026 RFM Segmentation","knowledge":["\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 01\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EGI\u1ea2I NG\u1ed0 DATA \u2014 T\u1ed5ng quan v\u1ec1 d\u1eef li\u1ec7u \u0026 H\u1ec7 th\u1ed1ng d\u1eef li\u1ec7u\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003EHi\u1ec3u b\u1ea3n ch\u1ea5t d\u1eef li\u1ec7u, ph\u00e2n bi\u1ec7t c\u00e1c lo\u1ea1i c\u01a1 s\u1edf d\u1eef li\u1ec7u, v\u00e0 vai tr\u00f2 c\u1ee7a t\u1eebng th\u00e0nh ph\u1ea7n trong Data System tr\u01b0\u1edbc khi b\u1eaft tay v\u00e0o vi\u1ebft SQL.\u003C\/p\u003E\u003Cdiv class=\u0022bg-emerald-50 dark:bg-emerald-900\/10 border-l-4 border-emerald-500 p-3 mb-3 text-sm text-emerald-900 dark:text-emerald-200 rounded-r-lg\u0022\u003E\u003Cp\u003E\u003Cstrong\u003E\ud83e\udde0 Database l\u00e0 g\u00ec?\u003C\/strong\u003E L\u00e0 kho l\u01b0u tr\u1eef d\u1eef li\u1ec7u c\u00f3 c\u1ea5u tr\u00fac, \u0111\u01b0\u1ee3c qu\u1ea3n l\u00fd b\u1edfi DBMS (Database Management System) nh\u01b0 PostgreSQL, MySQL, SQL Server. D\u1eef li\u1ec7u \u0111\u01b0\u1ee3c t\u1ed5 ch\u1ee9c th\u00e0nh c\u00e1c \u003Cem\u003Eb\u1ea3ng (tables)\u003C\/em\u003E g\u1ed3m \u003Cem\u003Eh\u00e0ng (rows)\u003C\/em\u003E v\u00e0 \u003Cem\u003Ec\u1ed9t (columns)\u003C\/em\u003E.\u003C\/p\u003E\u003Chr class=\u0022my-3 border-gray-200 dark:border-navy-700\u0022\u003E\u003Cp\u003E\u003Cstrong\u003E\ud83d\udce6 Data System g\u1ed3m 4 tr\u1ee5 c\u1ed9t:\u003C\/strong\u003E\u003C\/p\u003E\u003Cul class=\u0022list-disc list-inside mt-1 space-y-1\u0022\u003E\u003Cli\u003E\u003Cstrong\u003EData Warehouse:\u003C\/strong\u003E Kho d\u1eef li\u1ec7u \u0111\u00e3 \u0111\u01b0\u1ee3c l\u00e0m s\u1ea1ch, t\u1ed1i \u01b0u cho ph\u00e2n t\u00edch (OLAP). VD: BigQuery, Redshift, Snowflake.\u003C\/li\u003E\u003Cli\u003E\u003Cstrong\u003EData Lake:\u003C\/strong\u003E \u0022H\u1ed3\u0022 ch\u1ee9a d\u1eef li\u1ec7u th\u00f4, \u0111a d\u1ea1ng \u0111\u1ecbnh d\u1ea1ng (CSV, JSON, log...). VD: AWS S3, Azure Data Lake.\u003C\/li\u003E\u003Cli\u003E\u003Cstrong\u003EData Pipeline:\u003C\/strong\u003E Quy tr\u00ecnh t\u1ef1 \u0111\u1ed9ng ETL (Extract \u2192 Transform \u2192 Load) \u2014 \u0111\u01b0a d\u1eef li\u1ec7u t\u1eeb ngu\u1ed3n v\u00e0o kho.\u003C\/li\u003E\u003Cli\u003E\u003Cstrong\u003EData Roles:\u003C\/strong\u003E Data Engineer (x\u00e2y pipeline) \u2192 Data Analyst (ph\u00e2n t\u00edch) \u2192 Data Scientist (m\u00f4 h\u00ecnh h\u00f3a).\u003C\/li\u003E\u003C\/ul\u003E\u003C\/div\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EDatabase\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EData Warehouse\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EData Lake\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EETL Pipeline\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EData Roles\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 02\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EBASIC QUERIES \u0026 FILTER \u2014 Truy v\u1ea5n c\u01a1 b\u1ea3n \u0026 L\u1ecdc d\u1eef li\u1ec7u\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003EVi\u1ebft nh\u1eefng c\u00e2u truy v\u1ea5n SQL \u0111\u1ea7u ti\u00ean: l\u1ea5y d\u1eef li\u1ec7u, s\u1eafp x\u1ebfp, lo\u1ea1i tr\u00f9ng, gi\u1edbi h\u1ea1n k\u1ebft qu\u1ea3. Sau \u0111\u00f3 h\u1ecdc c\u00e1ch l\u1ecdc d\u1eef li\u1ec7u v\u1edbi WHERE v\u00e0 c\u00e1c to\u00e1n t\u1eed logic.\u003C\/p\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003E-- 1\ufe0f\u20e3 Truy v\u1ea5n c\u01a1 b\u1ea3n: L\u1ea5y to\u00e0n b\u1ed9 d\u1eef li\u1ec7u\\nSELECT * FROM customers;\\n\\n-- 2\ufe0f\u20e3 Ch\u1ecdn c\u1ed9t c\u1ee5 th\u1ec3 + S\u1eafp x\u1ebfp theo doanh thu gi\u1ea3m d\u1ea7n\\nSELECT customer_name, revenue\\nFROM orders\\nORDER BY revenue DESC;\\n\\n-- 3\ufe0f\u20e3 Lo\u1ea1i b\u1ecf gi\u00e1 tr\u1ecb tr\u00f9ng l\u1eb7p\\nSELECT DISTINCT category FROM products;\\n\\n-- 4\ufe0f\u20e3 Gi\u1edbi h\u1ea1n k\u1ebft qu\u1ea3: L\u1ea5y Top 10\\nSELECT * FROM orders ORDER BY revenue DESC LIMIT 10;\\n\\n-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\\n-- 5\ufe0f\u20e3 B\u1ed8 L\u1eccC \u0110I\u1ec0U KI\u1ec6N (WHERE)\\n-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\\n\\n-- L\u1ecdc \u0111\u01a1n h\u00e0ng c\u00f3 doanh thu \u003E 500\\nSELECT * FROM orders WHERE revenue \u003E 500;\\n\\n-- K\u1ebft h\u1ee3p AND\/OR\\nSELECT * FROM orders\\nWHERE category = \\\u0027Technology\\\u0027 AND revenue \u003E 1000;\\n\\n-- BETWEEN: L\u1ecdc theo kho\u1ea3ng ng\u00e0y\\nSELECT * FROM orders\\nWHERE order_date BETWEEN \\\u00272024-01-01\\\u0027 AND \\\u00272024-03-31\\\u0027;\\n\\n-- IN: L\u1ecdc nhi\u1ec1u gi\u00e1 tr\u1ecb c\u00f9ng l\u00fac\\nSELECT * FROM orders\\nWHERE region IN (\\\u0027North\\\u0027, \\\u0027South\\\u0027, \\\u0027East\\\u0027);\\n\\n-- LIKE: T\u00ecm ki\u1ebfm m\u1eabu chu\u1ed7i\\nSELECT * FROM customers\\nWHERE customer_name LIKE \\\u0027Nguy\u1ec5n%\\\u0027;  -- B\u1eaft \u0111\u1ea7u b\u1eb1ng \u0022Nguy\u1ec5n\u0022\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ESELECT\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EORDER BY\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EDISTINCT\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ELIMIT\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EWHERE\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EAND\/OR\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EBETWEEN\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EIN\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ELIKE\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 04\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EGROUP BY \u0026 AGGREGATE FUNCTIONS \u2014 Gom nh\u00f3m \u0026 H\u00e0m t\u1ed5ng h\u1ee3p\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003EN\u1eafm v\u1eefng c\u00e1c h\u00e0m t\u1ed5ng h\u1ee3p (COUNT, SUM, AVG, MIN, MAX) k\u1ebft h\u1ee3p GROUP BY \u0111\u1ec3 ph\u00e2n t\u00edch theo nh\u00f3m. Ph\u00e2n bi\u1ec7t WHERE (l\u1ecdc d\u00f2ng) v\u00e0 HAVING (l\u1ecdc nh\u00f3m).\u003C\/p\u003E\u003Cdiv class=\u0022bg-emerald-50 dark:bg-emerald-900\/10 border-l-4 border-emerald-500 p-3 mb-3 text-sm text-emerald-900 dark:text-emerald-200 rounded-r-lg\u0022\u003E\u003Cp\u003E\u003Cstrong\u003E\u26a1 Th\u1ee9 t\u1ef1 th\u1ef1c thi SQL (quan tr\u1ecdng!):\u003C\/strong\u003E\u003C\/p\u003E\u003Cp\u003E\u003Ccode class=\u0022bg-accent\/10 text-accent px-2 py-0.5 rounded text-xs\u0022\u003EFROM \u2192 WHERE \u2192 GROUP BY \u2192 HAVING \u2192 SELECT \u2192 ORDER BY \u2192 LIMIT\u003C\/code\u003E\u003C\/p\u003E\u003Cp class=\u0022mt-1\u0022\u003E\u2192 V\u00ec v\u1eady, \u003Cstrong\u003Ekh\u00f4ng th\u1ec3\u003C\/strong\u003E d\u00f9ng alias \u0111\u1eb7t \u1edf SELECT trong m\u1ec7nh \u0111\u1ec1 WHERE (v\u00ec WHERE ch\u1ea1y tr\u01b0\u1edbc SELECT).\u003C\/p\u003E\u003C\/div\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003E-- 1\ufe0f\u20e3 H\u00e0m t\u1ed5ng h\u1ee3p c\u01a1 b\u1ea3n (Aggregate Functions)\\nSELECT\\n  COUNT(*) AS total_orders,           -- \u0110\u1ebfm t\u1ed5ng \u0111\u01a1n h\u00e0ng\\n  SUM(revenue) AS total_revenue,       -- T\u1ed5ng doanh thu\\n  AVG(revenue) AS avg_revenue,         -- Trung b\u00ecnh doanh thu\\n  MIN(revenue) AS min_revenue,         -- \u0110\u01a1n th\u1ea5p nh\u1ea5t\\n  MAX(revenue) AS max_revenue          -- \u0110\u01a1n cao nh\u1ea5t\\nFROM orders;\\n\\n-- 2\ufe0f\u20e3 GROUP BY: Gom nh\u00f3m theo danh m\u1ee5c\\nSELECT\\n  category,\\n  COUNT(*) AS total_orders,\\n  ROUND(AVG(revenue), 2) AS avg_revenue\\nFROM orders\\nGROUP BY category\\nORDER BY total_orders DESC;\\n\\n-- 3\ufe0f\u20e3 HAVING: L\u1ecdc nh\u00f3m c\u00f3 doanh thu trung b\u00ecnh \u003E 300\\n-- (WHERE l\u1ecdc D\u00d2NG tr\u01b0\u1edbc khi gom, HAVING l\u1ecdc NH\u00d3M sau khi gom)\\nSELECT\\n  region,\\n  SUM(revenue) AS total_revenue\\nFROM orders\\nGROUP BY region\\nHAVING SUM(revenue) \u003E 50000;\\n\\n-- 4\ufe0f\u20e3 H\u00e0m to\u00e1n h\u1ecdc th\u01b0\u1eddng d\u00f9ng\\nSELECT\\n  ROUND(3.14159, 2) AS rounded,     -- 3.14\\n  CEIL(4.2) AS ceiling,              -- 5\\n  FLOOR(4.8) AS floored,             -- 4\\n  ABS(-100) AS absolute,             -- 100\\n  MOD(10, 3) AS modulo;              -- 1\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ECOUNT\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ESUM\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EAVG\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EGROUP BY\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EHAVING\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EROUND\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EExecution Order\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 06\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003ESTRING \u0026 DATETIME FUNCTIONS \u2014 H\u00e0m x\u1eed l\u00fd chu\u1ed7i \u0026 ng\u00e0y gi\u1edd\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003EThao t\u00e1c v\u1edbi d\u1eef li\u1ec7u v\u0103n b\u1ea3n (c\u1eaft, n\u1ed1i, t\u00ecm ki\u1ebfm, thay th\u1ebf) v\u00e0 d\u1eef li\u1ec7u th\u1eddi gian (b\u00f3c t\u00e1ch, \u0111\u1ecbnh d\u1ea1ng, t\u00ednh kho\u1ea3ng c\u00e1ch) \u2014 k\u1ef9 n\u0103ng thi\u1ebft y\u1ebfu khi l\u00e0m s\u1ea1ch d\u1eef li\u1ec7u.\u003C\/p\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003E-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550 H\u00c0M X\u1eec L\u00dd CHU\u1ed6I (STRING FUNCTIONS) \u2550\u2550\u2550\u2550\u2550\u2550\u2550\\n\\nSELECT\\n  LENGTH(\\\u0027Data Analyst\\\u0027) AS str_length,            -- 12\\n  LOWER(\\\u0027DATA\\\u0027) AS lower_case,                     -- data\\n  UPPER(\\\u0027analyst\\\u0027) AS upper_case,                   -- ANALYST\\n  LEFT(\\\u0027PostgreSQL\\\u0027, 8) AS left_chars,              -- PostgreS\\n  RIGHT(\\\u0027PostgreSQL\\\u0027, 3) AS right_chars,            -- SQL\\n  CONCAT(first_name, \\\u0027 \\\u0027, last_name) AS full_name,  -- N\u1ed1i chu\u1ed7i\\n  REPLACE(\\\u00272024\/01\/15\\\u0027, \\\u0027\/\\\u0027, \\\u0027-\\\u0027) AS formatted,    -- 2024-01-15\\n  POSITION(\\\u0027@\\\u0027 IN \\\u0027user@email.com\\\u0027) AS at_pos,      -- 5\\n  SUBSTRING(\\\u0027ABCDEF\\\u0027 FROM 2 FOR 3) AS sub_str       -- BCD\\nFROM employees;\\n\\n-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550 H\u00c0M X\u1eec L\u00dd NG\u00c0Y \u0026 TH\u1edcI GIAN \u2550\u2550\u2550\u2550\u2550\u2550\u2550\\n\\nSELECT\\n  -- EXTRACT: B\u00f3c t\u00e1ch th\u00e0nh ph\u1ea7n\\n  EXTRACT(YEAR FROM order_date) AS order_year,\\n  EXTRACT(MONTH FROM order_date) AS order_month,\\n  EXTRACT(DOW FROM order_date) AS day_of_week,      -- 0=CN, 1=T2...\\n\\n  -- TO_CHAR: \u0110\u1ecbnh d\u1ea1ng hi\u1ec3n th\u1ecb\\n  TO_CHAR(order_date, \\\u0027DD\/MM\/YYYY\\\u0027) AS vn_format,   -- 15\/01\/2024\\n  TO_CHAR(order_date, \\\u0027Month YYYY\\\u0027) AS month_year,  -- January 2024\\n\\n  -- INTERVAL \u0026 ph\u00e9p t\u00ednh ng\u00e0y\\n  order_date + INTERVAL \\\u002730 days\\\u0027 AS plus_30_days,\\n  NOW() - order_date AS days_since_order\\nFROM orders;\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ELENGTH\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ECONCAT\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EREPLACE\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ESUBSTRING\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EEXTRACT\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ETO_CHAR\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EINTERVAL\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 08\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003ECASE WHEN \u0026 PIVOT TABLE \u2014 Bi\u1ec3u th\u1ee9c \u0111i\u1ec1u ki\u1ec7n \u0026 Xoay b\u1ea3ng\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003ES\u1eed d\u1ee5ng CASE-WHEN \u0111\u1ec3 ph\u00e2n lo\u1ea1i d\u1eef li\u1ec7u linh ho\u1ea1t (gi\u1ed1ng IF-ELSE). K\u1ebft h\u1ee3p v\u1edbi SUM\/COUNT \u0111\u1ec3 t\u1ea1o Pivot Table \u2014 k\u1ef9 thu\u1eadt xoay d\u1eef li\u1ec7u t\u1eeb d\u1ecdc sang ngang.\u003C\/p\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003E-- 1\ufe0f\u20e3 CASE WHEN c\u01a1 b\u1ea3n: Ph\u00e2n lo\u1ea1i kh\u00e1ch h\u00e0ng theo doanh thu\\nSELECT\\n  customer_name,\\n  revenue,\\n  CASE\\n    WHEN revenue \u003E= 10000 THEN \\\u0027\ud83d\udc8e VIP\\\u0027\\n    WHEN revenue \u003E= 5000  THEN \\\u0027\u2b50 Gold\\\u0027\\n    WHEN revenue \u003E= 1000  THEN \\\u0027\ud83e\udd48 Silver\\\u0027\\n    ELSE \\\u0027\ud83c\udd95 New\\\u0027\\n  END AS customer_tier\\nFROM customers;\\n\\n-- 2\ufe0f\u20e3 PIVOT TABLE: Xoay doanh thu theo danh m\u1ee5c (d\u1ecdc \u2192 ngang)\\nSELECT\\n  TO_CHAR(order_date, \\\u0027YYYY-MM\\\u0027) AS month,\\n  SUM(CASE WHEN category = \\\u0027Technology\\\u0027 THEN revenue ELSE 0 END) AS tech,\\n  SUM(CASE WHEN category = \\\u0027Furniture\\\u0027 THEN revenue ELSE 0 END) AS furniture,\\n  SUM(CASE WHEN category = \\\u0027Office\\\u0027 THEN revenue ELSE 0 END) AS office\\nFROM orders\\nGROUP BY 1\\nORDER BY 1;\\n\\n-- 3\ufe0f\u20e3 COALESCE: Thay th\u1ebf NULL b\u1eb1ng gi\u00e1 tr\u1ecb m\u1eb7c \u0111\u1ecbnh\\nSELECT\\n  product_name,\\n  COALESCE(discount, 0) AS discount,         -- NULL \u2192 0\\n  COALESCE(notes, \\\u0027Kh\u00f4ng c\u00f3 ghi ch\u00fa\\\u0027) AS notes  -- NULL \u2192 text\\nFROM products;\\n\\n-- 4\ufe0f\u20e3 CAST: \u00c9p ki\u1ec3u d\u1eef li\u1ec7u\\nSELECT CAST(\\\u00272024-01-15\\\u0027 AS DATE);\\nSELECT CAST(revenue AS INTEGER) FROM orders;\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ECASE WHEN\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EPivot Table\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ECOALESCE\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ECAST\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ENULL Handling\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 10\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EJOIN \u0026 UNION \u2014 K\u1ebft h\u1ee3p b\u1ea3ng \u0026 Gh\u00e9p t\u1eadp k\u1ebft qu\u1ea3\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003EN\u1eafm v\u1eefng c\u00e1c lo\u1ea1i JOIN (INNER, LEFT, RIGHT, FULL, SELF) \u0111\u1ec3 k\u1ebft h\u1ee3p d\u1eef li\u1ec7u t\u1eeb nhi\u1ec1u b\u1ea3ng. Hi\u1ec3u k\u1ef9 thu\u1eadt JOIN n\u00e2ng cao v\u00e0 UNION \u0111\u1ec3 gh\u00e9p t\u1eadp k\u1ebft qu\u1ea3.\u003C\/p\u003E\u003Cdiv class=\u0022bg-emerald-50 dark:bg-emerald-900\/10 border-l-4 border-emerald-500 p-3 mb-3 text-sm text-emerald-900 dark:text-emerald-200 rounded-r-lg\u0022\u003E\u003Cp\u003E\u003Cstrong\u003E\u26a0\ufe0f B\u1eaby LEFT JOIN:\u003C\/strong\u003E N\u1ebfu \u0111\u1eb7t \u0111i\u1ec1u ki\u1ec7n l\u1ecdc b\u1ea3ng ph\u1ea3i \u1edf \u003Ccode\u003EWHERE\u003C\/code\u003E, LEFT JOIN s\u1ebd b\u1ecb \u00e9p th\u00e0nh INNER JOIN. H\u00e3y \u0111\u1eb7t \u0111i\u1ec1u ki\u1ec7n l\u1ecdc \u1edf \u003Ccode\u003EON\u003C\/code\u003E thay v\u00ec \u003Ccode\u003EWHERE\u003C\/code\u003E!\u003C\/p\u003E\u003C\/div\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003E-- 1\ufe0f\u20e3 INNER JOIN: Ch\u1ec9 l\u1ea5y d\u00f2ng kh\u1edbp \u1edf C\u1ea2 HAI b\u1ea3ng\\nSELECT o.order_id, c.customer_name, o.revenue\\nFROM orders o\\nINNER JOIN customers c ON o.customer_id = c.id;\\n\\n-- 2\ufe0f\u20e3 LEFT JOIN: L\u1ea5y T\u1ea4T C\u1ea2 b\u00ean tr\u00e1i, k\u1ec3 c\u1ea3 kh\u00f4ng kh\u1edbp\\n-- (T\u00ecm s\u1ea3n ph\u1ea9m CH\u01afA b\u00e1n \u0111\u01b0\u1ee3c)\\nSELECT p.product_name, o.order_id\\nFROM products p\\nLEFT JOIN orders o ON p.id = o.product_id\\nWHERE o.order_id IS NULL;  -- S\u1ea3n ph\u1ea9m ch\u01b0a c\u00f3 \u0111\u01a1n\\n\\n-- 3\ufe0f\u20e3 SELF JOIN: N\u1ed1i b\u1ea3ng v\u1edbi ch\u00ednh n\u00f3\\n-- (T\u00ecm nh\u00e2n vi\u00ean v\u00e0 t\u00ean qu\u1ea3n l\u00fd)\\nSELECT\\n  e.name AS employee,\\n  m.name AS manager\\nFROM employees e\\nLEFT JOIN employees m ON e.manager_id = m.id;\\n\\n-- 4\ufe0f\u20e3 JOIN MULTIPLE TABLES: N\u1ed1i 3+ b\u1ea3ng\\nSELECT\\n  c.customer_name, o.order_date,\\n  p.product_name, o.quantity\\nFROM orders o\\nJOIN customers c ON o.customer_id = c.id\\nJOIN products p ON o.product_id = p.id;\\n\\n-- 5\ufe0f\u20e3 UNION: Gh\u00e9p k\u1ebft qu\u1ea3 t\u1eeb 2 truy v\u1ea5n\\n-- (C\u00f9ng s\u1ed1 c\u1ed9t, c\u00f9ng ki\u1ec3u d\u1eef li\u1ec7u)\\nSELECT name, \\\u0027Employee\\\u0027 AS type FROM employees\\nUNION ALL\\nSELECT name, \\\u0027Customer\\\u0027 AS type FROM customers;\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EINNER JOIN\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ELEFT JOIN\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ERIGHT JOIN\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EFULL JOIN\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ESELF JOIN\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EUNION\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 12\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003ECTE \u0026 SUBQUERIES \u2014 B\u1ea3ng t\u1ea1m \u0026 Truy v\u1ea5n con\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003ESubquery gi\u00fap l\u1ed3ng truy v\u1ea5n b\u00ean trong truy v\u1ea5n kh\u00e1c. CTE (Common Table Expression) gi\u00fap chia nh\u1ecf logic ph\u1ee9c t\u1ea1p th\u00e0nh c\u00e1c b\u01b0\u1edbc d\u1ec5 \u0111\u1ecdc, d\u1ec5 debug.\u003C\/p\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003E-- 1\ufe0f\u20e3 SUBQUERY IN WHERE: L\u1ecdc theo k\u1ebft qu\u1ea3 truy v\u1ea5n con\\n-- T\u00ecm kh\u00e1ch h\u00e0ng c\u00f3 doanh thu cao h\u01a1n trung b\u00ecnh\\nSELECT customer_name, revenue\\nFROM customers\\nWHERE revenue \u003E (SELECT AVG(revenue) FROM customers);\\n\\n-- 2\ufe0f\u20e3 SUBQUERY IN FROM: D\u00f9ng k\u1ebft qu\u1ea3 l\u00e0m b\u1ea3ng t\u1ea1m\\nSELECT region, avg_rev\\nFROM (\\n  SELECT region, AVG(revenue) AS avg_rev\\n  FROM orders\\n  GROUP BY region\\n) AS region_stats\\nWHERE avg_rev \u003E 5000;\\n\\n-- 3\ufe0f\u20e3 CORRELATED SUBQUERY: Truy v\u1ea5n con t\u01b0\u01a1ng quan\\n-- T\u00ecm \u0111\u01a1n h\u00e0ng c\u00f3 doanh thu cao nh\u1ea5t c\u1ee7a M\u1ed6I kh\u00e1ch h\u00e0ng\\nSELECT *\\nFROM orders o1\\nWHERE revenue = (\\n  SELECT MAX(revenue) FROM orders o2\\n  WHERE o2.customer_id = o1.customer_id  -- T\u01b0\u01a1ng quan!\\n);\\n\\n-- 4\ufe0f\u20e3 CTE (WITH): Chia nh\u1ecf logic ph\u1ee9c t\u1ea1p\\nWITH monthly_revenue AS (\\n  SELECT\\n    TO_CHAR(order_date, \\\u0027YYYY-MM\\\u0027) AS month,\\n    SUM(revenue) AS total_rev\\n  FROM orders\\n  GROUP BY 1\\n),\\nmonth_over_month AS (\\n  SELECT\\n    month, total_rev,\\n    LAG(total_rev) OVER (ORDER BY month) AS prev_month_rev\\n  FROM monthly_revenue\\n)\\nSELECT\\n  month, total_rev, prev_month_rev,\\n  ROUND((total_rev - prev_month_rev) \/ prev_month_rev * 100, 1)\\n    AS growth_pct\\nFROM month_over_month;\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ESubquery\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ECorrelated Subquery\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ECTE\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EWITH Clause\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ENested Query\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 13\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EPROBLEM SOLVING CONCEPT \u2014 T\u01b0 duy gi\u1ea3i quy\u1ebft b\u00e0i to\u00e1n ph\u00e2n t\u00edch\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003EKh\u00f4ng ch\u1ec9 vi\u1ebft SQL \u0111\u00fang, m\u00e0 ph\u1ea3i \u0111\u1eb7t \u0111\u00fang c\u00e2u h\u1ecfi, ph\u00e2n t\u00e1ch b\u00e0i to\u00e1n th\u00e0nh t\u1eebng b\u01b0\u1edbc nh\u1ecf, v\u00e0 k\u1ebft n\u1ed1i k\u1ebft qu\u1ea3 v\u1edbi gi\u00e1 tr\u1ecb kinh doanh.\u003C\/p\u003E\u003Cdiv class=\u0022bg-emerald-50 dark:bg-emerald-900\/10 border-l-4 border-emerald-500 p-3 mb-3 text-sm text-emerald-900 dark:text-emerald-200 rounded-r-lg\u0022\u003E\u003Cp\u003E\u003Cstrong\u003E\ud83e\udde9 Quy tr\u00ecnh 5 b\u01b0\u1edbc gi\u1ea3i b\u00e0i to\u00e1n ph\u00e2n t\u00edch:\u003C\/strong\u003E\u003C\/p\u003E\u003Col class=\u0022list-decimal list-inside mt-2 space-y-2\u0022\u003E\u003Cli\u003E\u003Cstrong\u003EUnderstand:\u003C\/strong\u003E Hi\u1ec3u r\u00f5 y\u00eau c\u1ea7u kinh doanh \u2014 Output mong mu\u1ed1n l\u00e0 g\u00ec?\u003C\/li\u003E\u003Cli\u003E\u003Cstrong\u003EExplore:\u003C\/strong\u003E Kh\u00e1m ph\u00e1 d\u1eef li\u1ec7u \u2014 C\u00f3 nh\u1eefng b\u1ea3ng n\u00e0o? C\u1ed9t n\u00e0o li\u00ean quan? C\u00f3 NULL\/Outlier kh\u00f4ng?\u003C\/li\u003E\u003Cli\u003E\u003Cstrong\u003EBreak Down:\u003C\/strong\u003E Chia nh\u1ecf b\u00e0i to\u00e1n ph\u1ee9c t\u1ea1p th\u00e0nh c\u00e1c b\u01b0\u1edbc logic (d\u00f9ng CTE).\u003C\/li\u003E\u003Cli\u003E\u003Cstrong\u003EImplement:\u003C\/strong\u003E Vi\u1ebft SQL t\u1eebng b\u01b0\u1edbc, ki\u1ec3m tra k\u1ebft qu\u1ea3 trung gian.\u003C\/li\u003E\u003Cli\u003E\u003Cstrong\u003EValidate:\u003C\/strong\u003E Ki\u1ec3m tra l\u1ea1i k\u1ebft qu\u1ea3 \u2014 S\u1ed1 li\u1ec7u c\u00f3 h\u1ee3p l\u00fd? Cross-check v\u1edbi ngu\u1ed3n kh\u00e1c?\u003C\/li\u003E\u003C\/ol\u003E\u003Chr class=\u0022my-3 border-gray-200 dark:border-navy-700\u0022\u003E\u003Cp\u003E\u003Cstrong\u003E\ud83d\udca1 V\u00ed d\u1ee5 th\u1ef1c t\u1ebf:\u003C\/strong\u003E \u0022T\u00ecm s\u1ea3n ph\u1ea9m c\u00f3 t\u1ef7 l\u1ec7 ho\u00e0n tr\u1ea3 cao nh\u1ea5t trong Q4\/2024\u0022\u003C\/p\u003E\u003Cul class=\u0022list-disc list-inside mt-1 space-y-1\u0022\u003E\u003Cli\u003EB\u01b0\u1edbc 1: \u0110\u1ebfm t\u1ed5ng \u0111\u01a1n h\u00e0ng m\u1ed7i s\u1ea3n ph\u1ea9m (GROUP BY product_id)\u003C\/li\u003E\u003Cli\u003EB\u01b0\u1edbc 2: \u0110\u1ebfm s\u1ed1 \u0111\u01a1n b\u1ecb ho\u00e0n tr\u1ea3 (WHERE status = \\\u0027Returned\\\u0027)\u003C\/li\u003E\u003Cli\u003EB\u01b0\u1edbc 3: T\u00ednh t\u1ef7 l\u1ec7 = returned \/ total * 100\u003C\/li\u003E\u003Cli\u003EB\u01b0\u1edbc 4: S\u1eafp x\u1ebfp DESC + LIMIT 10\u003C\/li\u003E\u003C\/ul\u003E\u003C\/div\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EProblem Solving\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EAnalytical Thinking\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EBusiness Framing\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EMethodology\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 14\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EWINDOW FUNCTION \u2014 H\u00e0m c\u1eeda s\u1ed5 n\u00e2ng cao\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003EWindow Function cho ph\u00e9p t\u00ednh to\u00e1n tr\u00ean m\u1ed9t \u0022khung\u0022 d\u1eef li\u1ec7u m\u00e0 KH\u00d4NG gom nh\u00f3m (v\u1eabn gi\u1eef nguy\u00ean s\u1ed1 d\u00f2ng). Bao g\u1ed3m: x\u1ebfp h\u1ea1ng (RANK), l\u1ea5y gi\u00e1 tr\u1ecb tr\u01b0\u1edbc\/sau (LEAD\/LAG), gi\u00e1 tr\u1ecb \u0111\u1ea7u ti\u00ean (FIRST_VALUE).\u003C\/p\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003E-- 1\ufe0f\u20e3 PARTITION BY: T\u00ednh % doanh thu m\u1ed7i s\u1ea3n ph\u1ea9m trong danh m\u1ee5c\\nSELECT\\n  category, product_name, revenue,\\n  SUM(revenue) OVER (PARTITION BY category) AS category_total,\\n  ROUND(revenue * 100.0 \/ SUM(revenue) OVER (PARTITION BY category), 1)\\n    AS pct_of_category\\nFROM products;\\n\\n-- 2\ufe0f\u20e3 RANK vs DENSE_RANK vs ROW_NUMBER\\nSELECT\\n  customer_name, revenue,\\n  ROW_NUMBER() OVER (ORDER BY revenue DESC) AS row_num,   -- 1,2,3,4,5\\n  RANK() OVER (ORDER BY revenue DESC) AS rank_val,        -- 1,2,2,4,5\\n  DENSE_RANK() OVER (ORDER BY revenue DESC) AS dense_rank  -- 1,2,2,3,4\\nFROM customers;\\n\\n-- 3\ufe0f\u20e3 LAG \/ LEAD: So s\u00e1nh doanh thu th\u00e1ng n\u00e0y vs th\u00e1ng tr\u01b0\u1edbc\\nSELECT\\n  month,\\n  revenue,\\n  LAG(revenue, 1) OVER (ORDER BY month) AS prev_month,\\n  LEAD(revenue, 1) OVER (ORDER BY month) AS next_month,\\n  revenue - LAG(revenue, 1) OVER (ORDER BY month) AS mom_change\\nFROM monthly_sales;\\n\\n-- 4\ufe0f\u20e3 FIRST_VALUE: L\u1ea5y s\u1ea3n ph\u1ea9m b\u00e1n ch\u1ea1y nh\u1ea5t m\u1ed7i danh m\u1ee5c\\nSELECT DISTINCT\\n  category,\\n  FIRST_VALUE(product_name) OVER (\\n    PARTITION BY category\\n    ORDER BY total_sold DESC\\n  ) AS best_seller\\nFROM product_sales;\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EOVER()\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EPARTITION BY\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ERANK\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EDENSE_RANK\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EROW_NUMBER\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ELAG\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ELEAD\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EFIRST_VALUE\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 17\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EDDL \u0026 DML \u2014 \u0110\u1ecbnh ngh\u0129a \u0026 Thao t\u00e1c d\u1eef li\u1ec7u\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003EDDL (Data Definition Language) qu\u1ea3n l\u00fd c\u1ea5u tr\u00fac b\u1ea3ng: t\u1ea1o, s\u1eeda, x\u00f3a. DML (Data Manipulation Language) thao t\u00e1c v\u1edbi d\u1eef li\u1ec7u b\u00ean trong b\u1ea3ng: th\u00eam, s\u1eeda, x\u00f3a d\u00f2ng.\u003C\/p\u003E\u003Cdiv class=\u0022bg-emerald-50 dark:bg-emerald-900\/10 border-l-4 border-emerald-500 p-3 mb-3 text-sm text-emerald-900 dark:text-emerald-200 rounded-r-lg\u0022\u003E\u003Cp\u003E\u003Cstrong\u003E\u26a0\ufe0f Ph\u00e2n bi\u1ec7t DELETE vs TRUNCATE vs DROP:\u003C\/strong\u003E\u003C\/p\u003E\u003Cul class=\u0022list-disc list-inside mt-1 space-y-1\u0022\u003E\u003Cli\u003E\u003Ccode\u003EDELETE\u003C\/code\u003E: X\u00f3a t\u1eebng d\u00f2ng, c\u00f3 th\u1ec3 d\u00f9ng WHERE, c\u00f3 th\u1ec3 rollback.\u003C\/li\u003E\u003Cli\u003E\u003Ccode\u003ETRUNCATE\u003C\/code\u003E: X\u00f3a to\u00e0n b\u1ed9 d\u1eef li\u1ec7u, nhanh h\u01a1n, KH\u00d4NG rollback \u0111\u01b0\u1ee3c.\u003C\/li\u003E\u003Cli\u003E\u003Ccode\u003EDROP\u003C\/code\u003E: X\u00f3a c\u1ea3 b\u1ea3ng l\u1eabn c\u1ea5u tr\u00fac \u2014 m\u1ea5t ho\u00e0n to\u00e0n!\u003C\/li\u003E\u003C\/ul\u003E\u003C\/div\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003E-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550 DDL: \u0110\u1ecaNH NGH\u0128A C\u1ea4U TR\u00daC \u2550\u2550\u2550\u2550\u2550\u2550\u2550\\n\\n-- T\u1ea1o b\u1ea3ng m\u1edbi\\nCREATE TABLE employees (\\n  id SERIAL PRIMARY KEY,\\n  name VARCHAR(100) NOT NULL,\\n  email VARCHAR(255) UNIQUE,\\n  department VARCHAR(50),\\n  salary NUMERIC(12, 2) DEFAULT 0,\\n  hired_at DATE DEFAULT CURRENT_DATE\\n);\\n\\n-- T\u1ea1o b\u1ea3ng t\u1ea1m (t\u1ef1 x\u00f3a khi \u0111\u00f3ng session)\\nCREATE TEMPORARY TABLE temp_report AS\\nSELECT region, SUM(revenue) AS total\\nFROM orders GROUP BY region;\\n\\n-- T\u1ea1o VIEW (b\u1ea3ng \u1ea3o, lu\u00f4n c\u1eadp nh\u1eadt)\\nCREATE VIEW vw_top_customers AS\\nSELECT customer_name, SUM(revenue) AS lifetime_value\\nFROM orders GROUP BY customer_name\\nORDER BY lifetime_value DESC LIMIT 100;\\n\\n-- S\u1eeda c\u1ea5u tr\u00fac b\u1ea3ng\\nALTER TABLE employees ADD COLUMN phone VARCHAR(20);\\nALTER TABLE employees DROP COLUMN phone;\\n\\n-- X\u00f3a b\u1ea3ng v\u0129nh vi\u1ec5n\\nDROP TABLE IF EXISTS temp_report;\\n\\n-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550 DML: THAO T\u00c1C D\u1eee LI\u1ec6U \u2550\u2550\u2550\u2550\u2550\u2550\u2550\\n\\n-- Th\u00eam d\u1eef li\u1ec7u m\u1edbi\\nINSERT INTO employees (name, email, department, salary)\\nVALUES (\\\u0027Nguy\u1ec5n V\u0103n A\\\u0027, \\\u0027a@company.com\\\u0027, \\\u0027Data\\\u0027, 15000000);\\n\\n-- C\u1eadp nh\u1eadt d\u1eef li\u1ec7u\\nUPDATE employees SET salary = salary * 1.1\\nWHERE department = \\\u0027Data\\\u0027;\\n\\n-- X\u00f3a d\u00f2ng c\u1ee5 th\u1ec3\\nDELETE FROM employees WHERE id = 5;\\n\\n-- TRUNCATE: X\u00f3a TO\u00c0N B\u1ed8 d\u1eef li\u1ec7u (nhanh h\u01a1n DELETE)\\nTRUNCATE TABLE temp_report;\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ECREATE TABLE\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EALTER TABLE\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EVIEW\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EINSERT\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EUPDATE\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EDELETE\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ETRUNCATE\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EDDL\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EDML\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 18\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003EBASIC STATISTICS \u0026 OUTLIER \u2014 Th\u1ed1ng k\u00ea \u0026 X\u1eed l\u00fd ngo\u1ea1i lai\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003E\u00c1p d\u1ee5ng SQL \u0111\u1ec3 th\u1ef1c hi\u1ec7n ph\u00e2n t\u00edch th\u1ed1ng k\u00ea m\u00f4 t\u1ea3, ph\u00e1t hi\u1ec7n ph\u00e2n ph\u1ed1i chu\u1ea9n, t\u00ednh Z-score v\u00e0 t\u00ecm\/x\u1eed l\u00fd gi\u00e1 tr\u1ecb ngo\u1ea1i lai (Outlier) b\u1eb1ng ph\u01b0\u01a1ng ph\u00e1p IQR.\u003C\/p\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003E-- 1\ufe0f\u20e3 Th\u1ed1ng k\u00ea m\u00f4 t\u1ea3 c\u01a1 b\u1ea3n\\nSELECT\\n  COUNT(*) AS n,\\n  ROUND(AVG(revenue), 2) AS mean,\\n  PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY revenue) AS median,\\n  ROUND(STDDEV(revenue), 2) AS std_dev,\\n  MIN(revenue) AS min_val,\\n  MAX(revenue) AS max_val\\nFROM orders;\\n\\n-- 2\ufe0f\u20e3 Z-Score: T\u00ecm gi\u00e1 tr\u1ecb b\u1ea5t th\u01b0\u1eddng (|z| \u003E 3)\\nWITH stats AS (\\n  SELECT AVG(revenue) AS mean, STDDEV(revenue) AS std\\n  FROM orders\\n)\\nSELECT\\n  order_id, revenue,\\n  ROUND((revenue - stats.mean) \/ stats.std, 2) AS z_score\\nFROM orders, stats\\nWHERE ABS((revenue - stats.mean) \/ stats.std) \u003E 3;\\n\\n-- 3\ufe0f\u20e3 IQR Method: T\u00ecm Outlier b\u1eb1ng t\u1ee9 ph\u00e2n v\u1ecb\\nWITH quartiles AS (\\n  SELECT\\n    PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY revenue) AS q1,\\n    PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY revenue) AS q3\\n  FROM orders\\n),\\nbounds AS (\\n  SELECT\\n    q1, q3,\\n    q3 - q1 AS iqr,\\n    q1 - 1.5 * (q3 - q1) AS lower_bound,\\n    q3 + 1.5 * (q3 - q1) AS upper_bound\\n  FROM quartiles\\n)\\nSELECT o.*\\nFROM orders o, bounds b\\nWHERE o.revenue \u003C b.lower_bound\\n   OR o.revenue \u003E b.upper_bound;\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EStatistics\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EZ-Score\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EIQR\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EOutlier Detection\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EPERCENTILE\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ESTDDEV\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 20\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003ECOHORT ANALYSIS \u2014 Ph\u00e2n t\u00edch thu\u1ea7n t\u1eadp b\u1eb1ng SQL\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003ECohort Analysis theo d\u00f5i h\u00e0nh vi c\u1ee7a nh\u00f3m kh\u00e1ch h\u00e0ng theo th\u1eddi gian (v\u00ed d\u1ee5: t\u1ef7 l\u1ec7 quay l\u1ea1i mua h\u00e0ng). K\u1ef9 thu\u1eadt quan tr\u1ecdng \u0111\u1ec3 \u0111o Retention Rate v\u00e0 \u0111\u00e1nh gi\u00e1 s\u1ee9c kh\u1ecfe kinh doanh.\u003C\/p\u003E\u003Cdiv class=\u0022bg-emerald-50 dark:bg-emerald-900\/10 border-l-4 border-emerald-500 p-3 mb-3 text-sm text-emerald-900 dark:text-emerald-200 rounded-r-lg\u0022\u003E\u003Cp\u003E\u003Cstrong\u003E\ud83d\udcca \u0110\u1ecdc k\u1ebft qu\u1ea3 Cohort Chart:\u003C\/strong\u003E\u003C\/p\u003E\u003Cul class=\u0022list-disc list-inside mt-1 space-y-1\u0022\u003E\u003Cli\u003E\u003Cstrong\u003EMonth 0:\u003C\/strong\u003E Lu\u00f4n = 100% (t\u1ea5t c\u1ea3 kh\u00e1ch mua l\u1ea7n \u0111\u1ea7u).\u003C\/li\u003E\u003Cli\u003E\u003Cstrong\u003EMonth 1:\u003C\/strong\u003E % kh\u00e1ch quay l\u1ea1i mua sau 1 th\u00e1ng (Retention).\u003C\/li\u003E\u003Cli\u003EN\u1ebfu retention th\u00e1ng 1 \u0026lt; 20%: S\u1ea3n ph\u1ea9m c\u00f3 v\u1ea5n \u0111\u1ec1 v\u1ec1 ch\u1ea5t l\u01b0\u1ee3ng\/tr\u1ea3i nghi\u1ec7m.\u003C\/li\u003E\u003Cli\u003EN\u1ebfu retention \u1ed5n \u0111\u1ecbnh t\u1eeb th\u00e1ng 3+: \u0110\u00e3 t\u00ecm \u0111\u01b0\u1ee3c nh\u00f3m kh\u00e1ch h\u00e0ng trung th\u00e0nh.\u003C\/li\u003E\u003C\/ul\u003E\u003C\/div\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003E-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550 COHORT ANALYSIS: Retention Rate \u2550\u2550\u2550\u2550\u2550\u2550\u2550\\n\\n-- B\u01b0\u1edbc 1: X\u00e1c \u0111\u1ecbnh th\u00e1ng \u0111\u1ea7u ti\u00ean mua h\u00e0ng (cohort month)\\nWITH first_purchase AS (\\n  SELECT\\n    customer_id,\\n    DATE_TRUNC(\\\u0027month\\\u0027, MIN(order_date)) AS cohort_month\\n  FROM orders\\n  GROUP BY customer_id\\n),\\n\\n-- B\u01b0\u1edbc 2: T\u00ednh s\u1ed1 th\u00e1ng k\u1ec3 t\u1eeb l\u1ea7n mua \u0111\u1ea7u ti\u00ean\\ncohort_data AS (\\n  SELECT\\n    fp.cohort_month,\\n    EXTRACT(YEAR FROM AGE(DATE_TRUNC(\\\u0027month\\\u0027, o.order_date), fp.cohort_month)) * 12\\n    + EXTRACT(MONTH FROM AGE(DATE_TRUNC(\\\u0027month\\\u0027, o.order_date), fp.cohort_month))\\n      AS month_number,\\n    COUNT(DISTINCT o.customer_id) AS active_users\\n  FROM orders o\\n  JOIN first_purchase fp ON o.customer_id = fp.customer_id\\n  GROUP BY 1, 2\\n),\\n\\n-- B\u01b0\u1edbc 3: L\u1ea5y s\u1ed1 user ban \u0111\u1ea7u c\u1ee7a m\u1ed7i cohort\\ncohort_size AS (\\n  SELECT cohort_month, active_users AS initial_users\\n  FROM cohort_data\\n  WHERE month_number = 0\\n)\\n\\n-- B\u01b0\u1edbc 4: T\u00ednh Retention Rate (%)\\nSELECT\\n  cd.cohort_month,\\n  cd.month_number,\\n  cd.active_users,\\n  cs.initial_users,\\n  ROUND(cd.active_users * 100.0 \/ cs.initial_users, 1) AS retention_pct\\nFROM cohort_data cd\\nJOIN cohort_size cs ON cd.cohort_month = cs.cohort_month\\nORDER BY 1, 2;\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ECohort Analysis\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ERetention Rate\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EDATE_TRUNC\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ECustomer Lifecycle\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ECTE\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E","\u003Cdiv\u003E\u003Cdiv class=\u0022flex items-center gap-2 mb-2\u0022\u003E\u003Cspan class=\u0022bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider\u0022\u003EBu\u1ed5i 23\u003C\/span\u003E\u003Cstrong class=\u0022text-base text-gray-900 dark:text-white\u0022\u003ESEGMENTATION ANALYSIS \u2014 Ph\u00e2n kh\u00fac kh\u00e1ch h\u00e0ng b\u1eb1ng SQL\u003C\/strong\u003E\u003C\/div\u003E\u003Cp class=\u0022text-sm text-gray-600 dark:text-gray-400 mb-3\u0022\u003EPh\u00e2n kh\u00fac kh\u00e1ch h\u00e0ng (Customer Segmentation) gi\u00fap doanh nghi\u1ec7p hi\u1ec3u r\u00f5 t\u1eebng nh\u00f3m kh\u00e1ch h\u00e0ng \u0111\u1ec3 c\u00e1 nh\u00e2n h\u00f3a chi\u1ebfn l\u01b0\u1ee3c marketing, t\u1ed1i \u01b0u ng\u00e2n s\u00e1ch v\u00e0 t\u0103ng LTV.\u003C\/p\u003E\u003Cdiv class=\u0022bg-emerald-50 dark:bg-emerald-900\/10 border-l-4 border-emerald-500 p-3 mb-3 text-sm text-emerald-900 dark:text-emerald-200 rounded-r-lg\u0022\u003E\u003Cp\u003E\u003Cstrong\u003E\ud83c\udfaf \u1ee8ng d\u1ee5ng RFM trong th\u1ef1c t\u1ebf:\u003C\/strong\u003E\u003C\/p\u003E\u003Cul class=\u0022list-disc list-inside mt-1 space-y-1\u0022\u003E\u003Cli\u003E\u003Cstrong\u003EChampions (R\u2191F\u2191M\u2191):\u003C\/strong\u003E G\u1eedi ch\u01b0\u01a1ng tr\u00ecnh gi\u1edbi thi\u1ec7u b\u1ea1n b\u00e8, upsell s\u1ea3n ph\u1ea9m cao c\u1ea5p.\u003C\/li\u003E\u003Cli\u003E\u003Cstrong\u003EAt Risk (R\u2193F\u2191):\u003C\/strong\u003E G\u1eedi email win-back, voucher k\u00edch ho\u1ea1t l\u1ea1i.\u003C\/li\u003E\u003Cli\u003E\u003Cstrong\u003ENew Customers (R\u2191F\u2193):\u003C\/strong\u003E Nurture b\u1eb1ng email onboarding, h\u01b0\u1edbng d\u1eabn s\u1eed d\u1ee5ng.\u003C\/li\u003E\u003Cli\u003E\u003Cstrong\u003EHibernating (R\u2193F\u2193M\u2193):\u003C\/strong\u003E \u0110\u00e1nh gi\u00e1 chi ph\u00ed gi\u1eef ch\u00e2n vs. b\u1ecf qua.\u003C\/li\u003E\u003C\/ul\u003E\u003C\/div\u003E\u003Cpre class=\u0022bg-gray-100 dark:bg-navy-900 border border-gray-200 dark:border-navy-700 p-4 rounded-xl text-[13px] text-navy-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap font-mono leading-relaxed mb-3\u0022\u003E\u003Ccode\u003E-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550 RFM SEGMENTATION (Recency - Frequency - Monetary) \u2550\u2550\u2550\u2550\u2550\u2550\u2550\\n\\n-- B\u01b0\u1edbc 1: T\u00ednh R, F, M cho m\u1ed7i kh\u00e1ch h\u00e0ng\\nWITH rfm_raw AS (\\n  SELECT\\n    customer_id,\\n    -- Recency: S\u1ed1 ng\u00e0y t\u1eeb l\u1ea7n mua cu\u1ed1i \u0111\u1ebfn h\u00f4m nay\\n    EXTRACT(DAY FROM NOW() - MAX(order_date)) AS recency,\\n    -- Frequency: T\u1ed5ng s\u1ed1 \u0111\u01a1n h\u00e0ng\\n    COUNT(DISTINCT order_id) AS frequency,\\n    -- Monetary: T\u1ed5ng doanh thu\\n    SUM(revenue) AS monetary\\n  FROM orders\\n  GROUP BY customer_id\\n),\\n\\n-- B\u01b0\u1edbc 2: Ch\u1ea5m \u0111i\u1ec3m 1-5 b\u1eb1ng NTILE (chia \u0111\u1ec1u th\u00e0nh 5 nh\u00f3m)\\nrfm_scores AS (\\n  SELECT\\n    customer_id, recency, frequency, monetary,\\n    NTILE(5) OVER (ORDER BY recency DESC) AS r_score,  -- G\u1ea7n nh\u1ea5t = 5\\n    NTILE(5) OVER (ORDER BY frequency ASC) AS f_score,  -- Nhi\u1ec1u nh\u1ea5t = 5\\n    NTILE(5) OVER (ORDER BY monetary ASC) AS m_score    -- Chi nhi\u1ec1u = 5\\n  FROM rfm_raw\\n)\\n\\n-- B\u01b0\u1edbc 3: G\u00e1n nh\u00e3n ph\u00e2n kh\u00fac\\nSELECT\\n  customer_id, r_score, f_score, m_score,\\n  CONCAT(r_score, f_score, m_score) AS rfm_cell,\\n  CASE\\n    WHEN r_score \u003E= 4 AND f_score \u003E= 4 AND m_score \u003E= 4 THEN \\\u0027\ud83d\udc8e Champions\\\u0027\\n    WHEN r_score \u003E= 4 AND f_score \u003E= 1 AND f_score \u003C= 2 THEN \\\u0027\ud83c\udd95 New Customers\\\u0027\\n    WHEN r_score \u003E= 3 AND f_score \u003E= 3 THEN \\\u0027\u2b50 Loyal\\\u0027\\n    WHEN r_score \u003C= 2 AND f_score \u003E= 3 THEN \\\u0027\ud83d\ude34 At Risk\\\u0027\\n    WHEN r_score \u003C= 2 AND f_score \u003C= 2 THEN \\\u0027\ud83d\udca4 Hibernating\\\u0027\\n    ELSE \\\u0027\ud83d\udcca Others\\\u0027\\n  END AS segment\\nFROM rfm_scores\\nORDER BY monetary DESC;\u003C\/code\u003E\u003C\/pre\u003E\u003Cdiv class=\u0022flex flex-wrap gap-2\u0022\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ERFM\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ESegmentation\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ENTILE\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003ECustomer Analytics\u003C\/span\u003E\u003Cspan class=\u0022bg-blue-100 text-blue-700 dark:bg-blue-900\/30 dark:text-blue-300 text-[11px] px-2 py-1 rounded-md font-medium\u0022\u003EMarketing Strategy\u003C\/span\u003E\u003C\/div\u003E\u003C\/div\u003E"]},{"name":"Data Cleaning \u0026 EDA","category":"X\u1eed l\u00fd d\u1eef li\u1ec7u","level":82,"icon":"\ud83e\uddf9","description":"Data Validation, Missing Value Imputation, IQR, Exploratory Analysis","knowledge":["Quy tr\u00ecnh Exploratory Data Analysis (EDA) chu\u1ea9n m\u1ef1c: ki\u1ec3m tra ph\u00e2n ph\u1ed1i, t\u01b0\u01a1ng quan (correlation matrix).","X\u1eed l\u00fd Outlier: \u00c1p d\u1ee5ng ph\u01b0\u01a1ng ph\u00e1p IQR ho\u1eb7c Z-score tu\u1ef3 v\u00e0o ph\u00e2n ph\u1ed1i d\u1eef li\u1ec7u (normal\/skewed).","Data Validation: Ki\u1ec3m tra t\u00ednh nh\u1ea5t qu\u00e1n, \u0111\u1ecbnh d\u1ea1ng ng\u00e0y th\u00e1ng, chu\u1ea9n ho\u00e1 text (lo\u1ea1i b\u1ecf kho\u1ea3ng tr\u1eafng, regex).","Feature Engineering c\u01a1 b\u1ea3n: T\u1ea1o bi\u1ebfn m\u1edbi t\u1eeb bi\u1ebfn c\u0169 (vd: t\u00ednh kho\u1ea3ng c\u00e1ch th\u1eddi gian, ph\u00e2n nh\u00f3m \u0111\u1ed9 tu\u1ed5i)."]},{"name":"Machine Learning","category":"AI \u0026 ML","level":65,"icon":"\ud83e\udd16","description":"NLP, Text Vectorization, Classification, Logistic Regression, SVM","knowledge":["Hi\u1ec3u r\u00f5 quy tr\u00ecnh train\/test split v\u00e0 Cross-Validation \u0111\u1ec3 tr\u00e1nh Overfitting.","NLP (X\u1eed l\u00fd ng\u00f4n ng\u1eef t\u1ef1 nhi\u00ean): Text normalization, Tokenization, d\u00f9ng TF-IDF v\u00e0 CountVectorizer.","Ph\u00e2n lo\u1ea1i (Classification): \u0110\u00e1nh gi\u00e1 m\u00f4 h\u00ecnh b\u1eb1ng Confusion Matrix, Precision, Recall, F1-score v\u00e0 ROC-AUC.","Kinh nghi\u1ec7m tri\u1ec3n khai Logistic Regression, Naive Bayes v\u00e0 SVM b\u1eb1ng th\u01b0 vi\u1ec7n Scikit-Learn."]},{"name":"GenAI Tools","category":"AI \u0026 ML","level":75,"icon":"\u2728","description":"ChatGPT, Claude, Gemini \u2014 workflow optimization \u0026 research","knowledge":["Prompt Engineering: Thi\u1ebft k\u1ebf c\u00e2u l\u1ec7nh r\u00f5 r\u00e0ng \u0111\u1ec3 AI sinh code Python\/SQL ch\u00ednh x\u00e1c.","D\u00f9ng AI \u0111\u1ec3 debug code: Nhanh ch\u00f3ng t\u00ecm ra l\u1ed7i logic ho\u1eb7c c\u00fa ph\u00e1p trong c\u00e1c \u0111o\u1ea1n script d\u00e0i.","Nghi\u00ean c\u1ee9u v\u00e0 h\u1ecdc t\u1eadp: S\u1eed d\u1ee5ng AI \u0111\u1ec3 gi\u1ea3i th\u00edch c\u00e1c thu\u1eadt to\u00e1n kh\u00f3 ho\u1eb7c t\u00f3m t\u1eaft t\u00e0i li\u1ec7u ng\u00e0nh."]},{"name":"MS Office","category":"C\u00f4ng c\u1ee5","level":85,"icon":"\ud83d\udcd7","description":"MOS Certified, Excel n\u00e2ng cao, Word, PowerPoint","knowledge":["Excel: S\u1eed d\u1ee5ng VLOOKUP\/INDEX-MATCH, Pivot Table v\u00e0 Power Query \u0111\u1ec3 t\u1ed5ng h\u1ee3p d\u1eef li\u1ec7u.","Excel: D\u00f9ng Conditional Formatting v\u00e0 Data Validation \u0111\u1ec3 t\u1ea1o Dashboard b\u00e1o c\u00e1o t\u1ef1 \u0111\u1ed9ng.","PowerPoint: K\u1ef9 n\u0103ng k\u1ec3 chuy\u1ec7n qua d\u1eef li\u1ec7u (Data Storytelling), thi\u1ebft k\u1ebf slide b\u00e1o c\u00e1o r\u00e0nh m\u1ea1ch.","Ch\u1ee9ng ch\u1ec9 MOS minh ch\u1ee9ng cho kh\u1ea3 n\u0103ng thao t\u00e1c c\u00f4ng vi\u1ec7c h\u00e0nh ch\u00ednh chu\u1ea9n x\u00e1c v\u00e0 nhanh ch\u00f3ng."]},{"name":"Git\/GitHub","category":"C\u00f4ng c\u1ee5","level":70,"icon":"\ud83d\udd00","description":"Version control, collaboration, repository management","knowledge":["Qu\u1ea3n l\u00fd m\u00e3 ngu\u1ed3n c\u01a1 b\u1ea3n: init, add, commit, push, pull.","S\u1eed d\u1ee5ng Branching (nh\u00e1nh) \u0111\u1ec3 ph\u00e1t tri\u1ec3n t\u00ednh n\u0103ng m\u1edbi m\u00e0 kh\u00f4ng \u1ea3nh h\u01b0\u1edfng code ch\u00ednh.","Kinh nghi\u1ec7m \u0111\u1ecdc hi\u1ec3u log l\u1ed7i v\u00e0 gi\u1ea3i quy\u1ebft Conflict c\u01a1 b\u1ea3n khi g\u1ed9p code.","Vi\u1ebft file README.md r\u00f5 r\u00e0ng, chuy\u00ean nghi\u1ec7p cho c\u00e1c project Data tr\u00ean GitHub."]},{"name":"Web Scraping","category":"X\u1eed l\u00fd d\u1eef li\u1ec7u","level":60,"icon":"\ud83d\udd77\ufe0f","description":"Selenium, BeautifulSoup, thu th\u1eadp d\u1eef li\u1ec7u t\u1ef1 \u0111\u1ed9ng","knowledge":["BeautifulSoup: Ph\u00e2n t\u00edch c\u00fa ph\u00e1p HTML t\u0129nh, tr\u00edch xu\u1ea5t d\u1eef li\u1ec7u qua CSS Selectors.","Selenium: X\u1eed l\u00fd c\u00e1c trang web \u0111\u1ed9ng (JavaScript rendered), t\u1ef1 \u0111\u1ed9ng ho\u00e1 c\u00e1c thao t\u00e1c click, \u0111i\u1ec1n form.","Hi\u1ec3u bi\u1ebft c\u01a1 b\u1ea3n v\u1ec1 c\u1ea5u tr\u00fac HTML\/DOM \u0111\u1ec3 x\u00e1c \u0111\u1ecbnh \u0111\u00fang tag ch\u1ee9a d\u1eef li\u1ec7u.","T\u00f4n tr\u1ecdng robots.txt v\u00e0 \u00e1p d\u1ee5ng k\u1ef9 thu\u1eadt rate-limiting (time.sleep) \u0111\u1ec3 kh\u00f4ng l\u00e0m qu\u00e1 t\u1ea3i server."]}];
+
+  
+  function openSkillModal(skillName) {
+    const modal = document.getElementById('skill-modal');
+    const skill = skillsData.find(s => s.name === skillName);
+    if (!skill) return;
+    
+    // Header
+    document.getElementById('modal-skill-icon').textContent = skill.icon;
+    document.getElementById('modal-skill-name').textContent = skill.name;
+    document.getElementById('modal-skill-desc').textContent = skill.description;
+    
+    // Render Knowledge List
+    const knowledgeContainer = document.getElementById('modal-knowledge-list');
+    if (skill.knowledge && skill.knowledge.length > 0) {
+      knowledgeContainer.innerHTML = skill.knowledge.map(note => `
+        <li class="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-navy-800 border border-gray-100 dark:border-navy-700">
+          <div class="mt-0.5 min-w-4 text-accent dark:text-accent-light">•</div>
+          <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">${note}</p>
+        </li>
+      `).join('');
+    } else {
+      knowledgeContainer.innerHTML = `<p class="text-sm text-gray-500 italic">Đang cập nhật kiến thức...</p>`;
+    }
+    
+
+    
+    // Mở modal
+    modal.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      modal.querySelector('.modal-content').classList.add('modal-open');
+      modal.querySelector('#skill-modal-overlay').classList.add('modal-overlay-open');
+    });
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeSkillModal() {
+    const modal = document.getElementById('skill-modal');
+    modal.querySelector('.modal-content').classList.remove('modal-open');
+    modal.querySelector('#skill-modal-overlay').classList.remove('modal-overlay-open');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }, 250);
+  }
+  
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeSkillModal();
+  });
+</script>
+
+
+<section id="roadmap" class="py-20 bg-gray-50/50 dark:bg-navy-800/30 border-t border-gray-100 dark:border-navy-800">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        <span class="text-gray-900 dark:text-white">Lộ trình học</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Data Analyst</span>
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Bản đồ 6 tháng từ con số 0 đến ứng viên nổi bật. Lộ trình được thiết kế bài bản theo mô hình Agile (Epic - Sprint - Backlog).
+      </p>
+    </div>
+
+    <div class="relative border-l-2 border-accent/20 dark:border-accent/10 ml-4 md:ml-6 space-y-12 pb-8">
+              <div class="relative pl-8 md:pl-12">
+          <!-- Timeline dot -->
+          <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-white dark:border-navy-900 bg-accent z-10 shadow-sm"></div>
+          
+          <!-- Epic Header -->
+          <div class="mb-6">
+            <div class="flex flex-wrap items-center gap-3 mb-2">
+              <span class="bg-accent/10 text-accent text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                Epic 01
+              </span>
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Sprint 1-3</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Data Analytics Skill</h3>
+            <p class="text-gray-600 dark:text-gray-300">Xây nền tảng xử lý dữ liệu bằng công cụ ai cũng có sẵn - Excel - trước khi động đến code.</p>
+          </div>
+
+          <!-- Sprints Accordion -->
+          <div class="space-y-3">
+                          <div class="roadmap-accordion-item bg-white dark:bg-navy-800 border border-gray-200 dark:border-navy-700 rounded-xl overflow-hidden shadow-sm transition-all duration-200 hover:shadow-md">
+                <!-- Accordion Header -->
+                <button class="roadmap-accordion-btn w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <h4 class="font-bold text-gray-900 dark:text-white">Sprint 1 - Excel cơ bản</h4>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-navy-900 dark:text-gray-300">
+                      2 tuần
+                    </span>
+                  </div>
+                  <div class="flex-shrink-0 text-gray-400 dark:text-gray-500 ml-4">
+                    <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                
+                <!-- Accordion Content -->
+                <div class="roadmap-accordion-content hidden px-5 pb-5 pt-1 border-t border-gray-100 dark:border-navy-700/50">
+                  <div class="mb-4 p-3 bg-accent/5 dark:bg-accent/10 border-l-4 border-accent rounded-r-lg">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                      <strong class="text-accent dark:text-accent-light">Mục tiêu (DoD):</strong> Xử lý được 1 bộ dữ liệu thô thành bảng sạch, dùng Pivot Table tổng hợp theo nhiều chiều
+                    </p>
+                  </div>
+                  
+                  <div class="space-y-4">
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 1 - Hàm &amp; xử lý dữ liệu</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Học hàm tra cứu: VLOOKUP, XLOOKUP, INDEX/MATCH</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Học hàm điều kiện: IF, IFS, SUMIFS, COUNTIFS</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Học hàm xử lý text: TRIM, LEFT/RIGHT/MID, Text to Columns</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Thực hành làm sạch 1 bộ dữ liệu có lỗi (trùng dòng, sai định dạng)</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 2 - Pivot Table &amp; tổng hợp</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Tạo Pivot Table từ dữ liệu thô</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Pivot Chart, Slicer, Timeline filter</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Bài tập: tổng hợp doanh thu theo tháng/khu vực/sản phẩm</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Tự đánh giá: làm lại 1 bài Pivot không xem hướng dẫn, đo thời gian</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                      </div>
+                </div>
+              </div>
+                          <div class="roadmap-accordion-item bg-white dark:bg-navy-800 border border-gray-200 dark:border-navy-700 rounded-xl overflow-hidden shadow-sm transition-all duration-200 hover:shadow-md">
+                <!-- Accordion Header -->
+                <button class="roadmap-accordion-btn w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <h4 class="font-bold text-gray-900 dark:text-white">Sprint 2 - End-to-end project Excel</h4>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-navy-900 dark:text-gray-300">
+                      2 tuần
+                    </span>
+                  </div>
+                  <div class="flex-shrink-0 text-gray-400 dark:text-gray-500 ml-4">
+                    <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                
+                <!-- Accordion Content -->
+                <div class="roadmap-accordion-content hidden px-5 pb-5 pt-1 border-t border-gray-100 dark:border-navy-700/50">
+                  <div class="mb-4 p-3 bg-accent/5 dark:bg-accent/10 border-l-4 border-accent rounded-r-lg">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                      <strong class="text-accent dark:text-accent-light">Mục tiêu (DoD):</strong> Có 1 dashboard/report hoàn chỉnh trả lời được ít nhất 3 câu hỏi kinh doanh
+                    </p>
+                  </div>
+                  
+                  <div class="space-y-4">
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Backlog Thực thi</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Chọn 1 bộ dữ liệu thật (sales, HR attrition, marketing campaign)</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Viết 3-5 câu hỏi kinh doanh cụ thể cần trả lời</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Làm sạch và cấu trúc lại dữ liệu thô</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Dùng Pivot Table trả lời từng câu hỏi</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Thiết kế 1 dashboard (biểu đồ + bảng + slicer)</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Viết insight summary 3-5 gạch đầu dòng</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Lưu file để dùng lại cho portfolio</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                      </div>
+                </div>
+              </div>
+                          <div class="roadmap-accordion-item bg-white dark:bg-navy-800 border border-gray-200 dark:border-navy-700 rounded-xl overflow-hidden shadow-sm transition-all duration-200 hover:shadow-md">
+                <!-- Accordion Header -->
+                <button class="roadmap-accordion-btn w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <h4 class="font-bold text-gray-900 dark:text-white">Sprint 3 - Apply AI</h4>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-navy-900 dark:text-gray-300">
+                      1-2 tuần
+                    </span>
+                  </div>
+                  <div class="flex-shrink-0 text-gray-400 dark:text-gray-500 ml-4">
+                    <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                
+                <!-- Accordion Content -->
+                <div class="roadmap-accordion-content hidden px-5 pb-5 pt-1 border-t border-gray-100 dark:border-navy-700/50">
+                  <div class="mb-4 p-3 bg-accent/5 dark:bg-accent/10 border-l-4 border-accent rounded-r-lg">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                      <strong class="text-accent dark:text-accent-light">Mục tiêu (DoD):</strong> Tự động hóa được ít nhất 1 tác vụ lặp lại bằng AI, giải thích rõ AI đã làm gì
+                    </p>
+                  </div>
+                  
+                  <div class="space-y-4">
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Backlog Ứng dụng AI</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Học viết prompt hiệu quả để nhờ AI viết công thức phức tạp</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Thử Copilot for Excel hoặc ChatGPT để phân tích nhanh 1 bảng dữ liệu</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Bài tập: so sánh insight AI tóm tắt với insight tự làm ở Sprint 2</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Đúc kết 3 việc nên và 3 việc không nên dùng AI khi làm data</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Sprint Review: Demo dashboard Excel cho mentor/cộng đồng, giải thích logic xử lý dữ liệu và insight rút ra.</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Retrospective: Việc học nào hiệu quả nhất? Chỗ nào mất nhiều thời gian hơn dự kiến? Có cần điều chỉnh nhịp học cho sprint sau không?</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                      </div>
+                </div>
+              </div>
+                      </div>
+        </div>
+              <div class="relative pl-8 md:pl-12">
+          <!-- Timeline dot -->
+          <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-white dark:border-navy-900 bg-accent z-10 shadow-sm"></div>
+          
+          <!-- Epic Header -->
+          <div class="mb-6">
+            <div class="flex flex-wrap items-center gap-3 mb-2">
+              <span class="bg-accent/10 text-accent text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                Epic 02
+              </span>
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Sprint 1-3</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Core Technique Skill</h3>
+            <p class="text-gray-600 dark:text-gray-300">Bộ kỹ năng lõi mọi tin tuyển dụng DA đều yêu cầu: truy vấn dữ liệu và trực quan hóa.</p>
+          </div>
+
+          <!-- Sprints Accordion -->
+          <div class="space-y-3">
+                          <div class="roadmap-accordion-item bg-white dark:bg-navy-800 border border-gray-200 dark:border-navy-700 rounded-xl overflow-hidden shadow-sm transition-all duration-200 hover:shadow-md">
+                <!-- Accordion Header -->
+                <button class="roadmap-accordion-btn w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <h4 class="font-bold text-gray-900 dark:text-white">Sprint 1 - SQL</h4>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-navy-900 dark:text-gray-300">
+                      2-3 tuần
+                    </span>
+                  </div>
+                  <div class="flex-shrink-0 text-gray-400 dark:text-gray-500 ml-4">
+                    <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                
+                <!-- Accordion Content -->
+                <div class="roadmap-accordion-content hidden px-5 pb-5 pt-1 border-t border-gray-100 dark:border-navy-700/50">
+                  <div class="mb-4 p-3 bg-accent/5 dark:bg-accent/10 border-l-4 border-accent rounded-r-lg">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                      <strong class="text-accent dark:text-accent-light">Mục tiêu (DoD):</strong> Viết được query JOIN từ 3 bảng trở lên, dùng được window function để tính running total/rank
+                    </p>
+                  </div>
+                  
+                  <div class="space-y-4">
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 1 - Truy vấn cơ bản</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>SELECT, WHERE, ORDER BY, LIMIT</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>GROUP BY, HAVING, hàm aggregate (SUM, COUNT, AVG)</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Luyện tập trên SQLZoo / Mode Analytics / LeetCode Database</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 2 - JOIN &amp; subquery</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>INNER JOIN, LEFT JOIN - hiểu sự khác biệt</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>JOIN từ 3 bảng trở lên</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Subquery (nested SELECT)</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Viết 5 query JOIN nhiều bảng trên bộ dữ liệu mẫu (Northwind, e-commerce Kaggle)</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 3 - Window function</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>ROW_NUMBER, RANK, DENSE_RANK</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Running total, moving average bằng OVER/PARTITION BY</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Tính running total doanh thu theo tháng, rank top khách hàng theo khu vực</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                      </div>
+                </div>
+              </div>
+                          <div class="roadmap-accordion-item bg-white dark:bg-navy-800 border border-gray-200 dark:border-navy-700 rounded-xl overflow-hidden shadow-sm transition-all duration-200 hover:shadow-md">
+                <!-- Accordion Header -->
+                <button class="roadmap-accordion-btn w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <h4 class="font-bold text-gray-900 dark:text-white">Sprint 2 - Power BI</h4>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-navy-900 dark:text-gray-300">
+                      2 tuần
+                    </span>
+                  </div>
+                  <div class="flex-shrink-0 text-gray-400 dark:text-gray-500 ml-4">
+                    <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                
+                <!-- Accordion Content -->
+                <div class="roadmap-accordion-content hidden px-5 pb-5 pt-1 border-t border-gray-100 dark:border-navy-700/50">
+                  <div class="mb-4 p-3 bg-accent/5 dark:bg-accent/10 border-l-4 border-accent rounded-r-lg">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                      <strong class="text-accent dark:text-accent-light">Mục tiêu (DoD):</strong> Xuất bản được 1 dashboard tương tác có filter/slicer, dùng ít nhất 2 loại visual
+                    </p>
+                  </div>
+                  
+                  <div class="space-y-4">
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 1 - Connect &amp; xử lý dữ liệu</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Import dữ liệu từ Excel/CSV/database</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Power Query: làm sạch, merge, transform dữ liệu</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Tạo relationship giữa các bảng</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 2 - Visual &amp; DAX</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Các loại visual: bar/line chart, card, table, matrix</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>DAX cơ bản: CALCULATE, SUM, measure vs column</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Thêm slicer, filter tương tác</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Dựng dashboard có ít nhất 4 visual khác loại + 1 slicer</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                      </div>
+                </div>
+              </div>
+                          <div class="roadmap-accordion-item bg-white dark:bg-navy-800 border border-gray-200 dark:border-navy-700 rounded-xl overflow-hidden shadow-sm transition-all duration-200 hover:shadow-md">
+                <!-- Accordion Header -->
+                <button class="roadmap-accordion-btn w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <h4 class="font-bold text-gray-900 dark:text-white">Sprint 3 - End-to-end project</h4>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-navy-900 dark:text-gray-300">
+                      2 tuần
+                    </span>
+                  </div>
+                  <div class="flex-shrink-0 text-gray-400 dark:text-gray-500 ml-4">
+                    <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                
+                <!-- Accordion Content -->
+                <div class="roadmap-accordion-content hidden px-5 pb-5 pt-1 border-t border-gray-100 dark:border-navy-700/50">
+                  <div class="mb-4 p-3 bg-accent/5 dark:bg-accent/10 border-l-4 border-accent rounded-r-lg">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                      <strong class="text-accent dark:text-accent-light">Mục tiêu (DoD):</strong> Có 1 project khép kín từ SQL → dashboard → insight, tự tin giải thích lại toàn bộ SQL đã dùng
+                    </p>
+                  </div>
+                  
+                  <div class="space-y-4">
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Backlog Thực thi</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Chọn bài toán kinh doanh (churn khách hàng, hiệu suất bán hàng theo khu vực)</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Viết SQL truy xuất và xử lý dữ liệu cần thiết</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Import kết quả vào Power BI, dựng dashboard hoàn chỉnh</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Viết report/insight đi kèm dashboard</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Ôn Sprint 1: tự giải lại 3 query JOIN/window function không xem bài cũ</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Đóng gói project (SQL script + file Power BI + insight doc)</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Sprint Review: Demo project (SQL query + dashboard) - trình bày như đang present cho stakeholder.</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Retrospective: SQL hay Power BI phần nào còn yếu? Có cần quay lại ôn Sprint 1 trước khi qua Epic 3 không?</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                      </div>
+                </div>
+              </div>
+                      </div>
+        </div>
+              <div class="relative pl-8 md:pl-12">
+          <!-- Timeline dot -->
+          <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-white dark:border-navy-900 bg-accent z-10 shadow-sm"></div>
+          
+          <!-- Epic Header -->
+          <div class="mb-6">
+            <div class="flex flex-wrap items-center gap-3 mb-2">
+              <span class="bg-accent/10 text-accent text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                Epic 03
+              </span>
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Sprint 1-2</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Stand Out - Go Beyond The Basics</h3>
+            <p class="text-gray-600 dark:text-gray-300">Phần tạo khác biệt so với người chỉ biết SQL/BI cơ bản.</p>
+          </div>
+
+          <!-- Sprints Accordion -->
+          <div class="space-y-3">
+                          <div class="roadmap-accordion-item bg-white dark:bg-navy-800 border border-gray-200 dark:border-navy-700 rounded-xl overflow-hidden shadow-sm transition-all duration-200 hover:shadow-md">
+                <!-- Accordion Header -->
+                <button class="roadmap-accordion-btn w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <h4 class="font-bold text-gray-900 dark:text-white">Sprint 1 - DWH &amp; SQL nâng cao</h4>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-navy-900 dark:text-gray-300">
+                      2 tuần
+                    </span>
+                  </div>
+                  <div class="flex-shrink-0 text-gray-400 dark:text-gray-500 ml-4">
+                    <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                
+                <!-- Accordion Content -->
+                <div class="roadmap-accordion-content hidden px-5 pb-5 pt-1 border-t border-gray-100 dark:border-navy-700/50">
+                  <div class="mb-4 p-3 bg-accent/5 dark:bg-accent/10 border-l-4 border-accent rounded-r-lg">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                      <strong class="text-accent dark:text-accent-light">Mục tiêu (DoD):</strong> Thiết kế được 1 schema đơn giản (fact + dimension), viết definition rõ ràng cho ít nhất 2 metric
+                    </p>
+                  </div>
+                  
+                  <div class="space-y-4">
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 1 - Data modeling</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Khái niệm fact table, dimension table</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Star schema vs snowflake schema</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Vẽ 1 star schema đơn giản cho bài toán &#039;phân tích đơn hàng e-commerce&#039;</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 2 - Metric design</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Cách viết metric definition rõ ràng (công thức, khung thời gian, điều kiện loại trừ)</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Viết definition chuẩn cho 3 metric (active user, conversion rate, churn rate)</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Đối chiếu với cách 1-2 công ty thật định nghĩa (tìm case study/blog)</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                      </div>
+                </div>
+              </div>
+                          <div class="roadmap-accordion-item bg-white dark:bg-navy-800 border border-gray-200 dark:border-navy-700 rounded-xl overflow-hidden shadow-sm transition-all duration-200 hover:shadow-md">
+                <!-- Accordion Header -->
+                <button class="roadmap-accordion-btn w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <h4 class="font-bold text-gray-900 dark:text-white">Sprint 2 - Python</h4>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-navy-900 dark:text-gray-300">
+                      2-3 tuần
+                    </span>
+                  </div>
+                  <div class="flex-shrink-0 text-gray-400 dark:text-gray-500 ml-4">
+                    <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                
+                <!-- Accordion Content -->
+                <div class="roadmap-accordion-content hidden px-5 pb-5 pt-1 border-t border-gray-100 dark:border-navy-700/50">
+                  <div class="mb-4 p-3 bg-accent/5 dark:bg-accent/10 border-l-4 border-accent rounded-r-lg">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                      <strong class="text-accent dark:text-accent-light">Mục tiêu (DoD):</strong> Làm được 1 notebook EDA hoàn chỉnh, kết thúc bằng 3-5 insight bằng chữ
+                    </p>
+                  </div>
+                  
+                  <div class="space-y-4">
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 1 - Python cơ bản</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Biến, kiểu dữ liệu, list/dict, vòng lặp, hàm cơ bản</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Làm quen Jupyter Notebook / Google Colab</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 2 - Pandas</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Đọc dữ liệu (read_csv, read_excel)</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Lọc, group, merge dữ liệu bằng pandas</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Xử lý missing value, duplicate</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 3 - EDA</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Thống kê mô tả cơ bản (mean, median, std, distribution)</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Trực quan hóa bằng matplotlib/seaborn</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Làm 1 notebook EDA hoàn chỉnh trên bộ dữ liệu mới</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Sprint Review: Demo schema thiết kế + notebook EDA, giải thích vì sao chọn cách tổ chức dữ liệu như vậy.</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Retrospective: Phần data modeling có trừu tượng quá không? Python học có bị vấp vì thiếu nền tảng lập trình không?</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                      </div>
+                </div>
+              </div>
+                      </div>
+        </div>
+              <div class="relative pl-8 md:pl-12">
+          <!-- Timeline dot -->
+          <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-white dark:border-navy-900 bg-accent z-10 shadow-sm"></div>
+          
+          <!-- Epic Header -->
+          <div class="mb-6">
+            <div class="flex flex-wrap items-center gap-3 mb-2">
+              <span class="bg-accent/10 text-accent text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                Epic 04
+              </span>
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Sprint cuối</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Prepare &amp; Get Hired</h3>
+            <p class="text-gray-600 dark:text-gray-300">Đóng gói toàn bộ sản phẩm từ Epic 1-3 thành hồ sơ ứng tuyển thuyết phục.</p>
+          </div>
+
+          <!-- Sprints Accordion -->
+          <div class="space-y-3">
+                          <div class="roadmap-accordion-item bg-white dark:bg-navy-800 border border-gray-200 dark:border-navy-700 rounded-xl overflow-hidden shadow-sm transition-all duration-200 hover:shadow-md">
+                <!-- Accordion Header -->
+                <button class="roadmap-accordion-btn w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <h4 class="font-bold text-gray-900 dark:text-white">Sprint cuối - Portfolio, CV &amp; phỏng vấn</h4>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-navy-900 dark:text-gray-300">
+                      2-3 tuần
+                    </span>
+                  </div>
+                  <div class="flex-shrink-0 text-gray-400 dark:text-gray-500 ml-4">
+                    <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                
+                <!-- Accordion Content -->
+                <div class="roadmap-accordion-content hidden px-5 pb-5 pt-1 border-t border-gray-100 dark:border-navy-700/50">
+                  <div class="mb-4 p-3 bg-accent/5 dark:bg-accent/10 border-l-4 border-accent rounded-r-lg">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                      <strong class="text-accent dark:text-accent-light">Mục tiêu (DoD):</strong> Portfolio có 3 project với case study rõ ràng; CV/LinkedIn sẵn sàng nộp đơn; trả lời tự tin 10 câu hỏi phỏng vấn DA phổ biến
+                    </p>
+                  </div>
+                  
+                  <div class="space-y-4">
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 1 - Portfolio</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Chọn 3 project tiêu biểu nhất (1 từ Epic 1, 1-2 từ Epic 2-3)</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Viết case study: vấn đề → cách tiếp cận → kết quả</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Đăng portfolio lên GitHub (SQL/Python) hoặc Notion</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 2 - CV &amp; LinkedIn</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Viết lại CV theo hướng định lượng kết quả</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Rà soát CV theo checklist ATS</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Cập nhật LinkedIn: headline, summary, project nổi bật</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Kết nối 5-10 người trong ngành Data</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                          <div>
+                        <h5 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Tuần 3 - Mock interview</h5>
+                        <ul class="space-y-1.5 ml-2">
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Luyện 10 câu hỏi SQL live coding phổ biến</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Luyện 5 case study kinh doanh dạng &#039;cho dữ liệu, đưa insight&#039;</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Mock interview thật với mentor/bạn bè, xin feedback cụ thể</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Rà lại portfolio + CV lần cuối trước khi nộp đơn</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Sprint Review: Nhờ mentor/bạn cùng ngành/cộng đồng review lại CV + portfolio, xin feedback thật.</span>
+                            </li>
+                                                      <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                              <span class="mr-2 mt-1.5 w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0"></span>
+                              <span>Retrospective: Nhìn lại toàn bộ 6 tháng - Epic nào tốn nhiều thời gian nhất, kỹ năng nào cần tiếp tục trau dồi.</span>
+                            </li>
+                                                  </ul>
+                      </div>
+                                      </div>
+                </div>
+              </div>
+                      </div>
+        </div>
+          </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.roadmap-accordion-btn');
+    
+    accordions.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const icon = this.querySelector('.accordion-icon');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle current accordion
+        if (isExpanded) {
+          this.setAttribute('aria-expanded', 'false');
+          content.classList.add('hidden');
+          icon.classList.remove('rotate-180');
+        } else {
+          this.setAttribute('aria-expanded', 'true');
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>
+
+
+<section id="projects" class="py-20 bg-gray-50/50 dark:bg-navy-900/30">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    
+    <div class="text-center mb-16 fade-in">
+      <p class="text-accent dark:text-accent-light font-mono text-sm tracking-wider uppercase mb-2">Dự án</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+        Dự án nổi bật
+      </h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-accent to-navy-500 mx-auto mt-4 rounded-full"></div>
+      <p class="text-gray-600 dark:text-gray-400 mt-4 max-w-lg mx-auto">
+        Một số dự án phân tích dữ liệu tiêu biểu tôi đã thực hiện
+      </p>
+    </div>
+    
+    
+    <div class="grid md:grid-cols-2 gap-8">
+              <div class="fade-in" style="animation-delay: 0ms;">
+          <article class="project-card group bg-white dark:bg-navy-800/50 rounded-2xl overflow-hidden border border-gray-100 dark:border-navy-700/50 hover:shadow-xl hover:border-accent/20 dark:hover:border-accent/30 transition-all duration-500">
+  
+  
+  <div class="relative overflow-hidden aspect-video">
+    <img 
+      src="https://placehold.co/600x400/1e3a5f/ffffff?text=E-Commerce+EDA" 
+      alt="Turkey Market E-Commerce Data Analysis"
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+      loading="lazy"
+    >
+    
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    
+    
+    <div class="absolute bottom-4 left-4 right-4 flex gap-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+      <a href="https://github.com/TrongLuat11" target="_blank" 
+         class="flex-1 text-center px-3 py-2 bg-white/90 backdrop-blur-sm text-gray-900 text-sm font-medium rounded-lg hover:bg-white transition-colors">
+        ⚡ GitHub
+      </a>
+      <a href="#" target="_blank"
+         class="flex-1 text-center px-3 py-2 bg-accent/90 backdrop-blur-sm text-white text-sm font-medium rounded-lg hover:bg-accent transition-colors">
+        🔗 Demo
+      </a>
+    </div>
+  </div>
+  
+  
+  <div class="p-6 space-y-4">
+    
+    <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-accent dark:group-hover:text-accent-light transition-colors">
+      Turkey Market E-Commerce Data Analysis
+    </h3>
+    
+    
+    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+      Phân tích dữ liệu giao dịch e-commerce thị trường Thổ Nhĩ Kỳ: làm sạch 1,300+ bản ghi, phát hiện xu hướng doanh thu theo mùa và tối ưu quy trình vận hành.
+    </p>
+    
+    
+    <div class="space-y-3 text-sm">
+      <div class="bg-gray-50 dark:bg-navy-900/50 rounded-lg p-3">
+        <p class="font-semibold text-navy-700 dark:text-navy-200 mb-1">🎯 Bài toán</p>
+        <p class="text-gray-600 dark:text-gray-400">Cần phân tích toàn diện dữ liệu bán hàng e-commerce để tìm xu hướng doanh thu, nguyên nhân lỗ và điểm nghẽn vận hành.</p>
+      </div>
+      <div class="bg-gray-50 dark:bg-navy-900/50 rounded-lg p-3">
+        <p class="font-semibold text-navy-700 dark:text-navy-200 mb-1">📁 Dữ liệu</p>
+        <p class="text-gray-600 dark:text-gray-400">1,300+ bản ghi giao dịch e-commerce gồm: mã đơn, ngày mua, danh mục sản phẩm, giá trị, mã bưu chính, thời gian xử lý đơn hàng.</p>
+      </div>
+      <div class="bg-gray-50 dark:bg-navy-900/50 rounded-lg p-3">
+        <p class="font-semibold text-navy-700 dark:text-navy-200 mb-1">🔬 Phương pháp</p>
+        <p class="text-gray-600 dark:text-gray-400">Làm sạch dữ liệu bằng logical group imputation cho missing values (Postal Code), áp dụng IQR để loại bỏ anomalies. Phân tích time-series doanh thu, root-cause profit margin analysis, và lead time logistics.</p>
+      </div>
+      <div class="bg-accent/5 dark:bg-accent/10 rounded-lg p-3 border border-accent/10">
+        <p class="font-semibold text-accent dark:text-accent-light mb-1">✅ Kết quả</p>
+        <p class="text-gray-700 dark:text-gray-300">Phát hiện đỉnh bán hàng theo mùa (tháng 6, 9, 12). Danh mục Technology chiếm 34% tổng lỗ. Lead time trung bình 3.97 ngày — đề xuất tối ưu quy trình xử lý đơn hàng.</p>
+      </div>
+    </div>
+    
+    
+    <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-3 py-1 text-xs font-mono font-medium bg-navy-50 dark:bg-navy-700/50 text-navy-600 dark:text-navy-200 rounded-full border border-navy-100 dark:border-navy-600/50">
+          Python
+        </span>
+              <span class="px-3 py-1 text-xs font-mono font-medium bg-navy-50 dark:bg-navy-700/50 text-navy-600 dark:text-navy-200 rounded-full border border-navy-100 dark:border-navy-600/50">
+          Pandas
+        </span>
+              <span class="px-3 py-1 text-xs font-mono font-medium bg-navy-50 dark:bg-navy-700/50 text-navy-600 dark:text-navy-200 rounded-full border border-navy-100 dark:border-navy-600/50">
+          Seaborn
+        </span>
+              <span class="px-3 py-1 text-xs font-mono font-medium bg-navy-50 dark:bg-navy-700/50 text-navy-600 dark:text-navy-200 rounded-full border border-navy-100 dark:border-navy-600/50">
+          Matplotlib
+        </span>
+              <span class="px-3 py-1 text-xs font-mono font-medium bg-navy-50 dark:bg-navy-700/50 text-navy-600 dark:text-navy-200 rounded-full border border-navy-100 dark:border-navy-600/50">
+          EDA
+        </span>
+          </div>
+  </div>
+</article>
+        </div>
+              <div class="fade-in" style="animation-delay: 150ms;">
+          <article class="project-card group bg-white dark:bg-navy-800/50 rounded-2xl overflow-hidden border border-gray-100 dark:border-navy-700/50 hover:shadow-xl hover:border-accent/20 dark:hover:border-accent/30 transition-all duration-500">
+  
+  
+  <div class="relative overflow-hidden aspect-video">
+    <img 
+      src="https://placehold.co/600x400/2563eb/ffffff?text=Sentiment+NLP" 
+      alt="Sentiment Analysis &amp; NLP System"
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+      loading="lazy"
+    >
+    
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    
+    
+    <div class="absolute bottom-4 left-4 right-4 flex gap-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+      <a href="https://github.com/TrongLuat11" target="_blank" 
+         class="flex-1 text-center px-3 py-2 bg-white/90 backdrop-blur-sm text-gray-900 text-sm font-medium rounded-lg hover:bg-white transition-colors">
+        ⚡ GitHub
+      </a>
+      <a href="#" target="_blank"
+         class="flex-1 text-center px-3 py-2 bg-accent/90 backdrop-blur-sm text-white text-sm font-medium rounded-lg hover:bg-accent transition-colors">
+        🔗 Demo
+      </a>
+    </div>
+  </div>
+  
+  
+  <div class="p-6 space-y-4">
+    
+    <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-accent dark:group-hover:text-accent-light transition-colors">
+      Sentiment Analysis &amp; NLP System
+    </h3>
+    
+    
+    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+      Xây dựng hệ thống phân tích cảm xúc văn bản với pipeline xử lý dữ liệu tự động, feature engineering bằng TF-IDF và đánh giá đa mô hình ML.
+    </p>
+    
+    
+    <div class="space-y-3 text-sm">
+      <div class="bg-gray-50 dark:bg-navy-900/50 rounded-lg p-3">
+        <p class="font-semibold text-navy-700 dark:text-navy-200 mb-1">🎯 Bài toán</p>
+        <p class="text-gray-600 dark:text-gray-400">Cần phân loại cảm xúc (sentiment) từ dữ liệu văn bản phi cấu trúc với độ chính xác cao, phục vụ phân tích phản hồi khách hàng.</p>
+      </div>
+      <div class="bg-gray-50 dark:bg-navy-900/50 rounded-lg p-3">
+        <p class="font-semibold text-navy-700 dark:text-navy-200 mb-1">📁 Dữ liệu</p>
+        <p class="text-gray-600 dark:text-gray-400">Tập dữ liệu văn bản phi cấu trúc (text datasets) cần được làm sạch, loại bỏ trùng lặp và tiền xử lý trước khi đưa vào mô hình.</p>
+      </div>
+      <div class="bg-gray-50 dark:bg-navy-900/50 rounded-lg p-3">
+        <p class="font-semibold text-navy-700 dark:text-navy-200 mb-1">🔬 Phương pháp</p>
+        <p class="text-gray-600 dark:text-gray-400">Thiết kế pipeline tự động bằng Python (regex, string handling) để làm sạch text. Feature engineering với CountVectorizer và TF-IDF. Huấn luyện Logistic Regression, Naive Bayes, SVM. Đánh giá bằng Confusion Matrix và ROC-AUC.</p>
+      </div>
+      <div class="bg-accent/5 dark:bg-accent/10 rounded-lg p-3 border border-accent/10">
+        <p class="font-semibold text-accent dark:text-accent-light mb-1">✅ Kết quả</p>
+        <p class="text-gray-700 dark:text-gray-300">So sánh hiệu suất 3 mô hình ML, chọn được mô hình tối ưu nhất cho phân loại sentiment. Tích hợp AI prompt-engineering để debug và tăng tốc nghiên cứu.</p>
+      </div>
+    </div>
+    
+    
+    <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-3 py-1 text-xs font-mono font-medium bg-navy-50 dark:bg-navy-700/50 text-navy-600 dark:text-navy-200 rounded-full border border-navy-100 dark:border-navy-600/50">
+          Python
+        </span>
+              <span class="px-3 py-1 text-xs font-mono font-medium bg-navy-50 dark:bg-navy-700/50 text-navy-600 dark:text-navy-200 rounded-full border border-navy-100 dark:border-navy-600/50">
+          Scikit-learn
+        </span>
+              <span class="px-3 py-1 text-xs font-mono font-medium bg-navy-50 dark:bg-navy-700/50 text-navy-600 dark:text-navy-200 rounded-full border border-navy-100 dark:border-navy-600/50">
+          NLP
+        </span>
+              <span class="px-3 py-1 text-xs font-mono font-medium bg-navy-50 dark:bg-navy-700/50 text-navy-600 dark:text-navy-200 rounded-full border border-navy-100 dark:border-navy-600/50">
+          TF-IDF
+        </span>
+              <span class="px-3 py-1 text-xs font-mono font-medium bg-navy-50 dark:bg-navy-700/50 text-navy-600 dark:text-navy-200 rounded-full border border-navy-100 dark:border-navy-600/50">
+          ML
+        </span>
+          </div>
+  </div>
+</article>
+        </div>
+          </div>
+  </div>
+</section>
+
+
+<section id="timeline" class="py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    
+    <div class="text-center mb-16 fade-in">
+      <p class="text-accent dark:text-accent-light font-mono text-sm tracking-wider uppercase mb-2">Hành trình</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+        Kinh nghiệm & Học vấn
+      </h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-accent to-navy-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+      
+      
+      <div class="fade-in">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-2">
+          <span class="text-2xl">💼</span> Kinh nghiệm
+        </h3>
+        
+        <div class="relative">
+          
+          <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-navy-400 to-transparent"></div>
+          
+          
+                      <div class="relative pl-12 pb-10 last:pb-0 fade-in" style="animation-delay: 0ms;">
+              
+              <div class="absolute left-2.5 top-1 w-3.5 h-3.5 bg-accent rounded-full border-2 border-white dark:border-navy-950 shadow-lg shadow-accent/30 z-10"></div>
+              
+              
+              <div class="bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-md hover:border-accent/20 transition-all duration-300">
+                <div class="flex items-start justify-between gap-2 mb-2">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Turkey Market E-Commerce Data Analysis</h4>
+                    <p class="text-accent dark:text-accent-light text-sm font-medium">Dự án cá nhân | Python, Pandas, Seaborn, Matplotlib</p>
+                  </div>
+                  <span class="text-xs font-mono text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-navy-700 px-2 py-1 rounded-md whitespace-nowrap">
+                    2024
+                  </span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Xử lý và làm sạch 1,300+ bản ghi giao dịch e-commerce. Phân tích xu hướng doanh thu theo thời gian, tìm ra đỉnh bán hàng theo mùa (tháng 6, 9, 12). Phân tích nguyên nhân gốc lợi nhuận, phát hiện danh mục Technology chiếm 34% tổng lỗ. Theo dõi lead time xử lý đơn hàng (trung bình 3.97 ngày) để tối ưu quy trình vận hành.</p>
+              </div>
+            </div>
+                      <div class="relative pl-12 pb-10 last:pb-0 fade-in" style="animation-delay: 200ms;">
+              
+              <div class="absolute left-2.5 top-1 w-3.5 h-3.5 bg-accent rounded-full border-2 border-white dark:border-navy-950 shadow-lg shadow-accent/30 z-10"></div>
+              
+              
+              <div class="bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-md hover:border-accent/20 transition-all duration-300">
+                <div class="flex items-start justify-between gap-2 mb-2">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Sentiment Analysis &amp; NLP System</h4>
+                    <p class="text-accent dark:text-accent-light text-sm font-medium">Dự án cá nhân | Python, Scikit-learn</p>
+                  </div>
+                  <span class="text-xs font-mono text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-navy-700 px-2 py-1 rounded-md whitespace-nowrap">
+                    2024
+                  </span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Thiết kế pipeline xử lý dữ liệu tự động bằng Python để làm sạch và tiền xử lý văn bản phi cấu trúc. Sử dụng CountVectorizer và TF-IDF để feature engineering. Huấn luyện và đánh giá các mô hình ML (Logistic Regression, Naive Bayes, SVM) với Confusion Matrix và ROC-AUC.</p>
+              </div>
+            </div>
+                  </div>
+      </div>
+      
+      
+      <div class="fade-in">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-2">
+          <span class="text-2xl">🎓</span> Học vấn & Chứng chỉ
+        </h3>
+        
+        <div class="relative">
+          
+          <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-navy-400 via-accent to-transparent"></div>
+          
+          
+                      <div class="relative pl-12 pb-10 last:pb-0 fade-in" style="animation-delay: 0ms;">
+              
+              <div class="absolute left-2.5 top-1 w-3.5 h-3.5 bg-navy-500 dark:bg-navy-400 rounded-full border-2 border-white dark:border-navy-950 shadow-lg shadow-navy-500/30 z-10"></div>
+              
+              
+              <div class="bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-md hover:border-navy-300/30 transition-all duration-300">
+                <div class="flex items-start justify-between gap-2 mb-2">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Cử nhân Hệ thống Thông tin Quản lý (MIS)</h4>
+                    <p class="text-navy-500 dark:text-navy-300 text-sm font-medium">Đại học Ngân hàng TP.HCM (HUB)</p>
+                  </div>
+                  <span class="text-xs font-mono text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-navy-700 px-2 py-1 rounded-md whitespace-nowrap">
+                    09/2023 – 09/2027
+                  </span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">GPA: 3.3/4.0. Các môn: Hệ quản trị CSDL (SQL), Phân tích &amp; Trực quan hóa dữ liệu, Lập trình Python, Xác suất &amp; Thống kê, Phân tích &amp; Thiết kế Hệ thống.</p>
+              </div>
+            </div>
+                      <div class="relative pl-12 pb-10 last:pb-0 fade-in" style="animation-delay: 200ms;">
+              
+              <div class="absolute left-2.5 top-1 w-3.5 h-3.5 bg-navy-500 dark:bg-navy-400 rounded-full border-2 border-white dark:border-navy-950 shadow-lg shadow-navy-500/30 z-10"></div>
+              
+              
+              <div class="bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-md hover:border-navy-300/30 transition-all duration-300">
+                <div class="flex items-start justify-between gap-2 mb-2">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Google Data Analytics Professional Certificate</h4>
+                    <p class="text-navy-500 dark:text-navy-300 text-sm font-medium">Google (Coursera)</p>
+                  </div>
+                  <span class="text-xs font-mono text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-navy-700 px-2 py-1 rounded-md whitespace-nowrap">
+                    07/2025 – Hiện tại
+                  </span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Đang theo học chứng chỉ chuyên nghiệp gồm 8 khóa về quy trình phân tích dữ liệu, spreadsheet, SQL, R, Tableau và case study thực tế. Chương trình được thiết kế bởi Google, chuẩn bị sẵn sàng cho vị trí Data Analyst.</p>
+              </div>
+            </div>
+                      <div class="relative pl-12 pb-10 last:pb-0 fade-in" style="animation-delay: 400ms;">
+              
+              <div class="absolute left-2.5 top-1 w-3.5 h-3.5 bg-navy-500 dark:bg-navy-400 rounded-full border-2 border-white dark:border-navy-950 shadow-lg shadow-navy-500/30 z-10"></div>
+              
+              
+              <div class="bg-white dark:bg-navy-800/50 rounded-xl p-5 border border-gray-100 dark:border-navy-700/50 hover:shadow-md hover:border-navy-300/30 transition-all duration-300">
+                <div class="flex items-start justify-between gap-2 mb-2">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">MOS Certified — Microsoft Office Specialist</h4>
+                    <p class="text-navy-500 dark:text-navy-300 text-sm font-medium">Microsoft</p>
+                  </div>
+                  <span class="text-xs font-mono text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-navy-700 px-2 py-1 rounded-md whitespace-nowrap">
+                    2024
+                  </span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Chứng chỉ MS Office chuyên nghiệp, thể hiện kỹ năng thành thạo bộ công cụ Excel, Word, PowerPoint trong môi trường doanh nghiệp.</p>
+              </div>
+            </div>
+                  </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact" class="py-20 bg-gray-50/50 dark:bg-navy-900/30">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    
+    <div class="text-center mb-16 fade-in">
+      <p class="text-accent dark:text-accent-light font-mono text-sm tracking-wider uppercase mb-2">Liên hệ</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+        Hãy kết nối với tôi
+      </h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-accent to-navy-500 mx-auto mt-4 rounded-full"></div>
+      <p class="text-gray-600 dark:text-gray-400 mt-4 max-w-lg mx-auto">
+        Bạn có dự án cần phân tích dữ liệu? Đừng ngần ngại liên hệ nhé!
+      </p>
+    </div>
+    
+    <div class="grid sm:grid-cols-2 gap-6 fade-in">
+      
+      
+      <a href="mailto:luatle.111105@gmail.com" 
+         class="flex items-center justify-center sm:justify-start gap-4 p-6 bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 hover:border-accent/30 hover:shadow-lg transition-all duration-300 group transform hover:-translate-y-1">
+        <div class="w-14 h-14 bg-accent/10 dark:bg-accent/20 rounded-xl flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-900 dark:text-white">Email</p>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">luatle.111105@gmail.com</p>
+        </div>
+      </a>
+      
+      
+      <a href="https://linkedin.com/in/trongluat" target="_blank"
+         class="flex items-center justify-center sm:justify-start gap-4 p-6 bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 hover:border-accent/30 hover:shadow-lg transition-all duration-300 group transform hover:-translate-y-1">
+        <div class="w-14 h-14 bg-blue-600/10 dark:bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-900 dark:text-white">LinkedIn</p>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Kết nối công việc</p>
+        </div>
+      </a>
+      
+      
+      <a href="https://github.com/TrongLuat11" target="_blank"
+         class="flex items-center justify-center sm:justify-start gap-4 p-6 bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 hover:border-accent/30 hover:shadow-lg transition-all duration-300 group transform hover:-translate-y-1">
+        <div class="w-14 h-14 bg-gray-900/10 dark:bg-white/10 rounded-xl flex items-center justify-center text-gray-900 dark:text-white group-hover:bg-gray-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-gray-900 transition-all duration-300">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-900 dark:text-white">GitHub</p>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Source code dự án</p>
+        </div>
+      </a>
+      
+      
+      <a href="#" 
+         class="flex items-center justify-center sm:justify-start gap-4 p-6 bg-accent/5 dark:bg-accent/10 rounded-2xl border border-accent/20 hover:bg-accent hover:text-white transition-all duration-300 group transform hover:-translate-y-1">
+        <div class="w-14 h-14 bg-white dark:bg-navy-900 rounded-xl flex items-center justify-center text-accent transition-all duration-300">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-900 dark:text-white group-hover:text-white transition-colors">Tải CV</p>
+          <p class="text-accent/80 dark:text-accent-light/80 group-hover:text-white/80 text-sm mt-1 transition-colors">Định dạng PDF</p>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+  </main>
+  
+  <footer class="bg-gray-900 dark:bg-navy-950 border-t border-gray-800 dark:border-navy-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <div class="grid sm:grid-cols-3 gap-8 items-center">
+      
+      
+      <div class="text-center sm:text-left">
+        <a href="#hero" class="text-2xl font-bold text-white hover:text-accent-light transition-colors">
+          TrLuat <span class="text-accent-light font-normal text-lg">|</span> Data Analyst
+        </a>
+        <p class="text-gray-400 text-sm mt-2">
+          © <span id="footer-year">2024</span> Lê Trần Trọng Luật
+        </p>
+        <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+        <p class="text-gray-500 text-xs mt-1">
+          Built with ❤️ & Laravel
+        </p>
+      </div>
+      
+      
+      <div class="text-center">
+        <p class="text-gray-400 text-sm font-medium mb-3">Liên kết</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#about" class="text-gray-500 hover:text-white text-sm transition-colors">Giới thiệu</a>
+          <a href="#skills" class="text-gray-500 hover:text-white text-sm transition-colors">Kỹ năng</a>
+          <a href="#projects" class="text-gray-500 hover:text-white text-sm transition-colors">Dự án</a>
+          <a href="#contact" class="text-gray-500 hover:text-white text-sm transition-colors">Liên hệ</a>
+        </div>
+      </div>
+      
+      
+      <div class="text-center sm:text-right">
+        <p class="text-gray-400 text-sm font-medium mb-3">Kết nối</p>
+        <div class="flex justify-center sm:justify-end gap-3">
+          
+          <a href="https://github.com/TrongLuat11" target="_blank" 
+             class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+             aria-label="GitHub">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+            </svg>
+          </a>
+          
+          <a href="https://linkedin.com/in/trongluat" target="_blank"
+             class="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+             aria-label="LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          
+          <a href="mailto:luatle.111105@gmail.com"
+             class="w-10 h-10 bg-gray-800 hover:bg-accent rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+             aria-label="Email">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <button id="scroll-top-btn" 
+          class="fixed bottom-6 right-6 w-12 h-12 bg-accent hover:bg-accent-dark text-white rounded-full shadow-lg shadow-accent/25 flex items-center justify-center opacity-0 invisible translate-y-4 transition-all duration-300 z-50"
+          aria-label="Lên đầu trang">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+    </svg>
+  </button>
+</footer>
+  
+  <script src="js/script.js"></script>
+  
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

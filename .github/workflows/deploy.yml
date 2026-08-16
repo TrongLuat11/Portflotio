@@ -1,4 +1,4 @@
-name: Deploy Laravel Export to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -15,34 +15,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite3, pdo_sqlite, bcmath, soap, intl, readline, ldap, msgpack, igbinary, redis, swoole, memcached, pcov, xdebug
-
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-interaction --no-progress
-
-      - name: Copy .env
-        run: |
-          php -r "file_exists('.env') || copy('.env.example', '.env');"
-          echo "ASSET_URL=https://trongluat11.github.io/Portflotio" >> .env
-
-      - name: Generate key
-        run: php artisan key:generate
-
-      - name: Create data directory if missing
-        run: mkdir -p storage/app/data
-
-      - name: Export Static Site
-        run: php artisan export
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -50,15 +30,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "dist"
+          path: "."
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
