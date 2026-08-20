@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheLook eCommerce Analysis – SQL &amp; BigQuery | TrLuat Portfolio</title>
+  <meta name="description" content="Phân tích toàn diện nền tảng TheLook eCommerce sử dụng SQL (BigQuery). Quy trình 6 bước: Ask → Prepare → Process → Analyze → Share → Act.">
+  <meta name="author" content="Lê Trần Trọng Luật">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            navy: {
+              50: '#eef2f7', 100: '#d4dce8', 200: '#a9b9d1', 300: '#7e96ba',
+              400: '#5373a3', 500: '#3b5998', 600: '#2d4a80', 700: '#1e3a5f',
+              800: '#152b47', 900: '#0b1b2f', 950: '#060f1a',
+            },
+            accent: { DEFAULT: '#2563eb', light: '#60a5fa', dark: '#1d4ed8' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background: #2563eb55; border-radius: 99px; }
+
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .step-card { border-left: 3px solid transparent; transition: border-color .3s, box-shadow .3s; }
+    .step-card:hover { border-left-color: #2563eb; box-shadow: 0 4px 20px rgba(37,99,235,.12); }
+
+    .sql-block { background: #0f1117; border: 1px solid #1e2a3a; border-radius: 12px; overflow: hidden; }
+    .sql-header { background: #161b2e; padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #1e2a3a; }
+    .sql-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+    .tech-tag { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; font-family: 'JetBrains Mono', monospace; font-size: .75rem; font-weight: 500; border-radius: 99px; border: 1px solid rgba(37,99,235,.3); background: rgba(37,99,235,.08); color: #60a5fa; }
+
+    .metric-card { background: linear-gradient(135deg, rgba(37,99,235,.06), rgba(30,58,95,.04)); border: 1px solid rgba(37,99,235,.15); border-radius: 16px; padding: 20px; text-align: center; transition: transform .3s, box-shadow .3s; }
+    .metric-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(37,99,235,.15); }
+
+    .hero-grad { background: linear-gradient(135deg, #0b1b2f 0%, #1e3a5f 40%, #0f2a50 70%, #060f1a 100%); }
+
+    .step-badge { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #2563eb, #1e3a5f); color: #fff; font-weight: 700; font-size: .85rem; flex-shrink: 0; box-shadow: 0 4px 12px rgba(37,99,235,.35); }
+
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(37,99,235,.3), transparent); margin: 4rem 0; }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-navy-950 text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-navy-950/80 backdrop-blur-lg border-b border-gray-200/50 dark:border-navy-800/50">
+    <nav class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="../../index.html" class="flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent-light transition-colors group">
+        <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Quay về Portfolio
+      </a>
+      <div class="flex items-center gap-3">
+        <span class="text-xs font-mono text-gray-400 dark:text-gray-500 hidden sm:block">projects / thelook-ecommerce</span>
+        <button id="themeToggle" class="p-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all" aria-label="Toggle theme">
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+          <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-grad pt-32 pb-20 relative overflow-hidden">
+    <div class="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 left-5 w-48 h-48 bg-navy-400/10 rounded-full blur-2xl pointer-events-none"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="flex items-center gap-2 text-xs font-mono text-gray-500 mb-6 fade-in">
+        <span>Portfolio</span><span class="text-gray-600">/</span><span>Projects</span><span class="text-gray-600">/</span>
+        <span class="text-accent-light">TheLook eCommerce</span>
+      </div>
+      <div class="fade-in mb-4">
+        <span class="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold bg-accent/20 text-accent-light rounded-full border border-accent/30">
+          <span class="w-2 h-2 rounded-full bg-accent-light animate-pulse inline-block"></span>
+          SQL · BigQuery · Looker Studio
+        </span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-4 fade-in">
+        TheLook eCommerce<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-light to-blue-300">Sales Performance Analysis</span>
+      </h1>
+      <p class="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed mb-8 fade-in">
+        Phân tích toàn diện nền tảng TheLook eCommerce (Google BigQuery Public Dataset) theo phương pháp luận
+        <strong class="text-white">6 bước của Google Data Analytics</strong>: Ask → Prepare → Process → Analyze → Share → Act.
+      </p>
+      <div class="flex flex-wrap gap-4 text-sm text-gray-400 mb-10 fade-in">
+        <span class="flex items-center gap-2">📅 2025</span>
+        <span class="flex items-center gap-2">👤 Lê Trần Trọng Luật</span>
+        <span class="flex items-center gap-2">🗄️ Google BigQuery Public Dataset</span>
+      </div>
+      <div class="flex flex-wrap gap-3 fade-in">
+        <a href="https://datastudio.google.com/reporting/21c4085e-8481-435a-acd5-7314b67537bb" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-dark text-white font-semibold text-sm rounded-xl transition-all duration-200 shadow-lg shadow-accent/30 hover:-translate-y-0.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          Xem Live Dashboard
+        </a>
+        <a href="https://github.com/TrongLuat11" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm rounded-xl border border-white/20 hover:border-white/40 transition-all duration-200 hover:-translate-y-0.5">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section class="py-12 bg-gray-50/50 dark:bg-navy-900/30 border-y border-gray-100 dark:border-navy-800/50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="metric-card fade-in"><div class="text-2xl font-extrabold text-accent dark:text-accent-light mb-1">6</div><div class="text-xs text-gray-500 dark:text-gray-400 font-medium">Bước phân tích</div></div>
+        <div class="metric-card fade-in" style="animation-delay:100ms"><div class="text-2xl font-extrabold text-accent dark:text-accent-light mb-1">3</div><div class="text-xs text-gray-500 dark:text-gray-400 font-medium">Bảng dữ liệu</div></div>
+        <div class="metric-card fade-in" style="animation-delay:200ms"><div class="text-2xl font-extrabold text-accent dark:text-accent-light mb-1">10</div><div class="text-xs text-gray-500 dark:text-gray-400 font-medium">KPI được xây dựng</div></div>
+        <div class="metric-card fade-in" style="animation-delay:300ms"><div class="text-2xl font-extrabold text-accent dark:text-accent-light mb-1">1</div><div class="text-xs text-gray-500 dark:text-gray-400 font-medium">Looker Studio Dashboard</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+
+    <!-- Tech Stack -->
+    <div class="fade-in mb-16">
+      <h2 class="text-xs font-mono text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4">Công nghệ sử dụng</h2>
+      <div class="flex flex-wrap gap-2">
+        <span class="tech-tag">🛢 SQL (BigQuery)</span>
+        <span class="tech-tag">☁️ Google Cloud Platform</span>
+        <span class="tech-tag">📊 Looker Studio</span>
+        <span class="tech-tag">🔷 TheLook Dataset</span>
+        <span class="tech-tag">⚙️ CTE &amp; Window Functions</span>
+        <span class="tech-tag">📈 Data Modeling</span>
+        <span class="tech-tag">🧹 Data Cleaning</span>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- STEP 1 -->
+    <div class="fade-in mb-12" id="step1">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-badge">1</div>
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Xác Định Vấn Đề <span class="text-gray-400 font-normal">(Ask)</span></h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Đặt câu hỏi kinh doanh cốt lõi</p>
+        </div>
+      </div>
+      <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl p-6 border border-gray-100 dark:border-navy-700/50 space-y-4">
+        <div class="bg-blue-50 dark:bg-navy-900/60 rounded-xl p-4 border border-blue-100 dark:border-navy-700">
+          <p class="text-sm font-semibold text-navy-700 dark:text-navy-200 mb-2">📋 Bài toán kinh doanh</p>
+          <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Phân tích hiệu suất kinh doanh của nền tảng <strong>TheLook eCommerce</strong> nhằm trả lời các câu hỏi chiến lược cho ban lãnh đạo về xu hướng tăng trưởng, danh mục sản phẩm nổi bật và hành vi khách hàng.</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">🎯 Câu hỏi phân tích cốt lõi:</p>
+          <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">01.</span> Xu hướng tăng trưởng đơn hàng và doanh thu theo tháng ra sao?</li>
+            <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">02.</span> Giá trị đơn hàng trung bình (AOV) biến động như thế nào?</li>
+            <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">03.</span> Phân khúc khách hàng theo độ tuổi: nhóm nào chiếm tỷ trọng lớn nhất?</li>
+            <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">04.</span> Top 5 sản phẩm bán chạy nhất từng tháng là gì?</li>
+            <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">05.</span> Danh mục (Category) nào tạo ra doanh thu và lợi nhuận cao nhất?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="fade-in mb-12" id="step2">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-badge">2</div>
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Chuẩn Bị Dữ Liệu <span class="text-gray-400 font-normal">(Prepare)</span></h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Thu thập, mô tả và lập kế hoạch khai thác dữ liệu</p>
+        </div>
+      </div>
+      <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl p-6 border border-gray-100 dark:border-navy-700/50 space-y-5">
+        <div>
+          <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">🗄️ Nguồn dữ liệu</p>
+          <div class="bg-gray-50 dark:bg-navy-900/50 rounded-xl p-4 border border-gray-100 dark:border-navy-700 space-y-2 text-sm">
+            <div class="flex items-center gap-2"><span class="text-accent">●</span><strong class="text-gray-800 dark:text-gray-200">Dataset:</strong><span class="text-gray-600 dark:text-gray-400">TheLook eCommerce (Google BigQuery Public)</span></div>
+            <div class="flex items-center gap-2"><span class="text-accent">●</span><strong class="text-gray-800 dark:text-gray-200">Project:</strong><code class="font-mono bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded text-xs">bigquery-public-data.thelook_ecommerce</code></div>
+            <div class="flex items-center gap-2"><span class="text-accent">●</span><strong class="text-gray-800 dark:text-gray-200">Thời gian:</strong><span class="text-gray-600 dark:text-gray-400">2024 – 2026</span></div>
+          </div>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">📋 Các bảng sử dụng</p>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <div class="bg-accent/5 dark:bg-accent/10 border border-accent/15 rounded-xl p-4">
+              <code class="font-mono text-accent dark:text-accent-light text-sm font-semibold block mb-1">orders</code>
+              <p class="text-xs text-gray-500 dark:text-gray-400">order_id, created_at, status, user_id</p>
+            </div>
+            <div class="bg-accent/5 dark:bg-accent/10 border border-accent/15 rounded-xl p-4">
+              <code class="font-mono text-accent dark:text-accent-light text-sm font-semibold block mb-1">order_items</code>
+              <p class="text-xs text-gray-500 dark:text-gray-400">order_id, product_id, sale_price, status</p>
+            </div>
+            <div class="bg-accent/5 dark:bg-accent/10 border border-accent/15 rounded-xl p-4">
+              <code class="font-mono text-accent dark:text-accent-light text-sm font-semibold block mb-1">products</code>
+              <p class="text-xs text-gray-500 dark:text-gray-400">id, category, cost, name</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">📊 Danh sách KPI xây dựng (10 chỉ số)</p>
+          <div class="overflow-x-auto rounded-xl border border-gray-100 dark:border-navy-700">
+            <table class="w-full text-sm text-left">
+              <thead class="bg-gray-50 dark:bg-navy-900/60">
+                <tr>
+                  <th class="px-4 py-3 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">#</th>
+                  <th class="px-4 py-3 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">Tên KPI</th>
+                  <th class="px-4 py-3 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">Nguồn</th>
+                  <th class="px-4 py-3 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">Ý nghĩa</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100 dark:divide-navy-700/50">
+                <tr class="hover:bg-gray-50 dark:hover:bg-navy-800/30"><td class="px-4 py-3 text-gray-400">01</td><td class="px-4 py-3 font-mono text-accent dark:text-accent-light">Month</td><td class="px-4 py-3"><code class="text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">orders</code></td><td class="px-4 py-3 text-gray-600 dark:text-gray-400">Tháng tổng hợp dữ liệu</td></tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-navy-800/30"><td class="px-4 py-3 text-gray-400">02</td><td class="px-4 py-3 font-mono text-accent dark:text-accent-light">Year</td><td class="px-4 py-3"><code class="text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">orders</code></td><td class="px-4 py-3 text-gray-600 dark:text-gray-400">Năm tổng hợp dữ liệu</td></tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-navy-800/30"><td class="px-4 py-3 text-gray-400">03</td><td class="px-4 py-3 font-mono text-accent dark:text-accent-light">Product_category</td><td class="px-4 py-3"><code class="text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">products</code></td><td class="px-4 py-3 text-gray-600 dark:text-gray-400">Danh mục sản phẩm</td></tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-navy-800/30"><td class="px-4 py-3 text-gray-400">04</td><td class="px-4 py-3 font-mono text-accent dark:text-accent-light">TPV</td><td class="px-4 py-3"><code class="text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">order_items</code></td><td class="px-4 py-3 text-gray-600 dark:text-gray-400">Tổng doanh thu mỗi tháng</td></tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-navy-800/30"><td class="px-4 py-3 text-gray-400">05</td><td class="px-4 py-3 font-mono text-accent dark:text-accent-light">TPO</td><td class="px-4 py-3"><code class="text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">order_items</code></td><td class="px-4 py-3 text-gray-600 dark:text-gray-400">Tổng số lượng đơn hàng</td></tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-navy-800/30"><td class="px-4 py-3 text-gray-400">06</td><td class="px-4 py-3 font-mono text-accent dark:text-accent-light">Revenue_growth</td><td class="px-4 py-3"><em class="text-xs text-gray-400">Phái sinh</em></td><td class="px-4 py-3 text-gray-600 dark:text-gray-400">% Tăng trưởng doanh thu MoM</td></tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-navy-800/30"><td class="px-4 py-3 text-gray-400">07</td><td class="px-4 py-3 font-mono text-accent dark:text-accent-light">Order_growth</td><td class="px-4 py-3"><em class="text-xs text-gray-400">Phái sinh</em></td><td class="px-4 py-3 text-gray-600 dark:text-gray-400">% Tăng trưởng đơn hàng MoM</td></tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-navy-800/30"><td class="px-4 py-3 text-gray-400">08</td><td class="px-4 py-3 font-mono text-accent dark:text-accent-light">Total_cost</td><td class="px-4 py-3"><code class="text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">products</code></td><td class="px-4 py-3 text-gray-600 dark:text-gray-400">Tổng chi phí vốn (COGS)</td></tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-navy-800/30"><td class="px-4 py-3 text-gray-400">09</td><td class="px-4 py-3 font-mono text-accent dark:text-accent-light">Total_profit</td><td class="px-4 py-3"><em class="text-xs text-gray-400">Phái sinh</em></td><td class="px-4 py-3 text-gray-600 dark:text-gray-400">Tổng lợi nhuận gộp</td></tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-navy-800/30"><td class="px-4 py-3 text-gray-400">10</td><td class="px-4 py-3 font-mono text-accent dark:text-accent-light">Profit_to_cost_ratio</td><td class="px-4 py-3"><em class="text-xs text-gray-400">Phái sinh</em></td><td class="px-4 py-3 text-gray-600 dark:text-gray-400">Biên lợi nhuận trên chi phí</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="fade-in mb-12" id="step3">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-badge">3</div>
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Xử Lý &amp; Làm Sạch Dữ Liệu <span class="text-gray-400 font-normal">(Process)</span></h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Data Verification &amp; Data Cleaning</p>
+        </div>
+      </div>
+      <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl p-6 border border-gray-100 dark:border-navy-700/50 space-y-5">
+        <div>
+          <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">🔍 Kiểm tra tính toàn vẹn</p>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-start gap-3 p-3 bg-gray-50 dark:bg-navy-900/50 rounded-xl border border-gray-100 dark:border-navy-700/50">
+              <code class="font-mono text-accent shrink-0 text-xs bg-accent/10 px-2 py-1 rounded">orders &amp; order_items</code>
+              <span class="text-gray-600 dark:text-gray-400">Rà soát cột <code class="text-xs bg-gray-200 dark:bg-navy-700 px-1 py-0.5 rounded">status</code>. Loại trừ <code class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-1 py-0.5 rounded">Cancelled</code> và <code class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-1 py-0.5 rounded">Returned</code>. Đảm bảo sale_price &gt;= 0.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-gray-50 dark:bg-navy-900/50 rounded-xl border border-gray-100 dark:border-navy-700/50">
+              <code class="font-mono text-accent shrink-0 text-xs bg-accent/10 px-2 py-1 rounded">products</code>
+              <span class="text-gray-600 dark:text-gray-400">Kiểm tra cột <code class="text-xs bg-gray-200 dark:bg-navy-700 px-1 py-0.5 rounded">category</code> không chứa NULL. Đảm bảo cost &gt;= 0.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-gray-50 dark:bg-navy-900/50 rounded-xl border border-gray-100 dark:border-navy-700/50">
+              <code class="font-mono text-accent shrink-0 text-xs bg-accent/10 px-2 py-1 rounded">users</code>
+              <span class="text-gray-600 dark:text-gray-400">Kiểm tra cột <code class="text-xs bg-gray-200 dark:bg-navy-700 px-1 py-0.5 rounded">age</code> để loại bỏ ngoại lai (tuổi âm hoặc &gt; 120).</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">🧹 Làm sạch &amp; Chuyển đổi</p>
+          <div class="sql-block">
+            <div class="sql-header">
+              <div class="sql-dot bg-red-500"></div><div class="sql-dot bg-yellow-500"></div><div class="sql-dot bg-green-500"></div>
+              <span class="text-gray-400 text-xs ml-2 font-mono">cleaning_orders.sql</span>
+            </div>
+            <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed"><code><span style="color:#60a5fa">-- Làm sạch bảng orders: lọc trạng thái hợp lệ và chuyển đổi định dạng ngày</span>
+<span style="color:#c084fc">SELECT</span>
+  order_id,
+  user_id,
+  <span style="color:#facc15">FORMAT_TIMESTAMP</span>(<span style="color:#4ade80">'%Y-%m'</span>, created_at) <span style="color:#60a5fa">AS</span> month_year,
+  status
+<span style="color:#c084fc">FROM</span> <span style="color:#fb923c">`bigquery-public-data.thelook_ecommerce.orders`</span>
+<span style="color:#c084fc">WHERE</span> status <span style="color:#c084fc">NOT IN</span> (<span style="color:#4ade80">'Cancelled'</span>, <span style="color:#4ade80">'Returned'</span>)
+  <span style="color:#c084fc">AND</span> created_at <span style="color:#c084fc">BETWEEN</span> <span style="color:#4ade80">'2024-01-01'</span> <span style="color:#c084fc">AND</span> <span style="color:#4ade80">'2026-12-31'</span>;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="fade-in mb-12" id="step4">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-badge">4</div>
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Phân Tích &amp; Trích Xuất Insight <span class="text-gray-400 font-normal">(Analyze)</span></h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Ad-hoc Analysis &amp; Data Modeling</p>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 overflow-hidden">
+          <div class="p-5 border-b border-gray-100 dark:border-navy-700/50"><p class="font-semibold text-gray-900 dark:text-white">1. Tăng trưởng Đơn hàng &amp; Khách hàng</p></div>
+          <div class="p-5"><p class="text-sm text-gray-600 dark:text-gray-400">Kết hợp <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">COUNT(DISTINCT order_id)</code> và <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">COUNT(DISTINCT user_id)</code>. Chỉ xét đơn hàng <code class="font-mono text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-1.5 py-0.5 rounded">Complete / Shipped / Processing</code>.</p></div>
+        </div>
+        <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 overflow-hidden">
+          <div class="p-5 border-b border-gray-100 dark:border-navy-700/50"><p class="font-semibold text-gray-900 dark:text-white">2. Giá trị Đơn hàng Trung bình (AOV)</p></div>
+          <div class="p-5"><p class="text-sm text-gray-600 dark:text-gray-400">AOV = <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">SUM(sale_price) / COUNT(DISTINCT order_id)</code>. Loại bỏ các mặt hàng bị trả lại để đảm bảo độ chính xác.</p></div>
+        </div>
+        <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 overflow-hidden">
+          <div class="p-5 border-b border-gray-100 dark:border-navy-700/50"><p class="font-semibold text-gray-900 dark:text-white">3. Phân khúc Khách hàng theo Độ tuổi</p></div>
+          <div class="p-5"><p class="text-sm text-gray-600 dark:text-gray-400">Dùng <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">CASE WHEN</code> phân dải tuổi (&lt;18, 18–24, 25–34, 35–44, &gt;45). Nối bảng <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">users</code> và <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">orders</code> chỉ phân nhóm khách hàng thực sự phát sinh giao dịch.</p></div>
+        </div>
+        <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 overflow-hidden">
+          <div class="p-5 border-b border-gray-100 dark:border-navy-700/50"><p class="font-semibold text-gray-900 dark:text-white">4. Top 5 Sản phẩm Bán chạy mỗi tháng</p></div>
+          <div class="p-5 space-y-3">
+            <p class="text-sm text-gray-600 dark:text-gray-400">Ứng dụng Window Function để xếp hạng theo tháng:</p>
+            <div class="sql-block">
+              <div class="sql-header">
+                <div class="sql-dot bg-red-500"></div><div class="sql-dot bg-yellow-500"></div><div class="sql-dot bg-green-500"></div>
+                <span class="text-gray-400 text-xs ml-2 font-mono">top5_products.sql</span>
+              </div>
+              <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed"><code><span style="color:#facc15">DENSE_RANK</span>() <span style="color:#c084fc">OVER</span>(
+  <span style="color:#c084fc">PARTITION BY</span> Month
+  <span style="color:#c084fc">ORDER BY</span> Revenue <span style="color:#c084fc">DESC</span>
+) <span style="color:#60a5fa">AS</span> rank_by_month</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 overflow-hidden">
+          <div class="p-5 border-b border-gray-100 dark:border-navy-700/50">
+            <div class="flex items-center gap-2">
+              <p class="font-semibold text-gray-900 dark:text-white">5. Data Modeling – Master Dataset</p>
+              <span class="text-xs bg-accent/15 text-accent dark:text-accent-light px-2 py-0.5 rounded-full font-mono">CTE + LAG()</span>
+            </div>
+          </div>
+          <div class="p-5 space-y-3">
+            <p class="text-sm text-gray-600 dark:text-gray-400">Ứng dụng CTE để xây dựng Master Dataset. Tính toán MoM growth bằng Window Function <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">LAG() OVER(...)</code>.</p>
+            <div class="sql-block">
+              <div class="sql-header">
+                <div class="sql-dot bg-red-500"></div><div class="sql-dot bg-yellow-500"></div><div class="sql-dot bg-green-500"></div>
+                <span class="text-gray-400 text-xs ml-2 font-mono">sales_growth_view.sql</span>
+              </div>
+              <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed"><code><span style="color:#c084fc">WITH</span> base_data <span style="color:#c084fc">AS</span> (
+  <span style="color:#c084fc">SELECT</span>
+    <span style="color:#facc15">FORMAT_TIMESTAMP</span>(<span style="color:#4ade80">'%Y-%m'</span>, o.created_at) <span style="color:#60a5fa">AS</span> month_year,
+    p.category,
+    <span style="color:#facc15">SUM</span>(oi.sale_price)           <span style="color:#60a5fa">AS</span> TPV,
+    <span style="color:#facc15">COUNT</span>(<span style="color:#c084fc">DISTINCT</span> o.order_id)  <span style="color:#60a5fa">AS</span> TPO,
+    <span style="color:#facc15">SUM</span>(p.cost)                  <span style="color:#60a5fa">AS</span> total_cost
+  <span style="color:#c084fc">FROM</span> orders o
+  <span style="color:#c084fc">JOIN</span> order_items oi <span style="color:#c084fc">ON</span> o.order_id = oi.order_id
+  <span style="color:#c084fc">JOIN</span> products p    <span style="color:#c084fc">ON</span> oi.product_id = p.id
+  <span style="color:#c084fc">WHERE</span> o.status <span style="color:#c084fc">IN</span> (<span style="color:#4ade80">'Complete'</span>, <span style="color:#4ade80">'Shipped'</span>, <span style="color:#4ade80">'Processing'</span>)
+  <span style="color:#c084fc">GROUP BY</span> 1, 2
+)
+<span style="color:#c084fc">SELECT</span>
+  *,
+  TPV - <span style="color:#facc15">LAG</span>(TPV) <span style="color:#c084fc">OVER</span>(<span style="color:#c084fc">PARTITION BY</span> category <span style="color:#c084fc">ORDER BY</span> month_year)
+    <span style="color:#60a5fa">AS</span> revenue_growth
+<span style="color:#c084fc">FROM</span> base_data;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="fade-in mb-12" id="step5">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-badge">5</div>
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Trực Quan Hóa &amp; Chia Sẻ <span class="text-gray-400 font-normal">(Share)</span></h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400">BI Connection Pipeline &amp; Dashboard</p>
+        </div>
+      </div>
+      <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl p-6 border border-gray-100 dark:border-navy-700/50 space-y-6">
+        <div>
+          <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">🔗 Quy trình kết nối dữ liệu (BI Pipeline)</p>
+          <div class="space-y-3">
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-xs font-bold">1</div>
+              <div class="text-sm"><strong class="text-gray-800 dark:text-gray-200">Data Extraction &amp; Preparation</strong><p class="text-gray-500 dark:text-gray-400 mt-0.5">Khởi tạo Dataset <code class="font-mono text-xs">thelook_ecommerce_reports</code> (Data Location: US) trong project <code class="font-mono text-xs">rfm-analysis-490902</code>.</p></div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-xs font-bold">2</div>
+              <div class="text-sm"><strong class="text-gray-800 dark:text-gray-200">Data Modeling &amp; Logic Transformation</strong><p class="text-gray-500 dark:text-gray-400 mt-0.5">Viết SQL tổng hợp KPI cốt lõi, tính MoM growth bằng <code class="font-mono text-xs">LAG()</code>. Đóng gói vào View <code class="font-mono text-xs">sales_growth_view</code>.</p></div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-xs font-bold">3</div>
+              <div class="text-sm"><strong class="text-gray-800 dark:text-gray-200">BI Connection &amp; Semantic Layer</strong><p class="text-gray-500 dark:text-gray-400 mt-0.5">Kết nối BigQuery → Looker Studio qua View đã tạo. Cấu hình kiểu dữ liệu đúng (Text, Number, Date/Year).</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gradient-to-r from-accent/10 to-navy-700/10 dark:from-accent/15 dark:to-navy-700/20 rounded-2xl p-6 border border-accent/20">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-white text-lg">📊</div>
+            <div><p class="font-bold text-gray-900 dark:text-white text-sm">TheLook eCommerce Dashboard</p><p class="text-xs text-gray-500 dark:text-gray-400">Looker Studio – Live Report</p></div>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Dashboard tương tác trực quan hóa toàn bộ KPI kinh doanh: TPV, TPO, Revenue Growth, Category Performance và Customer Segments.</p>
+          <a href="https://datastudio.google.com/reporting/21c4085e-8481-435a-acd5-7314b67537bb" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-4 py-2.5 bg-accent hover:bg-accent-dark text-white font-semibold text-sm rounded-xl transition-all duration-200 shadow-md shadow-accent/25 hover:-translate-y-0.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Mở Dashboard →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="fade-in mb-12" id="step6">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-badge">6</div>
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Đề Xuất Hành Động <span class="text-gray-400 font-normal">(Act)</span></h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Actionable Recommendations</p>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl p-5 border border-gray-100 dark:border-navy-700/50">
+          <div class="text-2xl mb-3">🎯</div>
+          <h3 class="font-bold text-gray-900 dark:text-white text-sm mb-2">Tối ưu hóa Marketing</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Tập trung ngân sách quảng cáo vào nhóm nhân khẩu học chiếm tỷ trọng cao nhất và danh mục sản phẩm có biên lợi nhuận tốt nhất.</p>
+        </div>
+        <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl p-5 border border-gray-100 dark:border-navy-700/50">
+          <div class="text-2xl mb-3">📦</div>
+          <h3 class="font-bold text-gray-900 dark:text-white text-sm mb-2">Quản trị Tồn kho</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Tự động cảnh báo nguồn cung đối với Top 5 sản phẩm bán chạy mỗi tháng để tránh tình trạng "cháy hàng" (Out-of-stock).</p>
+        </div>
+        <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl p-5 border border-gray-100 dark:border-navy-700/50">
+          <div class="text-2xl mb-3">💬</div>
+          <h3 class="font-bold text-gray-900 dark:text-white text-sm mb-2">Thấu hiểu Khách hàng</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Cải thiện dịch vụ chăm sóc khách hàng với đơn hàng <code class="font-mono text-red-500 text-xs">Returned</code>, giảm tỷ lệ hoàn trả, tối ưu lợi nhuận ròng.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="fade-in text-center py-8">
+      <a href="../../index.html#projects" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-accent dark:hover:text-accent-light hover:bg-gray-50 dark:hover:bg-navy-800 rounded-xl transition-all duration-200 border border-gray-200 dark:border-navy-700 hover:border-accent/30">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Xem tất cả dự án
+      </a>
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-100 dark:border-navy-800/50 py-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <p class="text-sm text-gray-400 dark:text-gray-500">&copy; 2025 Lê Trần Trọng Luật — TrLuat Portfolio</p>
+    </div>
+  </footer>
+
+  <script>
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) html.classList.add('dark');
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
