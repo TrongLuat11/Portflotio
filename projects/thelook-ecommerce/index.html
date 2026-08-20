@@ -44,8 +44,8 @@
     .step-card { border-left: 3px solid transparent; transition: border-color .3s, box-shadow .3s; }
     .step-card:hover { border-left-color: #2563eb; box-shadow: 0 4px 20px rgba(37,99,235,.12); }
 
-    .sql-block { background: #0f1117; border: 1px solid #1e2a3a; border-radius: 12px; overflow: hidden; }
-    .sql-header { background: #161b2e; padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #1e2a3a; }
+    .sql-block { background: #1e293b; border: 1px solid #334155; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+    .sql-header { background: #0f172a; padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #334155; }
     .sql-dot { width: 10px; height: 10px; border-radius: 50%; }
 
     .tech-tag { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; font-family: 'JetBrains Mono', monospace; font-size: .75rem; font-weight: 500; border-radius: 99px; border: 1px solid rgba(37,99,235,.3); background: rgba(37,99,235,.08); color: #60a5fa; }
@@ -280,7 +280,7 @@
               <div class="sql-dot bg-red-500"></div><div class="sql-dot bg-yellow-500"></div><div class="sql-dot bg-green-500"></div>
               <span class="text-gray-400 text-xs ml-2 font-mono">cleaning_orders.sql</span>
             </div>
-            <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed"><code><span style="color:#60a5fa">-- Làm sạch bảng orders: lọc trạng thái hợp lệ và chuyển đổi định dạng ngày</span>
+            <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed text-gray-200"><code><span style="color:#60a5fa">-- Làm sạch bảng orders: lọc trạng thái hợp lệ và chuyển đổi định dạng ngày</span>
 <span style="color:#c084fc">SELECT</span>
   order_id,
   user_id,
@@ -303,50 +303,159 @@
           <p class="text-sm text-gray-500 dark:text-gray-400">Ad-hoc Analysis &amp; Data Modeling</p>
         </div>
       </div>
-      <div class="space-y-4">
+      <div class="space-y-6">
+        <!-- Item 1 -->
         <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 overflow-hidden">
           <div class="p-5 border-b border-gray-100 dark:border-navy-700/50"><p class="font-semibold text-gray-900 dark:text-white">1. Tăng trưởng Đơn hàng &amp; Khách hàng</p></div>
-          <div class="p-5"><p class="text-sm text-gray-600 dark:text-gray-400">Kết hợp <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">COUNT(DISTINCT order_id)</code> và <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">COUNT(DISTINCT user_id)</code>. Chỉ xét đơn hàng <code class="font-mono text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-1.5 py-0.5 rounded">Complete / Shipped / Processing</code>.</p></div>
+          <div class="p-5 space-y-4">
+            <p class="text-sm text-gray-600 dark:text-gray-400">Kết hợp <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">COUNT(DISTINCT order_id)</code> và <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">COUNT(DISTINCT user_id)</code>. Dùng <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">FORMAT_TIMESTAMP</code> để gom nhóm theo tháng (2024-2026). Chỉ xét đơn hàng <code class="font-mono text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-1.5 py-0.5 rounded">Complete / Shipped / Processing</code>.</p>
+            <div class="sql-block">
+              <div class="sql-header">
+                <div class="sql-dot bg-red-500"></div><div class="sql-dot bg-yellow-500"></div><div class="sql-dot bg-green-500"></div>
+                <span class="text-gray-400 text-xs ml-2 font-mono">growth_metrics.sql</span>
+              </div>
+              <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed text-gray-200"><code><span style="color:#c084fc">SELECT</span>
+  <span style="color:#facc15">FORMAT_TIMESTAMP</span>(<span style="color:#4ade80">'%Y-%m'</span>, created_at) <span style="color:#60a5fa">AS</span> month_year,
+  <span style="color:#facc15">COUNT</span>(<span style="color:#c084fc">DISTINCT</span> order_id) <span style="color:#60a5fa">AS</span> total_orders,
+  <span style="color:#facc15">COUNT</span>(<span style="color:#c084fc">DISTINCT</span> user_id) <span style="color:#60a5fa">AS</span> total_customers
+<span style="color:#c084fc">FROM</span> <span style="color:#fb923c">`bigquery-public-data.thelook_ecommerce.orders`</span>
+<span style="color:#c084fc">WHERE</span> status <span style="color:#c084fc">IN</span> (<span style="color:#4ade80">'Complete'</span>, <span style="color:#4ade80">'Shipped'</span>, <span style="color:#4ade80">'Processing'</span>)
+  <span style="color:#c084fc">AND</span> created_at <span style="color:#c084fc">BETWEEN</span> <span style="color:#4ade80">'2024-01-01'</span> <span style="color:#c084fc">AND</span> <span style="color:#4ade80">'2026-12-31'</span>
+<span style="color:#c084fc">GROUP BY</span> 1
+<span style="color:#c084fc">ORDER BY</span> 1;</code></pre>
+            </div>
+            <img src="image/Data_Analyst_Task/1786863236081.png" alt="Kết quả Tăng trưởng Đơn hàng" class="w-full rounded-xl border border-gray-100 dark:border-navy-700/50 shadow-sm mt-3">
+          </div>
         </div>
+        
+        <!-- Item 2 -->
         <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 overflow-hidden">
           <div class="p-5 border-b border-gray-100 dark:border-navy-700/50"><p class="font-semibold text-gray-900 dark:text-white">2. Giá trị Đơn hàng Trung bình (AOV)</p></div>
-          <div class="p-5"><p class="text-sm text-gray-600 dark:text-gray-400">AOV = <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">SUM(sale_price) / COUNT(DISTINCT order_id)</code>. Loại bỏ các mặt hàng bị trả lại để đảm bảo độ chính xác.</p></div>
+          <div class="p-5 space-y-4">
+            <p class="text-sm text-gray-600 dark:text-gray-400">AOV = <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">SUM(sale_price) / COUNT(DISTINCT order_id)</code>. Loại bỏ các mặt hàng bị trả lại để đảm bảo tính chuẩn xác cho bức tranh doanh thu.</p>
+            <div class="sql-block">
+              <div class="sql-header">
+                <div class="sql-dot bg-red-500"></div><div class="sql-dot bg-yellow-500"></div><div class="sql-dot bg-green-500"></div>
+                <span class="text-gray-400 text-xs ml-2 font-mono">calculate_aov.sql</span>
+              </div>
+              <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed text-gray-200"><code><span style="color:#c084fc">SELECT</span>
+  <span style="color:#facc15">FORMAT_TIMESTAMP</span>(<span style="color:#4ade80">'%Y-%m'</span>, o.created_at) <span style="color:#60a5fa">AS</span> month_year,
+  <span style="color:#facc15">SUM</span>(oi.sale_price) / <span style="color:#facc15">COUNT</span>(<span style="color:#c084fc">DISTINCT</span> o.order_id) <span style="color:#60a5fa">AS</span> AOV
+<span style="color:#c084fc">FROM</span> <span style="color:#fb923c">`bigquery-public-data.thelook_ecommerce.orders`</span> o
+<span style="color:#c084fc">JOIN</span> <span style="color:#fb923c">`bigquery-public-data.thelook_ecommerce.order_items`</span> oi 
+  <span style="color:#c084fc">ON</span> o.order_id = oi.order_id
+<span style="color:#c084fc">WHERE</span> o.status <span style="color:#c084fc">NOT IN</span> (<span style="color:#4ade80">'Cancelled'</span>, <span style="color:#4ade80">'Returned'</span>)
+  <span style="color:#c084fc">AND</span> oi.status <span style="color:#c084fc">NOT IN</span> (<span style="color:#4ade80">'Cancelled'</span>, <span style="color:#4ade80">'Returned'</span>)
+<span style="color:#c084fc">GROUP BY</span> 1
+<span style="color:#c084fc">ORDER BY</span> 1;</code></pre>
+            </div>
+            <img src="image/Data_Analyst_Task/1786864669995.png" alt="Kết quả Giá trị Đơn hàng Trung bình" class="w-full rounded-xl border border-gray-100 dark:border-navy-700/50 shadow-sm mt-3">
+          </div>
         </div>
+
+        <!-- Item 3 -->
         <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 overflow-hidden">
           <div class="p-5 border-b border-gray-100 dark:border-navy-700/50"><p class="font-semibold text-gray-900 dark:text-white">3. Phân khúc Khách hàng theo Độ tuổi</p></div>
-          <div class="p-5"><p class="text-sm text-gray-600 dark:text-gray-400">Dùng <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">CASE WHEN</code> phân dải tuổi (&lt;18, 18–24, 25–34, 35–44, &gt;45). Nối bảng <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">users</code> và <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">orders</code> chỉ phân nhóm khách hàng thực sự phát sinh giao dịch.</p></div>
+          <div class="p-5 space-y-4">
+            <p class="text-sm text-gray-600 dark:text-gray-400">Dùng <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">CASE WHEN</code> phân dải tuổi (&lt;18, 18-24, 25-34, 35-44, &gt;45). Nối bảng <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">users</code> và <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">orders</code> để đảm bảo chỉ phân nhóm <b>những khách hàng thực sự phát sinh giao dịch</b>.</p>
+            <div class="sql-block">
+              <div class="sql-header">
+                <div class="sql-dot bg-red-500"></div><div class="sql-dot bg-yellow-500"></div><div class="sql-dot bg-green-500"></div>
+                <span class="text-gray-400 text-xs ml-2 font-mono">customer_segments.sql</span>
+              </div>
+              <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed text-gray-200"><code><span style="color:#c084fc">SELECT</span>
+  <span style="color:#c084fc">CASE</span> 
+    <span style="color:#c084fc">WHEN</span> u.age &lt; <span style="color:#facc15">18</span> <span style="color:#c084fc">THEN</span> <span style="color:#4ade80">'&lt;18'</span>
+    <span style="color:#c084fc">WHEN</span> u.age <span style="color:#c084fc">BETWEEN</span> <span style="color:#facc15">18</span> <span style="color:#c084fc">AND</span> <span style="color:#facc15">24</span> <span style="color:#c084fc">THEN</span> <span style="color:#4ade80">'18-24'</span>
+    <span style="color:#c084fc">WHEN</span> u.age <span style="color:#c084fc">BETWEEN</span> <span style="color:#facc15">25</span> <span style="color:#c084fc">AND</span> <span style="color:#facc15">34</span> <span style="color:#c084fc">THEN</span> <span style="color:#4ade80">'25-34'</span>
+    <span style="color:#c084fc">WHEN</span> u.age <span style="color:#c084fc">BETWEEN</span> <span style="color:#facc15">35</span> <span style="color:#c084fc">AND</span> <span style="color:#facc15">44</span> <span style="color:#c084fc">THEN</span> <span style="color:#4ade80">'35-44'</span>
+    <span style="color:#c084fc">ELSE</span> <span style="color:#4ade80">'&gt;45'</span>
+  <span style="color:#c084fc">END AS</span> age_group,
+  <span style="color:#facc15">COUNT</span>(<span style="color:#c084fc">DISTINCT</span> u.id) <span style="color:#60a5fa">AS</span> total_customers
+<span style="color:#c084fc">FROM</span> <span style="color:#fb923c">`bigquery-public-data.thelook_ecommerce.users`</span> u
+<span style="color:#c084fc">JOIN</span> <span style="color:#fb923c">`bigquery-public-data.thelook_ecommerce.orders`</span> o 
+  <span style="color:#c084fc">ON</span> u.id = o.user_id
+<span style="color:#c084fc">WHERE</span> o.status <span style="color:#c084fc">IN</span> (<span style="color:#4ade80">'Complete'</span>, <span style="color:#4ade80">'Shipped'</span>, <span style="color:#4ade80">'Processing'</span>)
+<span style="color:#c084fc">GROUP BY</span> 1
+<span style="color:#c084fc">ORDER BY</span> age_group;</code></pre>
+            </div>
+            <img src="image/Data_Analyst_Task/1786868038275.png" alt="Kết quả Phân khúc Khách hàng" class="w-full rounded-xl border border-gray-100 dark:border-navy-700/50 shadow-sm mt-3">
+          </div>
         </div>
+        
+        <!-- Item 4 -->
         <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 overflow-hidden">
-          <div class="p-5 border-b border-gray-100 dark:border-navy-700/50"><p class="font-semibold text-gray-900 dark:text-white">4. Top 5 Sản phẩm Bán chạy mỗi tháng</p></div>
-          <div class="p-5 space-y-3">
-            <p class="text-sm text-gray-600 dark:text-gray-400">Ứng dụng Window Function để xếp hạng theo tháng:</p>
+          <div class="p-5 border-b border-gray-100 dark:border-navy-700/50"><p class="font-semibold text-gray-900 dark:text-white">4. Xác định Top 5 Sản phẩm Bán chạy</p></div>
+          <div class="p-5 space-y-4">
+            <p class="text-sm text-gray-600 dark:text-gray-400">Ứng dụng Window Function <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">DENSE_RANK() OVER(PARTITION BY Month ORDER BY Revenue DESC)</code> để phân bổ hạng và chọn lọc những sản phẩm xuất sắc nhất mỗi tháng.</p>
             <div class="sql-block">
               <div class="sql-header">
                 <div class="sql-dot bg-red-500"></div><div class="sql-dot bg-yellow-500"></div><div class="sql-dot bg-green-500"></div>
                 <span class="text-gray-400 text-xs ml-2 font-mono">top5_products.sql</span>
               </div>
-              <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed"><code><span style="color:#facc15">DENSE_RANK</span>() <span style="color:#c084fc">OVER</span>(
-  <span style="color:#c084fc">PARTITION BY</span> Month
-  <span style="color:#c084fc">ORDER BY</span> Revenue <span style="color:#c084fc">DESC</span>
-) <span style="color:#60a5fa">AS</span> rank_by_month</code></pre>
+              <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed text-gray-200"><code><span style="color:#c084fc">WITH</span> product_sales <span style="color:#c084fc">AS</span> (
+  <span style="color:#c084fc">SELECT</span>
+    <span style="color:#facc15">FORMAT_TIMESTAMP</span>(<span style="color:#4ade80">'%Y-%m'</span>, o.created_at) <span style="color:#60a5fa">AS</span> Month,
+    p.name <span style="color:#60a5fa">AS</span> product_name,
+    <span style="color:#facc15">SUM</span>(oi.sale_price) <span style="color:#60a5fa">AS</span> Revenue
+  <span style="color:#c084fc">FROM</span> orders o
+  <span style="color:#c084fc">JOIN</span> order_items oi <span style="color:#c084fc">ON</span> o.order_id = oi.order_id
+  <span style="color:#c084fc">JOIN</span> products p <span style="color:#c084fc">ON</span> oi.product_id = p.id
+  <span style="color:#c084fc">WHERE</span> o.status <span style="color:#c084fc">IN</span> (<span style="color:#4ade80">'Complete'</span>, <span style="color:#4ade80">'Shipped'</span>, <span style="color:#4ade80">'Processing'</span>)
+  <span style="color:#c084fc">GROUP BY</span> 1, 2
+),
+ranked_products <span style="color:#c084fc">AS</span> (
+  <span style="color:#c084fc">SELECT</span>
+    *,
+    <span style="color:#facc15">DENSE_RANK</span>() <span style="color:#c084fc">OVER</span>(<span style="color:#c084fc">PARTITION BY</span> Month <span style="color:#c084fc">ORDER BY</span> Revenue <span style="color:#c084fc">DESC</span>) <span style="color:#60a5fa">AS</span> rank_by_month
+  <span style="color:#c084fc">FROM</span> product_sales
+)
+<span style="color:#c084fc">SELECT</span> * <span style="color:#c084fc">FROM</span> ranked_products <span style="color:#c084fc">WHERE</span> rank_by_month &lt;= <span style="color:#facc15">5</span>;</code></pre>
             </div>
+            <img src="image/Data_Analyst_Task/1786871709785.png" alt="Kết quả Top 5 Sản phẩm" class="w-full rounded-xl border border-gray-100 dark:border-navy-700/50 shadow-sm mt-3">
           </div>
         </div>
+
+        <!-- Item 5 -->
+        <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 overflow-hidden">
+          <div class="p-5 border-b border-gray-100 dark:border-navy-700/50"><p class="font-semibold text-gray-900 dark:text-white">5. Thống kê Doanh thu theo Danh mục (Category)</p></div>
+          <div class="p-5 space-y-4">
+            <p class="text-sm text-gray-600 dark:text-gray-400">Dùng <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">GROUP BY category</code> kết hợp <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">ORDER BY total_revenue DESC</code> để định vị "con gà đẻ trứng vàng" của hệ thống.</p>
+            <div class="sql-block">
+              <div class="sql-header">
+                <div class="sql-dot bg-red-500"></div><div class="sql-dot bg-yellow-500"></div><div class="sql-dot bg-green-500"></div>
+                <span class="text-gray-400 text-xs ml-2 font-mono">revenue_by_category.sql</span>
+              </div>
+              <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed text-gray-200"><code><span style="color:#c084fc">SELECT</span>
+  p.category,
+  <span style="color:#facc15">SUM</span>(oi.sale_price) <span style="color:#60a5fa">AS</span> total_revenue
+<span style="color:#c084fc">FROM</span> orders o
+<span style="color:#c084fc">JOIN</span> order_items oi <span style="color:#c084fc">ON</span> o.order_id = oi.order_id
+<span style="color:#c084fc">JOIN</span> products p <span style="color:#c084fc">ON</span> oi.product_id = p.id
+<span style="color:#c084fc">WHERE</span> o.status <span style="color:#c084fc">IN</span> (<span style="color:#4ade80">'Complete'</span>, <span style="color:#4ade80">'Shipped'</span>, <span style="color:#4ade80">'Processing'</span>)
+<span style="color:#c084fc">GROUP BY</span> 1
+<span style="color:#c084fc">ORDER BY</span> 2 <span style="color:#c084fc">DESC</span>;</code></pre>
+            </div>
+            <img src="image/Data_Analyst_Task/1786872029965.png" alt="Kết quả Doanh thu theo Category" class="w-full rounded-xl border border-gray-100 dark:border-navy-700/50 shadow-sm mt-3">
+          </div>
+        </div>
+
+        <!-- 4.2 Data Modeling -->
         <div class="step-card bg-white dark:bg-navy-800/50 rounded-2xl border border-gray-100 dark:border-navy-700/50 overflow-hidden">
           <div class="p-5 border-b border-gray-100 dark:border-navy-700/50">
             <div class="flex items-center gap-2">
-              <p class="font-semibold text-gray-900 dark:text-white">5. Data Modeling – Master Dataset</p>
+              <p class="font-semibold text-gray-900 dark:text-white">6. Khởi tạo Mô hình Dữ liệu (Data Modeling)</p>
               <span class="text-xs bg-accent/15 text-accent dark:text-accent-light px-2 py-0.5 rounded-full font-mono">CTE + LAG()</span>
             </div>
           </div>
-          <div class="p-5 space-y-3">
+          <div class="p-5 space-y-4">
             <p class="text-sm text-gray-600 dark:text-gray-400">Ứng dụng CTE để xây dựng Master Dataset. Tính toán MoM growth bằng Window Function <code class="font-mono text-xs bg-gray-100 dark:bg-navy-800 px-1.5 py-0.5 rounded">LAG() OVER(...)</code>.</p>
             <div class="sql-block">
               <div class="sql-header">
                 <div class="sql-dot bg-red-500"></div><div class="sql-dot bg-yellow-500"></div><div class="sql-dot bg-green-500"></div>
                 <span class="text-gray-400 text-xs ml-2 font-mono">sales_growth_view.sql</span>
               </div>
-              <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed"><code><span style="color:#c084fc">WITH</span> base_data <span style="color:#c084fc">AS</span> (
+              <pre class="text-sm font-mono p-5 overflow-x-auto leading-relaxed text-gray-200"><code><span style="color:#c084fc">WITH</span> base_data <span style="color:#c084fc">AS</span> (
   <span style="color:#c084fc">SELECT</span>
     <span style="color:#facc15">FORMAT_TIMESTAMP</span>(<span style="color:#4ade80">'%Y-%m'</span>, o.created_at) <span style="color:#60a5fa">AS</span> month_year,
     p.category,
@@ -365,6 +474,7 @@
     <span style="color:#60a5fa">AS</span> revenue_growth
 <span style="color:#c084fc">FROM</span> base_data;</code></pre>
             </div>
+            <img src="image/Data_Analyst_Task/1787130182549.png" alt="Kết quả Data Modeling" class="w-full rounded-xl border border-gray-100 dark:border-navy-700/50 shadow-sm mt-3">
           </div>
         </div>
       </div>
